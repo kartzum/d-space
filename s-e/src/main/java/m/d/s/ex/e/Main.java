@@ -3,9 +3,7 @@ package m.d.s.ex.e;
 import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
 import org.apache.commons.codec.language.Metaphone;
-import org.apache.spark.api.java.function.ForeachFunction;
 import org.apache.spark.ml.feature.*;
-import org.apache.spark.ml.linalg.SparseVector;
 import org.apache.spark.sql.*;
 import org.apache.spark.sql.types.*;
 
@@ -25,20 +23,20 @@ public class Main {
             // TODO. Extract data.
 
             final List<Record> records = Arrays.asList(
-                    new Record("Shayna Dalwood", "1990"),
-                    new Record("Talya Aysh", "1991"),
-                    new Record("Taly Aysh", "1991"),
-                    new Record("Aysh Talya ", "1991"),
-                    new Record("Bethany Euston", "1989"),
-                    new Record("Bethany Eustonn", "1989"),
-                    new Record("Euston Bethany", "1989")
+                    new Record("0", "Shayna Dalwood", "1990"),
+                    new Record("1", "Talya Aysh", "1991"),
+                    new Record("2", "Taly Aysh", "1991"),
+                    new Record("3", "Aysh Talya ", "1991"),
+                    new Record("4", "Bethany Euston", "1989"),
+                    new Record("5", "Bethany Eustonn", "1989"),
+                    new Record("6", "Euston Bethany", "1989")
             );
 
             final List<Row> data = new ArrayList<>();
 
             records.forEach((Record a) -> {
                 try {
-                    final String[] rawNames = a.name.split("\\s");
+                    final String[] rawNames = a.name.split("\\s"); // TODO. Calculate into spark. And bday.
                     final List<String> calculatedNames = new ArrayList<>();
                     final List<String> parseNames = new ArrayList<>();
                     for (String rName : rawNames) {
@@ -47,13 +45,14 @@ public class Main {
                         Collections.addAll(calculatedNames, rawElements);
                         parseNames.add(rName);
                     }
-                    data.add(RowFactory.create(a.name, a.date, parseNames, calculatedNames));
+                    data.add(RowFactory.create(a.key, a.name, a.date, parseNames, calculatedNames));
                 } catch (EncoderException e) {
                     throw new RuntimeException(e);
                 }
             });
 
             final StructType schema = new StructType(new StructField[]{
+                    new StructField("key", DataTypes.StringType, true, Metadata.empty()),
                     new StructField("name", DataTypes.StringType, true, Metadata.empty()),
                     new StructField("date", DataTypes.StringType, true, Metadata.empty()),
                     new StructField("parseNames", new ArrayType(DataTypes.StringType, true), false, Metadata.empty()),
@@ -67,10 +66,12 @@ public class Main {
     }
 
     private static class Record implements Serializable {
+        final String key;
         final String name;
         final String date;
 
-        Record(final String name, final String date) {
+        Record(final String key, final String name, final String date) {
+            this.key = key;
             this.name = name;
             this.date = date;
         }
@@ -86,11 +87,17 @@ public class Main {
 
             final Dataset<Row> fData = hashingTF.transform(dataSet);
 
-            fData.foreach((ForeachFunction<Row>) row -> {
-                final String name = row.getAs("name");
-                final SparseVector pFeatures = row.getAs("pFeatures");
-                System.out.println(name + " " + pFeatures);
-            });
+            final BucketedRandomProjectionLSH mh = new BucketedRandomProjectionLSH()
+                    .setBucketLength(2.0)
+                    .setNumHashTables(3)
+                    .setInputCol("pFeatures")
+                    .setOutputCol("values");
+
+            final BucketedRandomProjectionLSHModel model = mh.fit(fData);
+
+            final Dataset<Row> transformedData = model.transform(fData).cache();
+
+            model.approxSimilarityJoin(transformedData, transformedData, 1.95).show();
         }
     }
 }
