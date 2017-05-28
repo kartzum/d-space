@@ -3,12 +3,23 @@ package m.d.s.ex.e;
 import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
 import org.apache.commons.codec.language.Metaphone;
-import org.apache.spark.ml.feature.*;
-import org.apache.spark.sql.*;
+import org.apache.spark.api.java.function.MapFunction;
+import org.apache.spark.ml.feature.BucketedRandomProjectionLSH;
+import org.apache.spark.ml.feature.BucketedRandomProjectionLSHModel;
+import org.apache.spark.ml.feature.HashingTF;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.RowFactory;
+import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.catalyst.encoders.RowEncoder;
+import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema;
 import org.apache.spark.sql.types.*;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     private final static StringEncoder stringEncoder = new Metaphone(); // TODO. Solve problem with Serializable.
@@ -23,13 +34,13 @@ public class Main {
             // TODO. Extract data.
 
             final List<Record> records = Arrays.asList(
-                    new Record("0", "Shayna Dalwood", "1990"),
-                    new Record("1", "Talya Aysh", "1991"),
-                    new Record("2", "Taly Aysh", "1991"),
-                    new Record("3", "Aysh Talya ", "1991"),
-                    new Record("4", "Bethany Euston", "1989"),
-                    new Record("5", "Bethany Eustonn", "1989"),
-                    new Record("6", "Euston Bethany", "1989")
+                    new Record(0, "Shayna Dalwood", "1990"),
+                    new Record(1, "Talya Aysh", "1991"),
+                    new Record(2, "Taly Aysh", "1991"),
+                    new Record(3, "Aysh Talya ", "1991"),
+                    new Record(4, "Bethany Euston", "1989"),
+                    new Record(5, "Bethany Eustonn", "1989"),
+                    new Record(6, "Euston Bethany", "1989")
             );
 
             final List<Row> data = new ArrayList<>();
@@ -52,7 +63,7 @@ public class Main {
             });
 
             final StructType schema = new StructType(new StructField[]{
-                    new StructField("key", DataTypes.StringType, true, Metadata.empty()),
+                    new StructField("key", DataTypes.IntegerType, true, Metadata.empty()),
                     new StructField("name", DataTypes.StringType, true, Metadata.empty()),
                     new StructField("date", DataTypes.StringType, true, Metadata.empty()),
                     new StructField("parseNames", new ArrayType(DataTypes.StringType, true), false, Metadata.empty()),
@@ -61,16 +72,16 @@ public class Main {
 
             final Dataset<Row> dataSet = spark.createDataFrame(data, schema);
 
-            new Computer().compute(dataSet);
+            new Computer().compute(spark, dataSet);
         }
     }
 
     private static class Record implements Serializable {
-        final String key;
+        final int key;
         final String name;
         final String date;
 
-        Record(final String key, final String name, final String date) {
+        Record(final int key, final String name, final String date) {
             this.key = key;
             this.name = name;
             this.date = date;
@@ -78,7 +89,7 @@ public class Main {
     }
 
     private static class Computer {
-        void compute(final Dataset<Row> dataSet) {
+        void compute(final SparkSession spark, final Dataset<Row> dataSet) {
 
             final HashingTF hashingTF = new HashingTF()
                     .setInputCol("calculatedNames")
@@ -97,7 +108,31 @@ public class Main {
 
             final Dataset<Row> transformedData = model.transform(fData).cache();
 
-            model.approxSimilarityJoin(transformedData, transformedData, 1.95).show();
+            final Dataset<Row> joinedData =
+                    (Dataset<Row>) model.approxSimilarityJoin(transformedData, transformedData, 1.95);
+
+            final StructType newKeysSchema = new StructType(new StructField[]{
+                    new StructField("key", DataTypes.StringType, true, Metadata.empty()),
+                    new StructField("key1", DataTypes.IntegerType, true, Metadata.empty()),
+                    new StructField("key2", DataTypes.IntegerType, true, Metadata.empty()),
+                    new StructField("distance", DataTypes.DoubleType, false, Metadata.empty()),
+            });
+
+            final Dataset<Row> newKeysData = joinedData.map((MapFunction<Row, Row>) row -> {
+                final GenericRowWithSchema row1 = row.getAs(0);
+                final GenericRowWithSchema row2 = row.getAs(1);
+                final double distance = row.getDouble(2);
+                final int key1 = row1.getAs(0);
+                final int key2 = row2.getAs(0);
+
+                final String newKey = Math.min(key1, key2) + "_" + Math.max(key1, key2);
+
+                return RowFactory.create(newKey, key1, key2, distance);
+            }, RowEncoder.apply(newKeysSchema));
+
+            final Dataset<Row> pureKeysData = newKeysData.dropDuplicates("key");
+
+            pureKeysData.show(100);
         }
     }
 }
