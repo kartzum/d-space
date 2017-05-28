@@ -4,6 +4,9 @@ import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
 import org.apache.commons.codec.language.Metaphone;
 import org.apache.spark.api.java.function.MapFunction;
+import org.apache.spark.graphx.EdgeDirection;
+import org.apache.spark.graphx.Graph;
+import org.apache.spark.graphx.GraphLoader;
 import org.apache.spark.ml.feature.BucketedRandomProjectionLSH;
 import org.apache.spark.ml.feature.BucketedRandomProjectionLSHModel;
 import org.apache.spark.ml.feature.HashingTF;
@@ -14,6 +17,7 @@ import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.catalyst.encoders.RowEncoder;
 import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema;
 import org.apache.spark.sql.types.*;
+import org.apache.spark.storage.StorageLevel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -132,7 +136,17 @@ public class Main {
 
             final Dataset<Row> pureKeysData = newKeysData.dropDuplicates("key");
 
-            pureKeysData.show(100);
+            pureKeysData.select("key1", "key2").write().option("delimiter", " ").csv("graph.csv");
+
+            final Graph<Object, Object> graph = GraphLoader.edgeListFile(
+                    spark.sparkContext(),
+                    "graph.csv",
+                    true,
+                    0,
+                    StorageLevel.MEMORY_AND_DISK(),
+                    StorageLevel.MEMORY_AND_DISK());
+
+            System.out.println(graph.ops().removeSelfEdges().ops().collectNeighbors(EdgeDirection.Either()).count());
         }
     }
 }
