@@ -3,6 +3,8 @@ package m.d.s.ex.p;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.function.Function;
 import org.apache.spark.ml.feature.BucketedRandomProjectionLSH;
 import org.apache.spark.ml.feature.BucketedRandomProjectionLSHModel;
 import org.apache.spark.ml.linalg.Vector;
@@ -24,9 +26,8 @@ public class Main {
                 .appName("s-p")
                 .master("local[2]")
                 .getOrCreate()) {
-
-
-            new BucketedRandomProjectionLSHComputer().compute(spark);
+            // new BucketedRandomProjectionLSHComputer().compute(spark);
+            new CsvComputer().compute(spark);
         }
     }
 
@@ -85,6 +86,25 @@ public class Main {
             // Approximate nearest neighbor search
             model.approxNearestNeighbors(dfA, key, 2).show();
             model.approxNearestNeighbors(transformedA, key, 2).show();
+        }
+    }
+
+    private static class CsvComputer extends Computer {
+        @Override
+        void compute(final SparkSession spark) {
+            final Dataset<Row> usersData =
+                    spark.read().option("delimiter", ";").option("header", "true").csv("data/users.csv");
+
+            final JavaRDD<Row> transformedUsersData = usersData.toJavaRDD().map((Function<Row, Row>) row ->
+                    RowFactory.create(Integer.decode(row.getString(0)), row.getString(1), row.getString(2)));
+
+            final StructType schema = new StructType(new StructField[]{
+                    new StructField("key", DataTypes.IntegerType, true, Metadata.empty()),
+                    new StructField("name", DataTypes.StringType, true, Metadata.empty()),
+                    new StructField("birthday", DataTypes.StringType, true, Metadata.empty()),
+            });
+
+            spark.createDataFrame(transformedUsersData, schema).show();
         }
     }
 }
