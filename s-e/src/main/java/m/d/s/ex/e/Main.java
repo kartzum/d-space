@@ -1,6 +1,5 @@
 package m.d.s.ex.e;
 
-import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
 import org.apache.commons.codec.language.Metaphone;
 import org.apache.spark.api.java.JavaRDD;
@@ -21,56 +20,68 @@ import org.apache.spark.sql.types.*;
 import org.apache.spark.storage.StorageLevel;
 import scala.Tuple2;
 
-import java.io.Serializable;
 import java.util.*;
 
 public class Main {
     private final static StringEncoder stringEncoder = new Metaphone(); // TODO. Solve problem with Serializable.
 
-    public static void main(final String[] args) {
+    // TODO. Pass parameters. Calculate on cluster.
 
-        // System.setProperty("hadoop.home.dir", "d:\\U\\G1\\T\\spark\\spark-2.1.1-bin-hadoop2.7\\"); // TODO. Calculate in runtime.
+    public static void main(final String[] args) {
+        final String os = System.getProperty("os.name").toLowerCase();
+        if (os.startsWith("win")) {
+            System.setProperty("hadoop.home.dir", "d:\\U\\G1\\T\\spark\\spark-2.1.1-bin-hadoop2.7\\");
+        }
 
         try (SparkSession spark = SparkSession.builder()
                 .appName("s-e")
                 .master("local[2]")
                 .getOrCreate()) {
 
-            spark.sparkContext().setLogLevel("INFO"); // TODO. Calculate in runtime.
+            // TODO. Pass through settings.
+            spark.sparkContext().setLogLevel("INFO");
 
-            // TODO. Extract data.
+            new Computer("data/users.csv", null).compute(spark);
+        }
+    }
 
-            final List<Record> records = Arrays.asList(
-                    new Record(0, "Shayna Dalwood", "1990"),
-                    new Record(1, "Talya Aysh", "1991"),
-                    new Record(2, "Taly Aysh", "1991"),
-                    new Record(3, "Aysh Talya ", "1991"),
-                    new Record(4, "Bethany Euston", "1989"),
-                    new Record(5, "Bethany Eustonn", "1989"),
-                    new Record(6, "Bethan Eustonn", "1989"),
-                    new Record(7, "Euston Bethany", "1989")
+    private static class Computer {
+        private final String inputPath;
+        private final String outputPath;
+
+        private Computer(final String inputPath, final String outputPath) {
+            this.inputPath = inputPath;
+            this.outputPath = outputPath;
+        }
+
+        void compute(final SparkSession spark) {
+            // Read data and prepare. Calculate names.
+
+            final Dataset<Row> initialData =
+                    spark.read().option("delimiter", ";").option("header", "true").csv(inputPath);
+
+            final JavaRDD<Row> transformedData = initialData.toJavaRDD().map((Function<Row, Row>) row -> {
+                        // TODO. Rewrite. What about birthday and others?
+                        final String[] rawNames = row.getString(1).split("\\s");
+                        final List<String> calculatedNames = new ArrayList<>();
+                        final List<String> parseNames = new ArrayList<>();
+                        for (String rName : rawNames) {
+                            final String d = stringEncoder.encode(rName);
+                            final String[] rawElements = d.split("\\|");
+                            Collections.addAll(calculatedNames, rawElements);
+                            parseNames.add(rName);
+                        }
+                        return RowFactory.create(
+                                Integer.decode(row.getString(0)),
+                                row.getString(1),
+                                row.getString(2),
+                                parseNames.toArray(new String[parseNames.size()]),
+                                calculatedNames.toArray(new String[calculatedNames.size()])
+                        );
+                    }
             );
 
-            final List<Row> data = new ArrayList<>();
-
-            records.forEach((Record a) -> {
-                try {
-                    final String[] rawNames = a.name.split("\\s"); // TODO. Calculate into spark. What about birthday and others?
-                    final List<String> calculatedNames = new ArrayList<>();
-                    final List<String> parseNames = new ArrayList<>();
-                    for (String rName : rawNames) {
-                        final String d = stringEncoder.encode(rName);
-                        final String[] rawElements = d.split("\\|");
-                        Collections.addAll(calculatedNames, rawElements);
-                        parseNames.add(rName);
-                    }
-                    data.add(RowFactory.create(a.key, a.name, a.date, parseNames, calculatedNames));
-                } catch (EncoderException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-
-            final StructType schema = new StructType(new StructField[]{
+            final StructType transformedSchema = new StructType(new StructField[]{
                     new StructField("key", DataTypes.IntegerType, true, Metadata.empty()),
                     new StructField("name", DataTypes.StringType, true, Metadata.empty()),
                     new StructField("date", DataTypes.StringType, true, Metadata.empty()),
@@ -78,33 +89,17 @@ public class Main {
                     new StructField("calculatedNames", new ArrayType(DataTypes.StringType, true), false, Metadata.empty()),
             });
 
-            final Dataset<Row> dataSet = spark.createDataFrame(data, schema);
+            final Dataset<Row> preparedData = spark.createDataFrame(transformedData, transformedSchema);
 
-            new Computer().compute(spark, dataSet);
-        }
-    }
+            // Calculate hashing.
 
-    private static class Record implements Serializable {
-        final int key;
-        final String name;
-        final String date;
-
-        Record(final int key, final String name, final String date) {
-            this.key = key;
-            this.name = name;
-            this.date = date;
-        }
-    }
-
-    private static class Computer {
-        void compute(final SparkSession spark, final Dataset<Row> dataSet) {
-
+            // TODO. Explain settings.
             final HashingTF hashingTF = new HashingTF()
                     .setInputCol("calculatedNames")
                     .setOutputCol("pFeatures")
                     .setNumFeatures(100);
 
-            final Dataset<Row> fData = hashingTF.transform(dataSet);
+            final Dataset<Row> fData = hashingTF.transform(preparedData);
 
             final BucketedRandomProjectionLSH mh = new BucketedRandomProjectionLSH() // TODO. Explain. Settings.
                     .setBucketLength(2.0)
@@ -114,10 +109,12 @@ public class Main {
 
             final BucketedRandomProjectionLSHModel model = mh.fit(fData);
 
-            final Dataset<Row> transformedData = model.transform(fData).cache();
+            // Join data using similarity. Generate data for finding.
+
+            final Dataset<Row> transformedDataForJoin = model.transform(fData).cache();
 
             final Dataset<Row> joinedData =
-                    (Dataset<Row>) model.approxSimilarityJoin(transformedData, transformedData, 1.95);
+                    (Dataset<Row>) model.approxSimilarityJoin(transformedDataForJoin, transformedDataForJoin, 1.95);
 
             final StructType newKeysSchema = new StructType(new StructField[]{
                     new StructField("newKey", DataTypes.StringType, true, Metadata.empty()),
@@ -140,6 +137,8 @@ public class Main {
 
             final Dataset<Row> pureKeysData = newKeysData.dropDuplicates("newKey");
 
+            // Filtering.
+
             final Dataset<Row> filteredPureKeysData = pureKeysData.filter((FilterFunction<Row>) row -> {
                 final int key1 = row.getAs(1);
                 final int key2 = row.getAs(2);
@@ -148,6 +147,9 @@ public class Main {
                 return distance <= 1.95 && key1 != key2;
             });
 
+            // Generate graph for finding neighbors.
+
+            // TODO. Remove old one.
             filteredPureKeysData.select("key1", "key2").write().option("delimiter", " ").csv("graph");
 
             final Graph<Object, Object> graph = GraphLoader.edgeListFile(
@@ -161,6 +163,7 @@ public class Main {
             final StructType neighborsSchema = new StructType(new StructField[]{
                     new StructField("nKey", DataTypes.IntegerType, true, Metadata.empty()),
                     new StructField("nKeys", new ArrayType(DataTypes.IntegerType, true), false, Metadata.empty()),
+                    new StructField("gKey", DataTypes.IntegerType, true, Metadata.empty()),
             });
 
             final JavaRDD<Row> neighborsRows =
@@ -173,14 +176,21 @@ public class Main {
                             keys.add((int) objectEdge.srcId());
                             keys.add((int) objectEdge.dstId());
                         }
-                        return RowFactory.create(key.intValue(), keys.toArray(new Integer[keys.size()]));
+                        final Integer[] nKeys = keys.toArray(new Integer[keys.size()]);
+                        return RowFactory.create(key.intValue(), nKeys, Arrays.hashCode(nKeys));
                     });
 
             final Dataset<Row> allKeysData = spark.createDataFrame(neighborsRows, neighborsSchema);
 
-            dataSet.join(allKeysData, dataSet.col("key").equalTo(allKeysData.col("nKey")), "fullouter").show(100);
+            // Join data as result.
 
-            // TODO. Save.
+            final Dataset<Row> resultData = preparedData.join(
+                    allKeysData, preparedData.col("key").equalTo(allKeysData.col("nKey")), "fullouter");
+            if (outputPath == null) {
+                resultData.show(100);
+            } else {
+                resultData.write().csv(outputPath);
+            }
         }
     }
 }
