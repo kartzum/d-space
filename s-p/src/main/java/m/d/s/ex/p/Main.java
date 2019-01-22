@@ -93,7 +93,7 @@ public class Main {
         @Override
         void compute(final SparkSession spark) {
             final Dataset<Row> usersData =
-                    spark.read().option("delimiter", ";").option("header", "true").csv("data/users.csv");
+                    spark.read().option("delimiter", ";").option("header", "true").csv("data/users_1/users.csv");
 
             final JavaRDD<Row> transformedUsersData = usersData.toJavaRDD().map((Function<Row, Row>) row ->
                     RowFactory.create(Integer.decode(row.getString(0)), row.getString(1), row.getString(2)));

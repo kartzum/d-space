@@ -41,7 +41,7 @@ public class Main {
             // TODO. Pass through settings.
             spark.sparkContext().setLogLevel("INFO");
 
-            new Computer("data/users.csv", null).compute(spark);
+            new Computer("data/users_1/users.csv", null).compute(spark);
         }
     }
 
@@ -150,7 +150,7 @@ public class Main {
             // Generate graph for finding neighbors.
 
             // TODO. Remove old one.
-            filteredPureKeysData.select("key1", "key2").write().option("delimiter", " ").csv("graph");
+            filteredPureKeysData.select("key1", "key2").toDF().write().option("delimiter", " ").csv("graph");
 
             final Graph<Object, Object> graph = GraphLoader.edgeListFile(
                     spark.sparkContext(),
