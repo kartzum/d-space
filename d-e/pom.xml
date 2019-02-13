@@ -13,6 +13,7 @@
         <compiler.plugin.version>3.7.0</compiler.plugin.version>
         <junit.jupiter.version>5.4.0</junit.jupiter.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+        <junit-platform-launcher.version>1.4.0</junit-platform-launcher.version>
     </properties>
 
     <build>
@@ -50,6 +51,18 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform-launcher.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
