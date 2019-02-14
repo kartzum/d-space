@@ -19,3 +19,5 @@ Small examples (Spark/java).
 * [Маленький код для больших данных или Apache Spark за 3 дня](https://habrahabr.ru/post/316088/)
 
 ## d-e
+
+## a-m
