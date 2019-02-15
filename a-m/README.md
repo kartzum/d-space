@@ -1,8 +1,10 @@
 # a-m
 
 ## Tasks
-* [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
+* [1. Two Sum](https://leetcode.com/problems/two-sum/)
 * Arrays
+* Lists
+* [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
