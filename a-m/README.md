@@ -8,6 +8,7 @@
 * [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 * [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)
 * [28. Implement strStr()](https://leetcode.com/problems/implement-strstr/)
+* [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
