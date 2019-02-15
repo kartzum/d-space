@@ -1,4 +1,4 @@
-package m.d.a.m.p;
+package m.d.a.m.p.arrays;
 
 import java.util.List;
 import java.util.Random;

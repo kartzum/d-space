@@ -1,4 +1,4 @@
-package m.d.a.m.p;
+package m.d.a.m.p.lists;
 
 public class Lists {
     public static void main(String[] args) {
