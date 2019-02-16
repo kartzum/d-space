@@ -17,3 +17,4 @@
 * [Array-Based Lists](https://opendatastructures.org/ods-java/2_Array_Based_Lists.html)
 * [Singly-linked list. Removal (deletion) operation.](http://www.algolist.net/Data_structures/Singly-linked_list/Removal)
 * [Circular Queue | Set 1 (Introduction and Array Implementation)](https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/)
+* [Stacks and Queues](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html)
