@@ -11,6 +11,7 @@
 * [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
 * Queues
 * [200. Number of Islands](https://leetcode.com/problems/longest-common-prefix/)
+* [752. Open the Lock](https://leetcode.com/problems/open-the-lock/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
