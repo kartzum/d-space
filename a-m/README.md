@@ -20,3 +20,4 @@
 * [Circular Queue | Set 1 (Introduction and Array Implementation)](https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/)
 * [Stacks and Queues](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html)
 * [DATA STRUCTURES & ALGORITHMS](https://www.studytonight.com/data-structures/circular-queue)
+* [Breadth first search in java](https://java2blog.com/breadth-first-search-in-java/)
