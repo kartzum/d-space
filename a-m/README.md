@@ -12,6 +12,7 @@
 * Queues
 * [200. Number of Islands](https://leetcode.com/problems/longest-common-prefix/)
 * [752. Open the Lock](https://leetcode.com/problems/open-the-lock/)
+* [367. Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
