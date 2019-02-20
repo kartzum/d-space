@@ -17,6 +17,7 @@
 * Stacks
 * [155. Min Stack](https://leetcode.com/problems/min-stack/)
 * [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+* [150. Evaluate Reverse Polish Notation](150. Evaluate Reverse Polish Notation)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
