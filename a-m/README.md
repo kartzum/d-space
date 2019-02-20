@@ -15,7 +15,8 @@
 * [367. Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
 * [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
 * Stacks
-* [155. Min Stack](155. Min Stack)
+* [155. Min Stack](https://leetcode.com/problems/min-stack/)
+* [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
