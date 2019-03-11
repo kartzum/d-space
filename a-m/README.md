@@ -21,6 +21,7 @@
 * [133. Clone Graph](https://leetcode.com/problems/clone-graph/)
 * [494. Target Sum](https://leetcode.com/problems/target-sum/)
 * [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+* [394. Decode String](https://leetcode.com/problems/decode-string/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
@@ -32,3 +33,4 @@
 * [Stacks and Queues](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html)
 * [DATA STRUCTURES & ALGORITHMS](https://www.studytonight.com/data-structures/circular-queue)
 * [Breadth first search in java](https://java2blog.com/breadth-first-search-in-java/)
+* [Binary Tree](https://www.baeldung.com/java-binary-tree)
