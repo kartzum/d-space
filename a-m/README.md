@@ -23,6 +23,7 @@
 * [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 * [394. Decode String](https://leetcode.com/problems/decode-string/)
 * [733. Flood Fill](https://leetcode.com/problems/flood-fill/)
+* [542. 01 Matrix](https://leetcode.com/problems/01-matrix/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
