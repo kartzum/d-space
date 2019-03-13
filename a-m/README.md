@@ -37,3 +37,4 @@
 * [DATA STRUCTURES & ALGORITHMS](https://www.studytonight.com/data-structures/circular-queue)
 * [Breadth first search in java](https://java2blog.com/breadth-first-search-in-java/)
 * [Binary Tree](https://www.baeldung.com/java-binary-tree)
+* [Doubly Linked List](https://www.geeksforgeeks.org/doubly-linked-list/)
