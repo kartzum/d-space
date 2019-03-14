@@ -38,3 +38,5 @@
 * [Breadth first search in java](https://java2blog.com/breadth-first-search-in-java/)
 * [Binary Tree](https://www.baeldung.com/java-binary-tree)
 * [Doubly Linked List](https://www.geeksforgeeks.org/doubly-linked-list/)
+* [HashMap](https://dzone.com/articles/custom-hashmap-implementation-in-java)
+* [Implementing our Own Hash Table with Separate Chaining in Java](https://www.geeksforgeeks.org/implementing-our-own-hash-table-with-separate-chaining-in-java/)
