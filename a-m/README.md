@@ -32,6 +32,7 @@
 * [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 * [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 * [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
+* [112. Path Sum](https://leetcode.com/problems/path-sum/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
