@@ -33,6 +33,7 @@
 * [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 * [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
 * [112. Path Sum](https://leetcode.com/problems/path-sum/)
+* [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/solution/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
