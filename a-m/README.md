@@ -15,6 +15,8 @@
 * [367. Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
 * [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
 * Stacks
+* Trees
+* Maps
 * [155. Min Stack](https://leetcode.com/problems/min-stack/)
 * [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
 * [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
@@ -29,6 +31,7 @@
 * [145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 * [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 * [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+* [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
