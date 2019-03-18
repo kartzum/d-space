@@ -35,6 +35,7 @@
 * [112. Path Sum](https://leetcode.com/problems/path-sum/)
 * [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/solution/)
 * [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+* [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
