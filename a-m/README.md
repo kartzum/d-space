@@ -37,6 +37,7 @@
 * [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 * [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 * [27. Remove Element](https://leetcode.com/problems/remove-element/)
+* [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
