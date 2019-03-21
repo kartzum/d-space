@@ -38,6 +38,7 @@
 * [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 * [27. Remove Element](https://leetcode.com/problems/remove-element/)
 * [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/)
+* [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
