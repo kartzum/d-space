@@ -39,6 +39,7 @@
 * [27. Remove Element](https://leetcode.com/problems/remove-element/)
 * [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/)
 * [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+* [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
