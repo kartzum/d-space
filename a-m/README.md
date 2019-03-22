@@ -55,3 +55,6 @@
 * [Doubly Linked List](https://www.geeksforgeeks.org/doubly-linked-list/)
 * [HashMap](https://dzone.com/articles/custom-hashmap-implementation-in-java)
 * [Implementing our Own Hash Table with Separate Chaining in Java](https://www.geeksforgeeks.org/implementing-our-own-hash-table-with-separate-chaining-in-java/)
+* [Java Collections Framework](https://habr.com/ru/post/237043/)
+* [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html)
+
