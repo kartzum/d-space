@@ -41,6 +41,7 @@
 * [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 * [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 * [100. Same Tree](https://leetcode.com/problems/same-tree/)
+* [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
