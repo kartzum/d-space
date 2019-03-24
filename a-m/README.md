@@ -45,6 +45,7 @@
 * [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
 * [747. Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/)
 * [66. Plus One](https://leetcode.com/problems/plus-one/)
+* [498. Diagonal Traverse](https://leetcode.com/problems/diagonal-traverse/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
