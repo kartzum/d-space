@@ -45,12 +45,14 @@ public class LinkedListCycle {
             }
             ListNode slow = head;
             ListNode fast = head.next;
+            System.out.println("slow = " + slow.val + ", fast = " + fast.val);
             while (slow != fast) {
                 if (fast == null || fast.next == null) {
                     return false;
                 }
                 slow = slow.next;
                 fast = fast.next.next;
+                System.out.println("slow = " + slow.val + ", fast = " + fast.val);
             }
             return true;
         }
