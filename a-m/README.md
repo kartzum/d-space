@@ -47,6 +47,7 @@
 * [66. Plus One](https://leetcode.com/problems/plus-one/)
 * [498. Diagonal Traverse](https://leetcode.com/problems/diagonal-traverse/)
 * [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+* [136. Single Number](https://leetcode.com/problems/single-number/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
