@@ -49,6 +49,7 @@
 * [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
 * [136. Single Number](https://leetcode.com/problems/single-number/)
 * [189. Rotate Array](https://leetcode.com/problems/rotate-array/)
+* [169. Majority Element](https://leetcode.com/problems/majority-element/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
