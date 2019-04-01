@@ -55,6 +55,11 @@
 * [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 * [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
 
+## Areas
+
+### Memory & Multithreading
+* [Jva memory model](https://habr.com/ru/post/133981/)
+
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
 * [Java Data Structures](https://www.cs.wcupa.edu/rkline/ds/data-structures.html)
