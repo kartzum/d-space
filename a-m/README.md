@@ -53,6 +53,7 @@
 * [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/solution/)
 * [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 * [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+* [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
