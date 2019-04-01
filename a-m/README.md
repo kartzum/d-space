@@ -50,6 +50,7 @@
 * [136. Single Number](https://leetcode.com/problems/single-number/)
 * [189. Rotate Array](https://leetcode.com/problems/rotate-array/)
 * [169. Majority Element](https://leetcode.com/problems/majority-element/)
+* [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/solution/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
