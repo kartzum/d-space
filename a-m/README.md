@@ -58,6 +58,7 @@
 * [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 * [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
 * [67. Add Binary](https://leetcode.com/problems/add-binary/)
+* [344. Reverse String](https://leetcode.com/problems/reverse-string/)
 
 ## Areas
 
