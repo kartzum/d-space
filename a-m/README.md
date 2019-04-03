@@ -55,6 +55,7 @@
 * [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 * [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
 * [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+* [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 
 ## Areas
 
