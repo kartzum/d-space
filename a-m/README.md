@@ -57,6 +57,7 @@
 * [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 * [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 * [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
+* [67. Add Binary](https://leetcode.com/problems/add-binary/)
 
 ## Areas
 
