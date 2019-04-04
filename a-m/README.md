@@ -60,6 +60,7 @@
 * [67. Add Binary](https://leetcode.com/problems/add-binary/)
 * [344. Reverse String](https://leetcode.com/problems/reverse-string/)
 * [561. Array Partition I](https://leetcode.com/problems/array-partition-i/)
+* [167. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
 ## Areas
 
