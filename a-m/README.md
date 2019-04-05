@@ -65,6 +65,7 @@
 * [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
 * [119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
 * [557. Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/solution/)
+* [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 
 ## Areas
 
