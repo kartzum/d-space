@@ -67,6 +67,7 @@
 * [557. Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/solution/)
 * [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 * [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+* [707. Design Linked List](https://leetcode.com/problems/design-linked-list/)
 
 ## Areas
 
