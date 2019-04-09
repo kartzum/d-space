@@ -69,6 +69,7 @@
 * [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 * [707. Design Linked List](https://leetcode.com/problems/design-linked-list/)
 * [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+* [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
 ## Areas
 
