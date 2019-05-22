@@ -79,6 +79,7 @@
 * [138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 * [61. Rotate List](https://leetcode.com/problems/rotate-list/)
 * [705. Design HashSet](https://leetcode.com/problems/design-hashset/)
+* [706. Design HashMap](https://leetcode.com/problems/design-hashmap/)
 
 ## Areas
 
