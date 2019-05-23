@@ -80,6 +80,7 @@
 * [61. Rotate List](https://leetcode.com/problems/rotate-list/)
 * [705. Design HashSet](https://leetcode.com/problems/design-hashset/)
 * [706. Design HashMap](https://leetcode.com/problems/design-hashmap/)
+* [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 
 ## Areas
 
