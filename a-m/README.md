@@ -82,6 +82,7 @@
 * [706. Design HashMap](https://leetcode.com/problems/design-hashmap/)
 * [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 * [202. Happy Number](https://leetcode.com/problems/happy-number/)
+* [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/submissions/)
 
 ## Areas
 
