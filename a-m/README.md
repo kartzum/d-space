@@ -88,6 +88,7 @@
 * [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
 * [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
 * [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+* [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)
 
 ## Areas
 
