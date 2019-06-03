@@ -87,11 +87,12 @@
 * [387. First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
 * [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
 * [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
+* [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 
 ## Areas
 
 ### Memory & Multithreading
-* [Jva memory model](https://habr.com/ru/post/133981/)
+* [Java memory model](https://habr.com/ru/post/133981/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
