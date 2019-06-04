@@ -89,6 +89,7 @@
 * [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
 * [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 * [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)
+* [652. Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)
 
 ## Areas
 
