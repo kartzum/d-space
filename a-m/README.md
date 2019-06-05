@@ -91,6 +91,7 @@
 * [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)
 * [652. Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)
 * [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
+* [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
 ## Areas
 
