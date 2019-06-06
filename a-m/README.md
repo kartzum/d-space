@@ -93,6 +93,7 @@
 * [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
 * [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 * [454. 4Sum II](https://leetcode.com/problems/4sum-ii/)
+* [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 
 ## Areas
 
