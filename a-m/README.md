@@ -98,6 +98,7 @@
 * [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 * [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 * [50. Pow(x, n)](https://leetcode.com/problems/powx-n/)
+* [779. K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/)
 
 ## Areas
 
