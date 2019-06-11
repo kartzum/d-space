@@ -97,6 +97,7 @@
 * [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 * [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 * [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+* [50. Pow(x, n)](https://leetcode.com/problems/powx-n/)
 
 ## Areas
 
@@ -119,4 +120,5 @@
 * [Implementing our Own Hash Table with Separate Chaining in Java](https://www.geeksforgeeks.org/implementing-our-own-hash-table-with-separate-chaining-in-java/)
 * [Java Collections Framework](https://habr.com/ru/post/237043/)
 * [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html)
+* [Java Program to Convert Integer Values into Binary](https://www.sanfoundry.com/java-program-convert-integer-values-binary/)
 
