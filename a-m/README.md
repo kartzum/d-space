@@ -96,6 +96,7 @@
 * [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 * [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 * [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+* [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
 
 ## Areas
 
