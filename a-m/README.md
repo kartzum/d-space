@@ -103,6 +103,7 @@
 * [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 * [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 * [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
+* [38. Count and Say](https://leetcode.com/problems/count-and-say/)
 
 ## Areas
 
