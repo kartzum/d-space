@@ -104,6 +104,7 @@
 * [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 * [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
 * [38. Count and Say](https://leetcode.com/problems/count-and-say/)
+* [237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
 
 ## Areas
 
