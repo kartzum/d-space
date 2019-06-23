@@ -102,6 +102,7 @@
 * [297. Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 * [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 * [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
+* [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
 
 ## Areas
 
