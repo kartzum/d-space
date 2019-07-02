@@ -110,6 +110,7 @@
 * [278. First Bad Version](https://leetcode.com/problems/first-bad-version/)
 * [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 * [198. House Robber](https://leetcode.com/problems/house-robber/)
+* [384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)
 
 ## Areas
 
