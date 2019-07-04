@@ -113,6 +113,7 @@
 * [384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)
 * [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
 * [204. Count Primes](https://leetcode.com/problems/count-primes/)
+* [326. Power of Three](https://leetcode.com/problems/power-of-three/)
 
 ## Areas
 
