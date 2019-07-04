@@ -112,6 +112,7 @@
 * [198. House Robber](https://leetcode.com/problems/house-robber/)
 * [384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)
 * [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
+* [204. Count Primes](https://leetcode.com/problems/count-primes/)
 
 ## Areas
 
