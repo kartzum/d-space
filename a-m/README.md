@@ -117,6 +117,7 @@
 * [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
 * [461. Hamming Distance](https://leetcode.com/problems/hamming-distance/)
 * [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+* [268. Missing Number](https://leetcode.com/problems/missing-number/)
 
 ## Areas
 
