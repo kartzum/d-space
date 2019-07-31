@@ -1,5 +1,9 @@
 package m.d.a.m.p.trees;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
  * <p>
@@ -25,6 +29,11 @@ public class Traversals {
         new PreOrder().run(create());
         System.out.println();
         new PostOrder().run(create());
+        System.out.println();
+        List<List<Integer>> lo = new LevelOrder().levelOrder(create());
+        for (List<Integer> i : lo) {
+            System.out.println(Arrays.toString(i.toArray()));
+        }
     }
 
     private static class InOrder {
@@ -57,6 +66,24 @@ public class Traversals {
             run(node.left);
             run(node.right);
             System.out.print(node.val);
+        }
+    }
+
+    private static class LevelOrder {
+        List<List<Integer>> levelOrder(TreeNode root) {
+            List<List<Integer>> list = new ArrayList<>();
+            return addlevel(root, 0, list);
+        }
+
+        private List<List<Integer>> addlevel(TreeNode root, int level, List<List<Integer>> list) {
+            if (root == null) return list;
+            if (list.size() == level) {
+                list.add(new ArrayList<>());
+            }
+            list.get(level).add(root.val);
+            addlevel(root.left, level + 1, list);
+            addlevel(root.right, level + 1, list);
+            return list;
         }
     }
 
