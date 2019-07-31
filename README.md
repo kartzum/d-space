@@ -14,8 +14,13 @@ Small examples (Spark/java).
 
 ## a-m
 
-### Links
-* See: /d-space/a-m/src/main/java/m/d/a/m/p/docs/jtop/*
+### kuick
+* [List](https://habr.com/ru/company/mailru/blog/350326/)
+* [jtop](/d-space/a-m/src/main/java/m/d/a/m/p/docs/jtop/*)
+* [m-lectures](https://habr.com/ru/company/mailru/blog/323696/)
+* [l-lectures-1](https://www.lektorium.tv/course/22823)
+* [l-lectures-2](https://www.lektorium.tv/course/22843)
+* [Математический анализ. В 2-х томах. Ильин В.А., Садовничий В.А., Сендов Бл.Х.](http://alleng.org/d/math/math96.htm)
 
 ## Links
 * [How to run Apache Spark on Windows7 in standalone mode](http://nishutayaltech.blogspot.ru/2015/04/how-to-run-apache-spark-on-windows7-in.html)
