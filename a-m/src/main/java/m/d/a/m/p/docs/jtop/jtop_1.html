@@ -6,23 +6,60 @@
 </head>
 <body>
 <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="0">
-    <!-- Trees.-->
+    <!-- Binary Tree.-->
     <tr>
-        <td><div>Trees</div></td>
+        <td>
+            <div>Binary Tree</div>
+        </td>
     </tr>
     <tr>
         <td>
-            <!-- Trees. Order.-->
+            <!-- Binary Tree. Traverse A Tree.-->
             <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="1">
                 <tr>
                     <td>
-                        <div>Tree. InOrder</div>
+                        <div>
+                            <pre>
+                                <code>
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+                                </code>
+                            </pre>
+                        </div>
+                        <div>
+                <pre>
+                    <code>
+                        1
+                       / \
+                      2   3
+                    /  \
+                   4    5
+    Depth First Traversals:
+    Inorder (Left, Root, Right) : 4 2 5 1 3
+    Preorder (Root, Left, Right) : 1 2 4 5 3
+    Postorder (Left, Right, Root) : 4 5 2 3 1
+                    </code>
+                </pre>
+                        </div>
+                        <div>
+                            <a href="https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/">Tree Traversals (Inorder, Preorder and Postorder)</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>Binary Tree. InOrder</div>
                     </td>
                     <td>
                         <div>
 	<pre>
 	<code>
-	private static class InOrder {
+	class InOrder {
         void run(TreeNode node) {
             if (node == null) {
                 return;
@@ -37,13 +74,13 @@
                         </div>
                     </td>
                     <td>
-                        <div>Tree. PreOrder</div>
+                        <div>Binary Tree. PreOrder</div>
                     </td>
                     <td>
                         <div>
 	<pre>
 	<code>
-	private static class PreOrder {
+	class PreOrder {
         void run(TreeNode node) {
             if (node == null) {
                 return;
@@ -58,13 +95,13 @@
                         </div>
                     </td>
                     <td>
-                        <div>Tree. PostOrder</div>
+                        <div>Binary Tree. PostOrder</div>
                     </td>
                     <td>
                         <div>
 	<pre>
 	<code>
-	private static class PostOrder {
+	class PostOrder {
         void run(TreeNode node) {
             if (node == null) {
                 return;
@@ -80,10 +117,10 @@
                     </td>
                 </tr>
             </table>
-            <!-- Trees. Order. Finish.-->
+            <!-- Binary Tree. Traverse A Tree. Finish.-->
         </td>
     </tr>
-    <!-- Trees. Finish.-->
+    <!-- Binary Tree. Finish.-->
 </table>
 </body>
 </html>
