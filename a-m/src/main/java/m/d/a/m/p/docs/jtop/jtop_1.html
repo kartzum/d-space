@@ -340,6 +340,42 @@ class Solution {
             </table>
         </td>
     </tr>
+    <tr>
+        <td>
+            <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="1">
+                <tr>
+                    <td>
+                        <div>Binary Tree. Validate Binary Search Tree</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+class Solution {
+    public boolean helper(TreeNode node, Integer lower, Integer upper) {
+        if (node == null) return true;
+
+        int val = node.val;
+        if (lower != null && val <= lower) return false;
+        if (upper != null && val >= upper) return false;
+
+        if (!helper(node.right, val, upper)) return false;
+        if (!helper(node.left, lower, val)) return false;
+        return true;
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        return helper(root, null, null);
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
     <!-- Binary Tree. Finish.-->
 </table>
 </body>
