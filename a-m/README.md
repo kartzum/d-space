@@ -119,6 +119,7 @@
 * [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/)
 * [268. Missing Number](https://leetcode.com/problems/missing-number/)
 * [173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
+* [700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
 
 ## Areas
 
