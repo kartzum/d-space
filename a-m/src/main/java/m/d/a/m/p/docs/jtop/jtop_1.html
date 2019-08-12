@@ -451,6 +451,50 @@ class Solution {
             </table>
         </td>
     </tr>
+    <tr>
+        <td>
+            <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="1">
+                <tr>
+                    <td>
+                        <div>Binary Tree. Insert into a Binary Search Tree</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if (root == null) {
+            root = new TreeNode(val);
+            return root;
+        }
+
+        if (root.left == null && root.right == null) {
+            if (root.val <= val)
+                root.right = new TreeNode(val);
+            else
+                root.left = new TreeNode(val);
+
+            return root;
+        }
+
+        if (root.val <= val)
+            root.right = insertIntoBST(root.right, val);
+
+        else
+            root.left = insertIntoBST(root.left, val);
+
+        return root;
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
     <!-- Binary Tree. Finish.-->
 </table>
 </body>
