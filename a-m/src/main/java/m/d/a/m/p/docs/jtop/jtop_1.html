@@ -543,6 +543,49 @@ class Solution {
         </td>
     </tr>
     <!-- Binary Tree. Finish.-->
+    <!-- Breadth-first Search & Depth-First Search.-->
+    <tr>
+        <td>
+            <div>Breadth-first Search & Depth-First Search</div>
+        </td>
+    <tr>
+        <td>
+            <!-- Binary Tree. Traverse A Tree.-->
+            <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="1">
+                <tr>
+                    <td>
+                        <div>bfs</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+static int bfs(Node root, Node target) {
+    final LinkedList[Node] queue = new LinkedList[]();
+    queue.add(root);
+    int step = 0;
+    while (!queue.isEmpty()) {
+        step = step + 1;
+        int size = queue.size();
+        for (int i = 0; i < size; i++) {
+            final Node current = queue.remove();
+            if (target.data == current.data) return step;
+            for (Node next : current.getNodes()) {
+                queue.add(next);
+            }
+        }
+    }
+    return -1;
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Breadth-first Search & Depth-First Search. Finish.-->
 </table>
 </body>
 </html>
