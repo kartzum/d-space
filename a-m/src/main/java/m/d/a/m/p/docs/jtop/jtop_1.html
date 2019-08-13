@@ -581,6 +581,37 @@ static int bfs(Node root, Node target) {
 	</pre>
                         </div>
                     </td>
+                    <td>
+                        <div>dfs</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+static void dfs(final Node node) {
+        final Stack[Node] stack = new Stack<>();
+        final List[Node] visited = new ArrayList<>();
+        stack.add(node);
+        visited.add(node);
+        while (!stack.isEmpty()) {
+            final Node element = stack.pop();
+
+            System.out.println(element.data);
+
+            final List[Node] elements = element.getNodes();
+            for (int i = 0; i < elements.size(); i++) {
+                final Node elementI = elements.get(i);
+                if (!visited.contains(elementI)) {
+                    stack.add(elementI);
+                    visited.add(elementI);
+                }
+            }
+        }
+    }
+	</code>
+	</pre>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </td>
