@@ -617,6 +617,121 @@ static void dfs(final Node node) {
         </td>
     </tr>
     <!-- Breadth-first Search & Depth-First Search. Finish.-->
+    <!-- Sorts.-->
+    <tr>
+        <td>
+            <div>Sorts</div>
+        </td>
+    <tr>
+    <tr>
+        <td>
+            <!-- Binary Tree. Traverse A Tree.-->
+            <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="1">
+                <tr>
+                    <td>
+                        <div>Quick</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+private static void sort(int[] items) {
+    sort(items, 0, items.length - 1);
+}
+
+private static void sort(int[] items, int lo, int hi) {
+    if (hi <= lo) {
+        return;
+    }
+    int j = partition(items, lo, hi);
+    sort(items, lo, j - 1);
+    sort(items, j + 1, hi);
+}
+
+private static int partition(int[] items, int lo, int hi) {
+    boolean log = false;
+    int i = lo;
+    int j = hi + 1;
+    int v = items[lo];
+    while (true) {
+        while (items[++i] < v) {
+            if (i == hi) {
+                break;
+            }
+        }
+        while (v < items[--j]) {
+            if (j == lo) {
+                break;
+            }
+        }
+        if (i >= j) {
+            break;
+        }
+        int t = items[i];
+        items[i] = items[j];
+        items[j] = t;
+        if (log) {
+            System.out.println(Arrays.toString(items));
+        }
+    }
+    int t = items[lo];
+    items[lo] = items[j];
+    items[j] = t;
+    return j;
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div>Selection</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+static void sort(int[] items) {
+    for (int i = 0; i < items.length; i++) {
+        int m = i;
+        for (int j = i + 1; j < items.length; j++) {
+            if (items[j] < items[m]) {
+                m = j;
+            }
+        }
+        int t = items[i];
+        items[i] = items[m];
+        items[m] = t;
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div>Insertion</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+static void sort(int[] items) {
+    for (int i = 1; i < items.length; i++) {
+        for (int j = i; j > 0 && items[j] < items[j - 1]; j--) {
+            int t = items[j];
+            items[j] = items[j - 1];
+            items[j - 1] = t;
+        }
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Sorts. Finish.-->
 </table>
 </body>
 </html>
