@@ -2,7 +2,7 @@ package m.d.a.m.p.mr.m1;
 
 import java.util.*;
 
-public class Main {
+public class M1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String n = scanner.nextLine();
