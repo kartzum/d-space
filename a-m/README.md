@@ -125,6 +125,7 @@
 * [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
 * [235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 * [110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
+* [1200. Minimum Absolute Difference](https://leetcode.com/problems/minimum-absolute-difference/)
 
 ## Areas
 
