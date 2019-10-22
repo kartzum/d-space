@@ -13,6 +13,7 @@ public class MaxArraySum {
 
     private static void test1() {
         System.out.println(new Solution1().calc(new int[]{-2, 1, 3, -4, 5}));
+        System.out.println();
         System.out.println(new Solution2().calc(new int[]{-2, 1, 3, -4, 5}));
     }
 
@@ -34,6 +35,7 @@ public class MaxArraySum {
             d[0] = a[0];
             for (int i = 1; i < a.length; i++) {
                 d[i] = Math.max(d[i - 1] + a[i], a[i]);
+                System.out.println(a[i]);
             }
             Arrays.sort(d);
             return d[d.length - 1];
