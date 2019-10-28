@@ -135,8 +135,15 @@
 
 ### Memory & Multithreading
 * [Java memory model](https://habr.com/ru/post/133981/)
+
+### Questions
 * [ya-interview](https://yandex.ru/jobs/ya-interview/)
 * [e-maxx.ru](http://e-maxx.ru/algo/)
+* [50-voprosov-i-otvetov-po-programmirovaniiu](https://zen.yandex.ru/media/codeblog/50-voprosov-i-otvetov-po-programmirovaniiu-dlia-podgotovki-k-tehnicheskomu-interviu-5bd4cdae060b8d00aa9f5f6e)
+* [ya](https://medium.com/@olgakozlova/%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%B8%D0%B7-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-895261c94e16)
+* [ya](http://lmndeit.kg/746/hr-yandex/)
+* [ya](https://sysdev.me/yandex-tests/)
+* [ya](https://medium.com/@mbelsky/yandex-frontend-interview-454c75435b26)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
