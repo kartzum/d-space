@@ -128,13 +128,15 @@
 * [1200. Minimum Absolute Difference](https://leetcode.com/problems/minimum-absolute-difference/)
 * [974. Subarray Sums Divisible by K (ya)](https://leetcode.com/problems/subarray-sums-divisible-by-k/)
 * [59. Spiral Matrix II (ya)](https://leetcode.com/problems/spiral-matrix-ii/)
-* [146. LRU Cache (y)](https://leetcode.com/problems/lru-cache/)
-* [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+* [146. LRU Cache (ya)](https://leetcode.com/problems/lru-cache/)
+* [23. Merge k Sorted Lists (ya)](https://leetcode.com/problems/merge-k-sorted-lists/)
 
 ## Areas
 
 ### Memory & Multithreading
 * [Java memory model](https://habr.com/ru/post/133981/)
+* [ya-interview](https://yandex.ru/jobs/ya-interview/)
+* [e-maxx.ru](http://e-maxx.ru/algo/)
 
 ## Links
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
