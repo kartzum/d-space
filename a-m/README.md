@@ -131,6 +131,7 @@
 * [146. LRU Cache (ya)](https://leetcode.com/problems/lru-cache/)
 * [23. Merge k Sorted Lists (ya)](https://leetcode.com/problems/merge-k-sorted-lists/)
 * [34. Find First and Last Position of Element in Sorted (ya)](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+* [22. Generate Parentheses (ya)](https://leetcode.com/problems/generate-parentheses/)
 
 ## Areas
 
