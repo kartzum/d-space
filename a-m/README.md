@@ -136,6 +136,7 @@
 * [5. Longest Palindromic Substring (microsoft)](https://leetcode.com/problems/longest-palindromic-substring/)
 * [794. Valid Tic-Tac-Toe State (microsoft)](https://leetcode.com/problems/valid-tic-tac-toe-state/)
 * [470. Implement Rand10() Using Rand7() (microsoft)](https://leetcode.com/problems/implement-rand10-using-rand7/)
+* [428. Serialize and Deserialize N-ary Tree (microsoft)](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
 
 ## Areas
 
