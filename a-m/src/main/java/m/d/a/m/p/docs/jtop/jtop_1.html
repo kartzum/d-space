@@ -732,6 +732,115 @@ static void sort(int[] items) {
         </td>
     </tr>
     <!-- Sorts. Finish.-->
+    <!-- Linked List.-->
+    <tr>
+        <td>
+            <div>Linked List</div>
+        </td>
+    <tr>
+    <tr>
+        <td>
+            <!-- Add Two Numbers.-->
+            <table cellspacing="0" cellpadding="0" width="100%" height="100%" border="1">
+                <tr>
+                    <td>
+                        <div>Add Two Numbers</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+static class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode r = new ListNode(0);
+        ListNode n1 = l1;
+        ListNode m1 = l2;
+        ListNode current = r;
+        int carry = 0;
+        while (n1 != null || m1 != null) {
+            int x = n1 != null ? n1.val : 0;
+            int y = m1 != null ? m1.val : 0;
+            int s = carry + x + y;
+            carry = s / 10;
+            current.next = new ListNode(s % 10);
+            current = current.next;
+            //System.out.println("x = " + x + ", y = " + y + ", carry = " + carry + ", s = " + s);
+            if (n1 != null) {
+                n1 = n1.next;
+            }
+            if (m1 != null) {
+                m1 = m1.next;
+            }
+        }
+        if (carry > 0) {
+            current.next = new ListNode(carry);
+        }
+        return r.next;
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div>Reverse Linked List</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                    <td>
+                        <div>Linked List Cycle</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+class Solution {
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        System.out.println("slow = " + slow.val + ", fast = " + fast.val);
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+            System.out.println("slow = " + slow.val + ", fast = " + fast.val);
+        }
+        return true;
+    }
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- Linked List. Finish.-->
 </table>
 </body>
 </html>
