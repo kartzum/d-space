@@ -133,6 +133,7 @@
 * [34. Find First and Last Position of Element in Sorted (ya)](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 * [22. Generate Parentheses (ya)](https://leetcode.com/problems/generate-parentheses/)
 * [445. Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
+* [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 ## Areas
 
