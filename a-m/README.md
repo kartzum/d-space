@@ -132,9 +132,10 @@
 * [23. Merge k Sorted Lists (ya)](https://leetcode.com/problems/merge-k-sorted-lists/)
 * [34. Find First and Last Position of Element in Sorted (ya)](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 * [22. Generate Parentheses (ya)](https://leetcode.com/problems/generate-parentheses/)
-* [445. Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
-* [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
-* [794. Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state/)
+* [445. Add Two Numbers II (microsoft)](https://leetcode.com/problems/add-two-numbers-ii/)
+* [5. Longest Palindromic Substring (microsoft)](https://leetcode.com/problems/longest-palindromic-substring/)
+* [794. Valid Tic-Tac-Toe State (microsoft)](https://leetcode.com/problems/valid-tic-tac-toe-state/)
+* [470. Implement Rand10() Using Rand7() (microsoft)](https://leetcode.com/problems/implement-rand10-using-rand7/)
 
 ## Areas
 
