@@ -134,6 +134,7 @@
 * [22. Generate Parentheses (ya)](https://leetcode.com/problems/generate-parentheses/)
 * [445. Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
 * [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+* [794. Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state/)
 
 ## Areas
 
