@@ -52,13 +52,13 @@ public class StringCompression {
                     chars[a] = chars[i];
                     a += 1;
                 } else {
-                    k += 2;
                     chars[a] = chars[i];
                     char[] t = Integer.toString(l).toCharArray();
                     for (int f = 0; f < t.length; f++) {
                         chars[a + f + 1] = t[f];
                     }
                     a += 1 + t.length;
+                    k += 1 + t.length;
                 }
                 i = j;
             }
