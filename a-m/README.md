@@ -137,7 +137,8 @@
 * [794. Valid Tic-Tac-Toe State (microsoft)](https://leetcode.com/problems/valid-tic-tac-toe-state/)
 * [470. Implement Rand10() Using Rand7() (microsoft)](https://leetcode.com/problems/implement-rand10-using-rand7/)
 * [428. Serialize and Deserialize N-ary Tree (microsoft)](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
-* [186. Reverse Words in a String II](https://leetcode.com/problems/reverse-words-in-a-string-ii/)
+* [186. Reverse Words in a String II (microsoft)](https://leetcode.com/problems/reverse-words-in-a-string-ii/)
+* [443. String Compression](https://leetcode.com/problems/string-compression/)
 
 ## Areas
 
