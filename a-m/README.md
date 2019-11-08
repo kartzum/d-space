@@ -138,7 +138,8 @@
 * [470. Implement Rand10() Using Rand7() (microsoft)](https://leetcode.com/problems/implement-rand10-using-rand7/)
 * [428. Serialize and Deserialize N-ary Tree (microsoft)](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
 * [186. Reverse Words in a String II (microsoft)](https://leetcode.com/problems/reverse-words-in-a-string-ii/)
-* [443. String Compression](https://leetcode.com/problems/string-compression/)
+* [443. String Compression (microsoft)](https://leetcode.com/problems/string-compression/)
+* [836. Rectangle Overlap (microsoft)](https://leetcode.com/problems/rectangle-overlap/)
 
 ## Areas
 
