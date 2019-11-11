@@ -142,6 +142,7 @@
 * [836. Rectangle Overlap (microsoft)](https://leetcode.com/problems/rectangle-overlap/)
 * [938. Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
 * [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+* [346. Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/)
 
 ## Areas
 
