@@ -141,6 +141,7 @@
 * [443. String Compression (microsoft)](https://leetcode.com/problems/string-compression/)
 * [836. Rectangle Overlap (microsoft)](https://leetcode.com/problems/rectangle-overlap/)
 * [938. Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
+* [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
 
 ## Areas
 
