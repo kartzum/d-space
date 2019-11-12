@@ -147,6 +147,7 @@
 * [876. Middle of the Linked List (microsoft)](https://leetcode.com/problems/middle-of-the-linked-list/)
 * [1185. Day of the Week (microsoft)](https://leetcode.com/problems/day-of-the-week/)
 * [575. Distribute Candies (microsoft)](https://leetcode.com/problems/distribute-candies/)
+* [917. Reverse Only Letters (microsoft)](https://leetcode.com/problems/reverse-only-letters/)
 
 ## Areas
 
