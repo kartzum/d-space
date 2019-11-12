@@ -144,6 +144,7 @@
 * [977. Squares of a Sorted Array (microsoft)](https://leetcode.com/problems/squares-of-a-sorted-array/)
 * [346. Moving Average from Data Stream (microsoft)](https://leetcode.com/problems/moving-average-from-data-stream/)
 * [1122. Relative Sort Array (microsoft)](https://leetcode.com/problems/relative-sort-array/)
+* [876. Middle of the Linked List (microsoft)](https://leetcode.com/problems/middle-of-the-linked-list/)
 
 ## Areas
 
