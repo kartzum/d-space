@@ -140,9 +140,10 @@
 * [186. Reverse Words in a String II (microsoft)](https://leetcode.com/problems/reverse-words-in-a-string-ii/)
 * [443. String Compression (microsoft)](https://leetcode.com/problems/string-compression/)
 * [836. Rectangle Overlap (microsoft)](https://leetcode.com/problems/rectangle-overlap/)
-* [938. Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
-* [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
-* [346. Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/)
+* [938. Range Sum of BST (microsoft)](https://leetcode.com/problems/range-sum-of-bst/)
+* [977. Squares of a Sorted Array (microsoft)](https://leetcode.com/problems/squares-of-a-sorted-array/)
+* [346. Moving Average from Data Stream (microsoft)](https://leetcode.com/problems/moving-average-from-data-stream/)
+* [1122. Relative Sort Array (microsoft)](https://leetcode.com/problems/relative-sort-array/)
 
 ## Areas
 
