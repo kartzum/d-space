@@ -149,6 +149,7 @@
 * [575. Distribute Candies (microsoft)](https://leetcode.com/problems/distribute-candies/)
 * [917. Reverse Only Letters (microsoft)](https://leetcode.com/problems/reverse-only-letters/)
 * [383. Ransom Note (microsoft)](https://leetcode.com/problems/ransom-note/)
+* [704. Binary Search (microsoft)](https://leetcode.com/problems/binary-search/)
 
 ## Areas
 
