@@ -151,7 +151,8 @@
 * [383. Ransom Note (microsoft)](https://leetcode.com/problems/ransom-note/)
 * [704. Binary Search (microsoft)](https://leetcode.com/problems/binary-search/)
 * [543. Diameter of Binary Tree (microsoft)](https://leetcode.com/problems/diameter-of-binary-tree/)
-* [415. Add Strings](https://leetcode.com/problems/add-strings/)
+* [415. Add Strings (microsoft)](https://leetcode.com/problems/add-strings/)
+* [83. Remove Duplicates from Sorted List (microsoft)](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
 ## Areas
 
