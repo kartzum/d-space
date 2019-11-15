@@ -154,6 +154,7 @@
 * [415. Add Strings (microsoft)](https://leetcode.com/problems/add-strings/)
 * [83. Remove Duplicates from Sorted List (microsoft)](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 * [572. Subtree of Another Tree (microsoft)](https://leetcode.com/problems/subtree-of-another-tree/)
+* [419. Battleships in a Board (microsoft)](https://leetcode.com/problems/battleships-in-a-board/)
 
 ## Areas
 
