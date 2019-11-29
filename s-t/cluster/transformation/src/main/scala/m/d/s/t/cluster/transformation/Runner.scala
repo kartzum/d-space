@@ -1,7 +1,7 @@
 package m.d.s.t.cluster.transformation
 
 import org.apache.spark.serializer.KryoSerializer
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object Runner {
   def main(args: Array[String]): Unit = {
@@ -14,10 +14,13 @@ object Runner {
       .getOrCreate()
 
     try {
-      CalculationService.run(spark)
+      save(CalculationService.run(spark))
     }
     finally {
       spark.stop()
     }
+  }
+
+  def save(df: DataFrame): Unit = {
   }
 }

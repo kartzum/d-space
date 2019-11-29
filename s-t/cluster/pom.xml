@@ -20,9 +20,9 @@
         <scalatest.version>3.0.5</scalatest.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <scalatest-maven-plugin.version>2.0.0</scalatest-maven-plugin.version>
-        <scala-maven-plugin.version>4.3.0</scala-maven-plugin.version>
+        <scala-maven-plugin.version>3.4.6</scala-maven-plugin.version>
         <java.version>1.8</java.version>
-        <code-cache-size>1g</code-cache-size>
+        <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -102,8 +102,6 @@
                 </executions>
             </plugin>
         </plugins>
-        <sourceDirectory>src/main/scala</sourceDirectory>
-        <testSourceDirectory>src/test/scala</testSourceDirectory>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -129,8 +127,9 @@
                             <arg>-Ywarn-value-discard</arg>
                         </args>
                         <jvmArgs>
-                            <jvmArg>-Xss128m</jvmArg>
-                            <jvmArg>-Xmx4096m</jvmArg>
+                            <jvmArg>-Xms1024m</jvmArg>
+                            <jvmArg>-Xmx1024m</jvmArg>
+                            <jvmArg>-XX:ReservedCodeCacheSize=1g</jvmArg>
                         </jvmArgs>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
@@ -152,7 +151,6 @@
                         <testFailureIgnore>false</testFailureIgnore>
                         <systemProperties>
                             <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
-                            <log4j.configuration>log4j-unit-tests.xml</log4j.configuration>
                         </systemProperties>
                     </configuration>
                     <dependencies>
@@ -180,13 +178,12 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.21.0</version>
+                    <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <forkCount>1</forkCount>
                         <reuseForks>false</reuseForks>
                         <systemPropertyVariables>
                             <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
-                            <log4j.configuration>log4j-unit-tests.xml</log4j.configuration>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
