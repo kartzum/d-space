@@ -14,32 +14,34 @@
     <packaging>pom</packaging>
 
     <properties>
-        <scala.version>2.11.8</scala.version>
-        <spark.version>2.1.0</spark.version>
+        <scala.version>2.11.10</scala.version>
+        <scala.binary.version>2.11</scala.binary.version>
+        <spark.version>2.3.4</spark.version>
         <scalatest.version>3.0.5</scalatest.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-        <scalatest-maven-plugin.version>1.0</scalatest-maven-plugin.version>
-        <maven-scala-plugin.version>2.15.2</maven-scala-plugin.version>
+        <scalatest-maven-plugin.version>2.0.0</scalatest-maven-plugin.version>
+        <scala-maven-plugin.version>4.3.0</scala-maven-plugin.version>
         <java.version>1.8</java.version>
+        <code-cache-size>1g</code-cache-size>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.spark</groupId>
-                <artifactId>spark-core_2.11</artifactId>
+                <artifactId>spark-core_${scala.binary.version}</artifactId>
                 <version>${spark.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.spark</groupId>
-                <artifactId>spark-sql_2.11</artifactId>
+                <artifactId>spark-sql_${scala.binary.version}</artifactId>
                 <version>${spark.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.spark</groupId>
-                <artifactId>spark-mllib_2.11</artifactId>
+                <artifactId>spark-mllib_${scala.binary.version}</artifactId>
                 <version>${spark.version}</version>
                 <scope>provided</scope>
             </dependency>
@@ -63,13 +65,13 @@
             </dependency>
             <dependency>
                 <groupId>org.scalatest</groupId>
-                <artifactId>scalatest_2.11</artifactId>
+                <artifactId>scalatest_${scala.binary.version}</artifactId>
                 <version>${scalatest.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.spark</groupId>
-                <artifactId>spark-streaming_2.11</artifactId>
+                <artifactId>spark-streaming_${scala.binary.version}</artifactId>
                 <version>${spark.version}</version>
                 <scope>provided</scope>
                 <exclusions>
@@ -81,7 +83,7 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.spark</groupId>
-                <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
+                <artifactId>spark-streaming-kafka-0-10_${scala.binary.version}</artifactId>
                 <version>${spark.version}</version>
                 <scope>provided</scope>
             </dependency>
@@ -105,50 +107,88 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>${scala-maven-plugin.version}</version>
                     <configuration>
+                        <args>
+                            <arg>-deprecation</arg>
+                            <arg>-feature</arg>
+                            <arg>-unchecked</arg>
+                            <arg>-explaintypes</arg>
+                            <arg>-Xlint:_</arg>
+                            <arg>-Yno-adapted-args</arg>
+                            <arg>-Ywarn-dead-code</arg>
+                            <arg>-Ywarn-inaccessible</arg>
+                            <arg>-Ywarn-infer-any</arg>
+                            <arg>-Ywarn-nullary-override</arg>
+                            <arg>-Ywarn-nullary-unit</arg>
+                            <arg>-Ywarn-numeric-widen</arg>
+                            <arg>-Ywarn-unused</arg>
+                            <arg>-Ywarn-unused-import</arg>
+                            <arg>-Ywarn-value-discard</arg>
+                        </args>
+                        <jvmArgs>
+                            <jvmArg>-Xss128m</jvmArg>
+                            <jvmArg>-Xmx4096m</jvmArg>
+                        </jvmArgs>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <scalaCompatVersion>${scala.binary.version}</scalaCompatVersion>
+                        <checkMultipleScalaVersions>true</checkMultipleScalaVersions>
+                        <failOnMultipleScalaVersions>true</failOnMultipleScalaVersions>
+                        <sendJavaToScalac>false</sendJavaToScalac>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.scalatest</groupId>
                     <artifactId>scalatest-maven-plugin</artifactId>
                     <version>${scalatest-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>test</id>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <configuration>
+                        <parallel>false</parallel>
+                        <junitxml>.</junitxml>
+                        <filereports>WDF TestSuite.txt</filereports>
+                        <testFailureIgnore>false</testFailureIgnore>
+                        <systemProperties>
+                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+                            <log4j.configuration>log4j-unit-tests.xml</log4j.configuration>
+                        </systemProperties>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.scalatest</groupId>
+                            <artifactId>scalatest_${scala.binary.version}</artifactId>
+                            <version>${scalatest.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
-                    <groupId>org.scala-tools</groupId>
-                    <artifactId>maven-scala-plugin</artifactId>
-                    <version>${maven-scala-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>compile</goal>
-                                <goal>testCompile</goal>
-                            </goals>
-                            <configuration>
-                                <jvmArgs>
-                                    <jvmArg>-Xss128m</jvmArg>
-                                    <jvmArg>-Xmx4096m</jvmArg>
-                                </jvmArgs>
-                                <args>
-                                    <arg>-unchecked</arg>
-                                    <arg>-explaintypes</arg>
-                                    <arg>-optimise</arg>
-                                </args>
-                            </configuration>
-                        </execution>
-                    </executions>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <fork>true</fork>
+                        <compilerArgs>
+                            <arg>-Xlint:all</arg>
+                            <arg>-deprecation</arg>
+                            <arg>-Werror</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.21.0</version>
+                    <configuration>
+                        <forkCount>1</forkCount>
+                        <reuseForks>false</reuseForks>
+                        <systemPropertyVariables>
+                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+                            <log4j.configuration>log4j-unit-tests.xml</log4j.configuration>
+                        </systemPropertyVariables>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
