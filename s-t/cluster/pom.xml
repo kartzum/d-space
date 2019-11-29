@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <scala.version>2.11.10</scala.version>
+        <scala.version>2.13.1</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
         <spark.version>2.3.4</spark.version>
         <scalatest.version>3.0.5</scalatest.version>
