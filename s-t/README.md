@@ -5,6 +5,14 @@
 * [Testing strategy for Spark Streaming - Part 2 of 2](https://blog.ippon.tech/testing-strategy-for-spark-streaming/)
 * [Spark and Spark Streaming Unit Testing](http://mkuthan.github.io/blog/2015/03/01/spark-unit-testing/)
 
+## Real Time Analytics (links and notes)
+* [RegressionStreaming](https://github.com/PacktPublishing/Apache-Spark-2-Data-Processing-and-Real-Time-Analytics/blob/master/Module_3/Chapter%2016/Chapter%2016%20Code/RegressionStreaming.scala)
+* [Apache Spark 2: Data Processing and Real-Time Analytics](https://www.packtpub.com/big-data-and-business-intelligence/apache-spark-2-data-processing-and-real-time-analytics)
+* [Hands-On Data Analysis with Scala](https://github.com/PacktPublishing/Hands-On-Data-Analysis-with-Scala)
+* [Hands-On Data Analysis with Scala](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-scala)
+* [StreamingLogisticRegression.scala](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/mllib/StreamingLogisticRegression.scala)
+* [movie-recommendation-with-mllib](http://ampcamp.berkeley.edu/big-data-mini-course/movie-recommendation-with-mllib.html)
+
 ## Notes
 
 ```
