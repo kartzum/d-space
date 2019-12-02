@@ -14,15 +14,15 @@ class StreamingMLServiceSuite extends org.scalatest.fixture.FunSuite with Matche
     spark =>
       val ssc = new StreamingContext(spark.sparkContext, Seconds(1))
 
-      val sourceData = mutable.Queue[RDD[String]]()
-      val sourceDStream: InputDStream[String] = ssc.queueStream(sourceData)
+      val predictData = mutable.Queue[RDD[String]]()
+      val predictDStream: InputDStream[String] = ssc.queueStream(predictData)
 
-      StreamingMLService.calc(sourceDStream)
+      StreamingMLService.predict(predictDStream)
 
       ssc.start()
 
-      sourceData += spark.sparkContext.makeRDD(Seq("a b c d"))
-      sourceData += spark.sparkContext.makeRDD(Seq("e f"))
+      predictData += spark.sparkContext.makeRDD(Seq("a b c d"))
+      predictData += spark.sparkContext.makeRDD(Seq("e f"))
 
       ssc.awaitTerminationOrTimeout(5000)
   }
