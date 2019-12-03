@@ -13,13 +13,21 @@ import java.util.List;
 public class M1 {
 
     public static void main(String[] args) {
-        calculator1Test1();
+        // calculator1Test1();
+        calculator2Test1();
     }
 
     private static void calculator1Test1() {
         List<Integer> r1 = new Calculator1().calc(5);
         for (int i : r1) {
             System.out.println(i);
+        }
+    }
+
+    private static void calculator2Test1() {
+        List<Character> r1 = new Calculator2().calc(74);
+        for (char i : r1) {
+            System.out.print(i);
         }
     }
 
@@ -56,6 +64,50 @@ public class M1 {
 
                 sequence.add(3);
                 i /= 3;
+            }
+
+            Collections.reverse(sequence);
+            return sequence;
+        }
+    }
+
+    public static class Calculator2 {
+        List<Character> calc(int n) {
+            List<Character> sequence = new ArrayList<>();
+
+            int[] a = new int[n + 1];
+            a[0] = 0;
+            a[1] = 0;
+            a[2] = 0;
+            a[3] = 1;
+            a[4] = 0;
+            a[5] = 1;
+
+            int min;
+            for (int i = 5; i < n + 1; i++) {
+                min = a[i - 5] + 1;
+
+                if (i % 3 == 0) min = Math.min(min, a[i / 3] + 1);
+
+                a[i] = min;
+            }
+
+
+            int i = n;
+            while (i > 1) {
+                if (i > 4 && a[i] == a[i - 5] + 1) {
+                    sequence.add('B');
+                    i = i - 5;
+                    continue;
+                }
+
+                if (i > 0 && i % 3 == 0 && a[i] == a[i / 3] + 1) {
+                    sequence.add('A');
+                    i /= 3;
+                    continue;
+                }
+
+                i--;
             }
 
             Collections.reverse(sequence);
