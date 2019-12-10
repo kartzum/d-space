@@ -194,3 +194,7 @@
 * [Java Collections Framework](https://habr.com/ru/post/237043/)
 * [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html)
 
+### Tasks
+* [Спотривное программирование](https://ru.coursera.org/learn/sportivnoe-programmirovanie)
+* [Динамическое программирование](https://tproger.ru/articles/dynprog-starters/)
+* [Динамическое программирование](https://proglib.io/p/graphical-introduction-to-dynamic-programming)
