@@ -3,7 +3,8 @@ package m.d.a.m.p.hse.m1;
 public class M2 {
     public static void main(String[] args) {
         // test1();
-        test2();
+        // test2();
+        test3();
     }
 
     private static void test1() {
@@ -14,6 +15,17 @@ public class M2 {
 
     private static void test2() {
         System.out.println(new Calculator3().calc(7));
+    }
+
+    private static void test3() {
+        int n = 7;
+        int[] a = new int[n + 1];
+        a[0] = 1;
+        a[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            a[i] = a[i - 1] + a[i - 2];
+        }
+        System.out.print(a[a.length - 1]);
     }
 
     public static class Calculator1 {
