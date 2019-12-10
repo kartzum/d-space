@@ -9,6 +9,7 @@ import java.util.List;
  * https://server.179.ru/tasks/python/2022a/pgm14.6__Dynamic_programming.html#prob_I
  * https://informatics.mccme.ru/moodle/mod/statements/view3.php?id=654&chapterid=2968
  * https://github.com/akueisara/algo-box/blob/master/week%205/primitive_calculator/PrimitiveCalculator.java
+ * https://ppt-online.org/310466
  */
 public class M1 {
 
@@ -92,6 +93,10 @@ public class M1 {
                 a[i] = min;
             }
 
+            for (int k : a) {
+                // System.out.print(k + ", ");
+            }
+            // System.out.println();
 
             int i = n;
             while (i > 1) {
