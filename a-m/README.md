@@ -161,7 +161,8 @@
 * [253. Meeting Rooms II (microsoft)](https://leetcode.com/problems/meeting-rooms-ii/)
 * [33. Search in Rotated Sorted Array (microsoft)](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 * [143. Reorder List (microsoft)](https://leetcode.com/problems/reorder-list/)
-* [722. Remove Comments](https://leetcode.com/problems/remove-comments/)
+* [722. Remove Comments (microsoft)](https://leetcode.com/problems/remove-comments/)
+* [76. Minimum Window Substring (google)](https://leetcode.com/problems/minimum-window-substring/)
 
 ## Areas
 
