@@ -163,6 +163,7 @@
 * [143. Reorder List (microsoft)](https://leetcode.com/problems/reorder-list/)
 * [722. Remove Comments (microsoft)](https://leetcode.com/problems/remove-comments/)
 * [76. Minimum Window Substring (google)](https://leetcode.com/problems/minimum-window-substring/)
+* [844. Backspace String Compare (google)](https://leetcode.com/problems/backspace-string-compare/)
 
 ## Areas
 
