@@ -727,6 +727,46 @@ static void sort(int[] items) {
 	</pre>
                         </div>
                     </td>
+                    <td>
+                        <div>Merge</div>
+                    </td>
+                    <td>
+                        <div>
+	<pre>
+	<code>
+public static int[] mergeSort(int[] a) {
+    if (a.length <= 1) {
+        return a;
+    }
+    int pivot = a.length / 2;
+    int[] left = mergeSort(Arrays.copyOfRange(a, 0, pivot));
+    int[] right = mergeSort(Arrays.copyOfRange(a, pivot, a.length));
+    return merge(left, right);
+}
+private static int[] merge(int[] left, int[] right) {
+    int[] result = new int[left.length + right.length];
+    int leftCur = 0;
+    int rightCur = 0;
+    int resultCur = 0;
+    while (leftCur < left.length && rightCur < right.length) {
+        if (left[leftCur] < right[rightCur]) {
+            result[resultCur++] = left[leftCur++];
+        } else {
+            result[resultCur++] = right[rightCur++];
+        }
+    }
+    while (leftCur < left.length) {
+        result[resultCur++] = left[leftCur++];
+    }
+    while (rightCur < right.length) {
+        result[resultCur++] = right[rightCur++];
+    }
+    return result;
+}
+	</code>
+	</pre>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </td>
