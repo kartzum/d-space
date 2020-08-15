@@ -635,49 +635,35 @@ static void dfs(final Node node) {
                         <div>
 	<pre>
 	<code>
-private static void sort(int[] items) {
-    sort(items, 0, items.length - 1);
-}
-
-private static void sort(int[] items, int lo, int hi) {
-    if (hi <= lo) {
+public static void quick(int[] a, int low, int high) {
+    if (low >= high) {
         return;
     }
-    int j = partition(items, lo, hi);
-    sort(items, lo, j - 1);
-    sort(items, j + 1, hi);
-}
-
-private static int partition(int[] items, int lo, int hi) {
-    boolean log = false;
-    int i = lo;
-    int j = hi + 1;
-    int v = items[lo];
-    while (true) {
-        while (items[++i] < v) {
-            if (i == hi) {
-                break;
-            }
+    int m = low + (high - low) / 2;
+    int v = a[m];
+    int i = low;
+    int j = high;
+    while (i <= j) {
+        while (a[i] < v) {
+            i++;
         }
-        while (v < items[--j]) {
-            if (j == lo) {
-                break;
-            }
+        while (a[j] > v) {
+            j--;
         }
-        if (i >= j) {
-            break;
-        }
-        int t = items[i];
-        items[i] = items[j];
-        items[j] = t;
-        if (log) {
-            System.out.println(Arrays.toString(items));
+        if (i <= j) {
+            int temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+            i++;
+            j--;
         }
     }
-    int t = items[lo];
-    items[lo] = items[j];
-    items[j] = t;
-    return j;
+    if (low < j) {
+        quick(a, low, j);
+    }
+    if (high > i) {
+        quick(a, i, high);
+    }
 }
 	</code>
 	</pre>

@@ -1,13 +1,13 @@
-package m.d.a.m.p.sorts;
+package m.d.a.m.p.t.t1;
 
 import java.util.Arrays;
 
-public class Quick {
+public class T8 {
     public static void main(String[] args) {
-        int[] items = new int[]{5, 7, 1, 3, 9};
-        System.out.println(Arrays.toString(items));
-        quick(items, 0, items.length - 1);
-        System.out.println(Arrays.toString(items));
+        int[] a = new int[]{5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(a));
+        quick(a, 0, a.length - 1);
+        System.out.println(Arrays.toString(a));
     }
 
     public static void quick(int[] a, int low, int high) {
