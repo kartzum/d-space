@@ -165,6 +165,7 @@
 * [76. Minimum Window Substring (google)](https://leetcode.com/problems/minimum-window-substring/)
 * [844. Backspace String Compare (google)](https://leetcode.com/problems/backspace-string-compare/)
 * [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/)
+* [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
 
 ## Areas
 
