@@ -167,6 +167,7 @@
 * [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/)
 * [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
 * [77. Combinations](https://leetcode.com/problems/combinations/)
+* [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
 ## Areas
 
