@@ -169,6 +169,9 @@
 * [77. Combinations](https://leetcode.com/problems/combinations/)
 * [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
+## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
+* [Weird Algorithm](https://cses.fi/problemset/task/1068/)
+
 ## Areas
 
 ### Memory & Multithreading
