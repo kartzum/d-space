@@ -3,7 +3,7 @@ package m.d.a.m.p.cses.fi;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class WeirdAlgorithm {
+public class WeirdAlgorithmRun {
     public static void main(String[] args) {
         boolean t = false;
         if (t) {
