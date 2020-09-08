@@ -225,6 +225,320 @@ static long countWays(int S[], int m, int n) {
         </table>
     </div>
     <!-- DP. End. -->
+    <!-- Graph. Tree. -->
+    <div>
+        <div>Graph. Tree.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td>
+                    <div>BFS.</div>
+                </td>
+                <td>
+                    <div>DFS.</div>
+                </td>
+                <td>
+                    <div>Search.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+static int bfs(Node root, Node target) {
+    final LinkedList[Node] queue = new LinkedList[]();
+    queue.add(root);
+    int step = 0;
+    while (!queue.isEmpty()) {
+        step = step + 1;
+        int size = queue.size();
+        for (int i = 0; i < size; i++) {
+            final Node current = queue.remove();
+            if (target.data == current.data) return step;
+            for (Node next : current.getNodes()) {
+                queue.add(next);
+            }
+        }
+    }
+    return -1;
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static void dfs(final Node node) {
+    final Stack[Node] stack = new Stack<>();
+    final List[Node] visited = new ArrayList<>();
+    stack.add(node);
+    visited.add(node);
+    while (!stack.isEmpty()) {
+        final Node element = stack.pop();
+
+        System.out.println(element.data);
+
+        final List[Node] elements = element.getNodes();
+        for (int i = 0; i < elements.size(); i++) {
+            final Node elementI = elements.get(i);
+            if (!visited.contains(elementI)) {
+                stack.add(elementI);
+                visited.add(elementI);
+            }
+        }
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        if(root == null) return null;
+        if(root.val == val)
+            return root;
+        if(val < root.val)
+            return searchBST(root.left, val);
+        else
+            return searchBST(root.right, val);
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Traverse.</div>
+                </td>
+                <td>
+                    <div>Symmetric.</div>
+                </td>
+                <td>
+                    <div>Validate.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+                        1
+                       / \
+                      2   3
+                    /  \
+                   4    5
+    Depth First Traversals:
+    Inorder (Left, Root, Right) : 4 2 5 1 3
+    Preorder (Root, Left, Right) : 1 2 4 5 3
+    Postorder (Left, Right, Root) : 4 5 2 3 1
+
+run(node.left);
+System.out.print(node.val);
+run(node.right);
+
+System.out.print(node.val);
+run(node.left);
+run(node.right);
+
+run(node.left);
+run(node.right);
+System.out.print(node.val);
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        return isMirror(root.left, root.right);
+    }
+
+    boolean isMirror(TreeNode l, TreeNode r) {
+        if (l == null && r == null) return true;
+        if (l == null || r == null) return false;
+        return (l.val == r.val) && isMirror(l.right, r.left) && isMirror(l.left, r.right);
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+class Solution {
+    public boolean helper(TreeNode node, Integer lower, Integer upper) {
+        if (node == null) return true;
+
+        int val = node.val;
+        if (lower != null && val <= lower) return false;
+        if (upper != null && val >= upper) return false;
+
+        if (!helper(node.right, val, upper)) return false;
+        if (!helper(node.left, lower, val)) return false;
+        return true;
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        return helper(root, null, null);
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Operations.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if (root == null) {
+            root = new TreeNode(val);
+            return root;
+        }
+
+        if (root.left == null && root.right == null) {
+            if (root.val <= val)
+                root.right = new TreeNode(val);
+            else
+                root.left = new TreeNode(val);
+
+            return root;
+        }
+
+        if (root.val <= val)
+            root.right = insertIntoBST(root.right, val);
+
+        else
+            root.left = insertIntoBST(root.left, val);
+
+        return root;
+    }
+}
+class Solution {
+    public TreeNode deleteNode(TreeNode root, int key) {
+        if (root == null)
+            return root;
+
+        if (key < root.val)
+            root.left = deleteNode(root.left, key);
+
+        else if (key > root.val)
+            root.right = deleteNode(root.right, key);
+
+        else {
+            if (root.left == null)
+                return root.right;
+
+            else if (root.right == null)
+                return root.left;
+
+            root.val = minValue(root.right);
+            root.right = deleteNode(root.right, root.val);
+        }
+
+        return root;
+    }
+
+    private int minValue(TreeNode root) {
+        int minv = root.val;
+
+        while (root.left != null) {
+            minv = root.left.val;
+            root = root.left;
+        }
+
+        return minv;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- Graph. Tree. End. -->
+    <!-- LinkedList -->
+    <div>
+        <div>LinkedList.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td>
+                    <div>Reverse Linked List.</div>
+                </td>
+                <td>
+                    <div>Linked List Cycle</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+class Solution {
+public boolean hasCycle(ListNode head) {
+    if (head == null || head.next == null) {
+        return false;
+    }
+    ListNode slow = head;
+    ListNode fast = head.next;
+    System.out.println("slow = " + slow.val + ", fast = " + fast.val);
+    while (slow != fast) {
+        if (fast == null || fast.next == null) {
+            return false;
+        }
+        slow = slow.next;
+        fast = fast.next.next;
+        System.out.println("slow = " + slow.val + ", fast = " + fast.val);
+    }
+    return true;
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- LinkedList. End. -->
+
+    <!-- Template
+    <div>
+        <div>Tree.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    -->
 </div>
 </body>
 </html>
