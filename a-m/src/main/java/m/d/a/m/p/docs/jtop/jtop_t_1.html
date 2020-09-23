@@ -76,26 +76,21 @@ static boolean areAnagram(char str1[], char str2[]) {
 // (()())
 // ((()))
 
-static void _printParenthesis(char str[], int pos, int n, int open, int close) {
-    if (close == n) {
-        for (int i = 0; i < str.length; i++) {
-            System.out.print(str[i]);
-        }
-        System.out.println();
-    } else {
-        if (open > close) {
-            str[pos] = ')';
-            _printParenthesis(str, pos + 1, n, open, close + 1);
-        }
-        if (open < n) {
-            str[pos] = '(';
-            _printParenthesis(str, pos + 1, n, open + 1, close);
-        }
-    }
+static List(String) generateParenthesis(int n) {
+    List(String) ans = new ArrayList();
+    backtrack(ans, "", 0, 0, n);
+    return ans;
 }
-static void printParenthesis(char str[], int n) {
-    if (n > 0)
-        _printParenthesis(str, 0, n, 0, 0);
+
+static void backtrack(List(String) ans, String cur, int open, int close, int max){
+    if (cur.length() == max * 2) {
+        ans.add(cur);
+        return;
+    }
+    if (open < max)
+        backtrack(ans, cur+"(", open+1, close, max);
+    if (close < open)
+        backtrack(ans, cur+")", open, close+1, max);
 }
                         </code>
                     </pre>

@@ -1,11 +1,16 @@
 package m.d.a.m.p.it.common;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class T1 {
     public static void main(String[] args) {
         // maxConTest();
         // areAnagramTest();
-        // printParenthesisTest();
-        reverseListTest();
+        printParenthesisTest();
+        // reverseListTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -62,34 +67,28 @@ public class T1 {
 
     // Print all combinations of balanced parentheses.
     // https://www.geeksforgeeks.org/print-all-combinations-of-balanced-parentheses/
+    // https://leetcode.com/problems/generate-parentheses/
 
     static void printParenthesisTest() {
-        int n = 2;
-        char[] str = new char[2 * n];
-        printParenthesis(str, n);
+        List<String> r = generateParenthesis(3);
+        System.out.println(Arrays.toString(r.toArray()));
     }
 
-    static void _printParenthesis(char str[], int pos, int n, int open, int close) {
-        if (close == n) {
-            for (int i = 0; i < str.length; i++) {
-                System.out.print(str[i]);
-            }
-            System.out.println();
-        } else {
-            if (open > close) {
-                str[pos] = ')';
-                _printParenthesis(str, pos + 1, n, open, close + 1);
-            }
-            if (open < n) {
-                str[pos] = '(';
-                _printParenthesis(str, pos + 1, n, open + 1, close);
-            }
+    static List<String> generateParenthesis(int n) {
+        List<String> ans = new ArrayList<>();
+        backtrack(ans, "", 0, 0, n);
+        return ans;
+    }
+
+    static void backtrack(List<String> ans, String cur, int open, int close, int max){
+        if (cur.length() == max * 2) {
+            ans.add(cur);
+            return;
         }
-    }
-
-    static void printParenthesis(char str[], int n) {
-        if (n > 0)
-            _printParenthesis(str, 0, n, 0, 0);
+        if (open < max)
+            backtrack(ans, cur+"(", open+1, close, max);
+        if (close < open)
+            backtrack(ans, cur+")", open, close+1, max);
     }
 
     // Reverse Linked List.
