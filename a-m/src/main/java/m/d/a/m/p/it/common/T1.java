@@ -3,7 +3,8 @@ package m.d.a.m.p.it.common;
 public class T1 {
     public static void main(String[] args) {
         // maxConTest();
-        areAnagramTest();
+        // areAnagramTest();
+        printParenthesisTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -56,5 +57,37 @@ public class T1 {
             }
         }
         return true;
+    }
+
+    // Print all combinations of balanced parentheses.
+    // https://www.geeksforgeeks.org/print-all-combinations-of-balanced-parentheses/
+
+    static void printParenthesisTest() {
+        int n = 2;
+        char[] str = new char[2 * n];
+        printParenthesis(str, n);
+    }
+
+    static void _printParenthesis(char str[], int pos, int n, int open, int close) {
+        if (close == n) {
+            for (int i = 0; i < str.length; i++) {
+                System.out.print(str[i]);
+            }
+            System.out.println();
+        } else {
+            if (open > close) {
+                str[pos] = ')';
+                _printParenthesis(str, pos + 1, n, open, close + 1);
+            }
+            if (open < n) {
+                str[pos] = '(';
+                _printParenthesis(str, pos + 1, n, open + 1, close);
+            }
+        }
+    }
+
+    static void printParenthesis(char str[], int n) {
+        if (n > 0)
+            _printParenthesis(str, 0, n, 0, 0);
     }
 }
