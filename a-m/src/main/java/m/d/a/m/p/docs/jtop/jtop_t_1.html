@@ -6,7 +6,7 @@
 </head>
 <body>
 <div style="font-size:10px">
-    <!-- S1 -->
+    <!-- S 1 -->
     <div>
         <div>S1.</div>
         <table cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -103,7 +103,39 @@ static void printParenthesis(char str[], int n) {
             </tr>
         </table>
     </div>
-    <!-- S1. End.-->
+    <!-- S 1. End.-->
+
+    <!-- Linked List 1 -->
+    <div>
+        <div>Linked List 1.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td>
+                    <div>Reverse Linked List.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+static ListNode reverseList(ListNode head) {
+    ListNode current = head;
+    ListNode prev = null;
+    while (current != null) {
+        ListNode temp = current.next;
+        current.next = prev;
+        prev = current;
+        current = temp;
+    }
+    return prev;
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- Linked List. End.-->
 
     <!-- Template
     <div>

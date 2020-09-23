@@ -4,7 +4,8 @@ public class T1 {
     public static void main(String[] args) {
         // maxConTest();
         // areAnagramTest();
-        printParenthesisTest();
+        // printParenthesisTest();
+        reverseListTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -89,5 +90,51 @@ public class T1 {
     static void printParenthesis(char str[], int n) {
         if (n > 0)
             _printParenthesis(str, 0, n, 0, 0);
+    }
+
+    // Reverse Linked List.
+    // https://leetcode.com/problems/reverse-linked-list/
+
+    static void reverseListTest() {
+        ListNode n0 = new ListNode(0, null);
+        ListNode n1 = new ListNode(1, null);
+        ListNode n2 = new ListNode(2, null);
+        n0.next = n1;
+        n1.next = n2;
+        ListNode r = reverseList(n0);
+        print(r);
+    }
+
+    static ListNode reverseList(ListNode head) {
+        ListNode current = head;
+        ListNode prev = null;
+        while (current != null) {
+            ListNode temp = current.next;
+            current.next = prev;
+            prev = current;
+            current = temp;
+        }
+        return prev;
+    }
+
+    static void print(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.println(current.value);
+            current = current.next;
+        }
+    }
+
+    static class ListNode {
+        int value;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int value, ListNode next) {
+            this.value = value;
+            this.next = next;
+        }
     }
 }
