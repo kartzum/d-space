@@ -14,6 +14,9 @@
                 <td>
                     <div>Maximum consecutive one’s (or zeros) in a binary array.</div>
                 </td>
+                <td>
+                    <div>Check whether two strings are anagram of each other.</div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -31,6 +34,29 @@ static int getMaxLength(int arr[]) {
         }
     }
     return result;
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static boolean areAnagram(char str1[], char str2[]) {
+    if (str1.length != str2.length) {
+        return false;
+    }
+    int m = 256;
+    int[] count = new int[m];
+    for (int i = 0; i < str1.length; i++) {
+        count[str1[i]]++;
+        count[str2[i]]--;
+    }
+    for (int i = 0; i < str1.length; i++) {
+        if (count[i] != 0) {
+            return false;
+        }
+    }
+    return true;
 }
                         </code>
                     </pre>
