@@ -157,6 +157,39 @@ static ListNode reverseList(ListNode head) {
     </div>
     <!-- Linked List. End.-->
 
+    <!-- S 2 -->
+    <div>
+        <div>S 2.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td><div>Move Zeroes.</div></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+static void moveZeroes(int[] nums) {
+    if (nums == null || nums.length == 0) {
+        return;
+    }
+    int k = 0;
+    for (int i = 0; i < nums.length; i++) {
+        if (nums[i] != 0) {
+            int temp = nums[k];
+            nums[k] = nums[i];
+            nums[i] = temp;
+            k++;
+        }
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- S 2. End.-->
+
     <!-- Template
     <div>
         <div>Tree.</div>

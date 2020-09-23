@@ -10,7 +10,8 @@ public class T1 {
         // areAnagramTest();
         // printParenthesisTest();
         // reverseListTest();
-        longestOnesTest();
+        // longestOnesTest();
+        moveZeroesTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -139,6 +140,30 @@ public class T1 {
             }
         }
         return right - left;
+    }
+
+    // Move Zeroes.
+    // https://leetcode.com/problems/move-zeroes/
+
+    static void moveZeroesTest() {
+        int[] nums = new int[]{1, 0, 3, 12};
+        moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    static void moveZeroes(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[k];
+                nums[k] = nums[i];
+                nums[i] = temp;
+                k++;
+            }
+        }
     }
 
     static void print(ListNode head) {
