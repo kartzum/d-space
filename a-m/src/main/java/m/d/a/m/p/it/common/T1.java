@@ -2,15 +2,15 @@ package m.d.a.m.p.it.common;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class T1 {
     public static void main(String[] args) {
         // maxConTest();
         // areAnagramTest();
-        printParenthesisTest();
+        // printParenthesisTest();
         // reverseListTest();
+        longestOnesTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -80,15 +80,15 @@ public class T1 {
         return ans;
     }
 
-    static void backtrack(List<String> ans, String cur, int open, int close, int max){
+    static void backtrack(List<String> ans, String cur, int open, int close, int max) {
         if (cur.length() == max * 2) {
             ans.add(cur);
             return;
         }
         if (open < max)
-            backtrack(ans, cur+"(", open+1, close, max);
+            backtrack(ans, cur + "(", open + 1, close, max);
         if (close < open)
-            backtrack(ans, cur+")", open, close+1, max);
+            backtrack(ans, cur + ")", open, close + 1, max);
     }
 
     // Reverse Linked List.
@@ -114,6 +114,31 @@ public class T1 {
             current = temp;
         }
         return prev;
+    }
+
+    // Max Consecutive Ones III.
+    // https://leetcode.com/problems/max-consecutive-ones-iii/
+
+    static void longestOnesTest() {
+        int[] a = new int[]{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0};
+        System.out.println(longestOnes(a, 2));
+    }
+
+    static int longestOnes(int[] A, int K) {
+        int left = 0;
+        int right = 0;
+        for (right = 0; right < A.length; right++) {
+            if (A[right] == 0) {
+                K--;
+            }
+            if (K < 0) {
+                if (A[left] == 0) {
+                    K++;
+                }
+                left++;
+            }
+        }
+        return right - left;
     }
 
     static void print(ListNode head) {

@@ -20,6 +20,9 @@
                 <td>
                     <div>Print all combinations of balanced parentheses. TC: O(4^n/sqrt(n)), SC: O(4^n/sqrt(n)).</div>
                 </td>
+                <td>
+                    <div>Max Consecutive Ones III.</div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -91,6 +94,28 @@ static void backtrack(List(String) ans, String cur, int open, int close, int max
         backtrack(ans, cur+"(", open+1, close, max);
     if (close < open)
         backtrack(ans, cur+")", open, close+1, max);
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static int longestOnes(int[] A, int K) {
+    int left = 0;
+    int right = 0;
+    for (right = 0; right < A.length; right++) {
+        if (A[right] == 0) {
+            K--;
+        }
+        if (K < 0) {
+            if (A[left] == 0) {
+                K++;
+            }
+            left++;
+        }
+    }
+    return right - left;
 }
                         </code>
                     </pre>

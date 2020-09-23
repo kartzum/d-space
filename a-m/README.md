@@ -168,6 +168,7 @@
 * [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
 * [77. Combinations](https://leetcode.com/problems/combinations/)
 * [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+* [1004. Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
