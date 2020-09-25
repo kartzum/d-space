@@ -162,7 +162,12 @@ static ListNode reverseList(ListNode head) {
         <div>S 2.</div>
         <table cellspacing="0" cellpadding="0" width="100%" border="0">
             <tr>
-                <td><div>Move Zeroes.</div></td>
+                <td>
+                    <div>Move Zeroes.</div>
+                </td>
+                <td>
+                    <div>Two Sum. TC: O(n), SC: O(n).</div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -181,6 +186,23 @@ static void moveZeroes(int[] nums) {
             k++;
         }
     }
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static int[] twoSum(int[] nums, int target) {
+    Map<(Integer, Integer) map = new HashMap();
+    for (int i = 0; i < nums.length; i++) {
+        int complement = target - nums[i];
+        if (map.containsKey(complement)) {
+            return new int[]{map.get(complement), i};
+        }
+        map.put(nums[i], i);
+    }
+    throw new IllegalArgumentException("No two sum solution");
 }
                         </code>
                     </pre>
