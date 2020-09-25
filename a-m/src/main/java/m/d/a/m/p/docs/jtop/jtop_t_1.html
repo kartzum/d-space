@@ -168,6 +168,9 @@ static ListNode reverseList(ListNode head) {
                 <td>
                     <div>Two Sum. TC: O(n), SC: O(n).</div>
                 </td>
+                <td>
+                    <div>Topological Sorting.</div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -204,6 +207,48 @@ static int[] twoSum(int[] nums, int target) {
     }
     throw new IllegalArgumentException("No two sum solution");
 }
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static Stack(Integer) topologicalSort(Graph graph) {
+    Stack(Integer) stack = new Stack<>();
+    boolean[] visited = new boolean[graph.v];
+
+    for (int i = 0; i < graph.v; i++) {
+        if (!visited[i]) {
+            topologicalSortUtil(graph, i, visited, stack);
+        }
+    }
+
+    return stack;
+}
+
+static void topologicalSortUtil(Graph graph, int v, boolean[] visited, Stack(Integer) stack) {
+    visited[v] = true;
+    for (int i : graph.adj.get(v)) {
+        if (!visited[i])
+            topologicalSortUtil(graph, i, visited, stack);
+    }
+    stack.push(v);
+}
+static class Graph {
+        private int v;
+        private LinkedList(LinkedList(Integer)) adj;
+
+        Graph(int v) {
+            this.v = v;
+            adj = new LinkedList()();
+            for (int i = 0; i < v; ++i)
+                adj.add(new LinkedList()());
+        }
+
+        void addEdge(int v, int w) {
+            adj.get(v).add(w);
+        }
+    }
                         </code>
                     </pre>
                 </td>
