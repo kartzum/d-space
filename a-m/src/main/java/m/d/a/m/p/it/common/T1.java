@@ -13,7 +13,8 @@ public class T1 {
         // twoSumTest();
         // topologicalSortTest();
         // isBSTTest();
-        DFSTest();
+        // DFSTest();
+        BFSTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -330,6 +331,43 @@ public class T1 {
             for (Node childNode : currentNode.nodes) {
                 if (!visited.contains(childNode)) {
                     stack.push(childNode);
+                    visited.add(childNode);
+                }
+            }
+        }
+    }
+
+    // BFS.
+    // https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
+
+    static void BFSTest() {
+        //    [0]
+        //   /  \
+        // [1]  [2]
+        //        \
+        //        [3]
+
+        Node n0 = new Node(0);
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n0.nodes.add(n1);
+        n0.nodes.add(n2);
+        n2.nodes.add(n3);
+        BFS(n0);
+    }
+
+    static void BFS(Node node) {
+        LinkedList<Node> queue = new LinkedList<>();
+        List<Node> visited = new LinkedList<>();
+        queue.add(node);
+        visited.add(node);
+        while (!queue.isEmpty()) {
+            Node currentNode = queue.poll();
+            System.out.println(currentNode.val);
+            for (Node childNode : currentNode.nodes) {
+                if (!visited.contains(childNode)) {
+                    queue.add(childNode);
                     visited.add(childNode);
                 }
             }

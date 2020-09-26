@@ -244,22 +244,21 @@ static long countWays(int S[], int m, int n) {
                 <td>
                     <pre>
                         <code>
-static int bfs(Node root, Node target) {
-    final LinkedList[Node] queue = new LinkedList[]();
-    queue.add(root);
-    int step = 0;
+static void BFS(Node node) {
+    LinkedList(Node) queue = new LinkedList();
+    List(Node) visited = new LinkedList();
+    queue.add(node);
+    visited.add(node);
     while (!queue.isEmpty()) {
-        step = step + 1;
-        int size = queue.size();
-        for (int i = 0; i < size; i++) {
-            final Node current = queue.remove();
-            if (target.data == current.data) return step;
-            for (Node next : current.getNodes()) {
-                queue.add(next);
+        Node currentNode = queue.poll();
+        System.out.println(currentNode.val);
+        for (Node childNode : currentNode.nodes) {
+            if (!visited.contains(childNode)) {
+                queue.add(childNode);
+                visited.add(childNode);
             }
         }
     }
-    return -1;
 }
                         </code>
                     </pre>
