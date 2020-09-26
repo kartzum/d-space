@@ -267,24 +267,29 @@ static int bfs(Node root, Node target) {
                 <td>
                     <pre>
                         <code>
-static void dfs(final Node node) {
-    final Stack[Node] stack = new Stack<>();
-    final List[Node] visited = new ArrayList<>();
-    stack.add(node);
+static void DFS(Node node) {
+    Stack(Node) stack = new Stack();
+    List(Node) visited = new LinkedList();
+    stack.push(node);
     visited.add(node);
     while (!stack.isEmpty()) {
-        final Node element = stack.pop();
-
-        System.out.println(element.data);
-
-        final List[Node] elements = element.getNodes();
-        for (int i = 0; i < elements.size(); i++) {
-            final Node elementI = elements.get(i);
-            if (!visited.contains(elementI)) {
-                stack.add(elementI);
-                visited.add(elementI);
+        Node currentNode = stack.pop();
+        System.out.println(currentNode.val);
+        for (Node childNode : currentNode.nodes) {
+            if (!visited.contains(childNode)) {
+                stack.push(childNode);
+                visited.add(childNode);
             }
         }
+    }
+}
+static class Node {
+    List(Node) nodes;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        nodes = new LinkedList<>();
     }
 }
                         </code>

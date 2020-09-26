@@ -12,7 +12,8 @@ public class T1 {
         // moveZeroesTest();
         // twoSumTest();
         // topologicalSortTest();
-        isBSTTest();
+        // isBSTTest();
+        DFSTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -297,6 +298,44 @@ public class T1 {
         return isBST(root.left, l, root) && isBST(root.right, root, r);
     }
 
+    // DFS.
+    // https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/
+    // https://www.programiz.com/dsa/graph-dfs
+
+    static void DFSTest() {
+        //    [0]
+        //   /  \
+        // [1]  [2]
+        //        \
+        //        [3]
+
+        Node n0 = new Node(0);
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n0.nodes.add(n1);
+        n0.nodes.add(n2);
+        n2.nodes.add(n3);
+        DFS(n0);
+    }
+
+    static void DFS(Node node) {
+        Stack<Node> stack = new Stack<>();
+        List<Node> visited = new LinkedList<>();
+        stack.push(node);
+        visited.add(node);
+        while (!stack.isEmpty()) {
+            Node currentNode = stack.pop();
+            System.out.println(currentNode.val);
+            for (Node childNode : currentNode.nodes) {
+                if (!visited.contains(childNode)) {
+                    stack.push(childNode);
+                    visited.add(childNode);
+                }
+            }
+        }
+    }
+
     // Three and others.
 
     static void print(ListNode head) {
@@ -343,6 +382,16 @@ public class T1 {
 
         TreeNode(int val) {
             this.val = val;
+        }
+    }
+
+    static class Node {
+        List<Node> nodes;
+        int val;
+
+        Node(int val) {
+            this.val = val;
+            nodes = new LinkedList<>();
         }
     }
 }
