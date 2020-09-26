@@ -11,7 +11,8 @@ public class T1 {
         // longestOnesTest();
         // moveZeroesTest();
         // twoSumTest();
-        topologicalSortTest();
+        // topologicalSortTest();
+        isBSTTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -243,6 +244,59 @@ public class T1 {
         stack.push(v);
     }
 
+    // To check if a binary tree is BST or not.
+    // https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+
+    static void isBSTTest() {
+        System.out.println(isBST(isBSTCreate(), null, null));
+        System.out.println(isBST(isBSTCreate2(), null, null));
+    }
+
+    static TreeNode isBSTCreate() {
+        //     [4]
+        //    /   |
+        //   [2]  [5]
+        //  /  |
+        // [1] [3]
+
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n4 = new TreeNode(4);
+        n4.left = n2;
+        n4.right = n5;
+        n2.left = n1;
+        n2.right = n3;
+        return n4;
+    }
+
+    static TreeNode isBSTCreate2() {
+        //     [3]
+        //    /   |
+        //   [2]  [5]
+        //  /  |
+        // [1] [4]
+
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n4 = new TreeNode(4);
+        n3.left = n2;
+        n3.right = n5;
+        n2.left = n1;
+        n2.right = n4;
+        return n3;
+    }
+
+    static boolean isBST(TreeNode root, TreeNode l, TreeNode r) {
+        if (root == null) return true;
+        if (l != null && root.val <= l.val) return false;
+        if (r != null && root.val >= r.val) return false;
+        return isBST(root.left, l, root) && isBST(root.right, root, r);
+    }
+
     // Three and others.
 
     static void print(ListNode head) {
@@ -279,6 +333,16 @@ public class T1 {
 
         void addEdge(int v, int w) {
             adj.get(v).add(w);
+        }
+    }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int val) {
+            this.val = val;
         }
     }
 }

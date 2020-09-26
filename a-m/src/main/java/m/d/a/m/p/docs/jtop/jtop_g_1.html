@@ -370,22 +370,16 @@ class Solution {
                 <td>
                     <pre>
                         <code>
-class Solution {
-    public boolean helper(TreeNode node, Integer lower, Integer upper) {
-        if (node == null) return true;
-
-        int val = node.val;
-        if (lower != null && val <= lower) return false;
-        if (upper != null && val >= upper) return false;
-
-        if (!helper(node.right, val, upper)) return false;
-        if (!helper(node.left, lower, val)) return false;
-        return true;
-    }
-
-    public boolean isValidBST(TreeNode root) {
-        return helper(root, null, null);
-    }
+//     [4]
+//    /   |
+//   [2]  [5]
+//  /  |
+// [1] [3]
+static boolean isBST(TreeNode root, TreeNode l, TreeNode r) {
+    if (root == null) return true;
+    if (l != null && root.val <= l.val) return false;
+    if (r != null && root.val >= r.val) return false;
+    return isBST(root.left, l, root) && isBST(root.right, root, r);
 }
                         </code>
                     </pre>
