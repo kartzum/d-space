@@ -14,7 +14,8 @@ public class T1 {
         // topologicalSortTest();
         // isBSTTest();
         // DFSTest();
-        BFSTest();
+        // BFSTest();
+        evalRPNTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -372,6 +373,44 @@ public class T1 {
                 }
             }
         }
+    }
+
+    // Evaluate Reverse Polish Notation.
+    // https://leetcode.com/problems/evaluate-reverse-polish-notation/
+
+    static void evalRPNTest() {
+        String[] tokens = new String[]{"2", "1", "+", "3", "*"};
+        System.out.println(evalRPN(tokens));
+    }
+
+    static int evalRPN(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+        for (String token : tokens) {
+            if (!"+-*/".contains(token)) {
+                int v = Integer.parseInt(token);
+                stack.push(v);
+                continue;
+            }
+            int n2 = stack.pop();
+            int n1 = stack.pop();
+            int r = 0;
+            switch (token) {
+                case "+":
+                    r = n1 + n2;
+                    break;
+                case "-":
+                    r = n1 - n2;
+                    break;
+                case "*":
+                    r = n1 * n2;
+                    break;
+                case "/":
+                    r = n1 / n2;
+                    break;
+            }
+            stack.push(r);
+        }
+        return stack.pop();
     }
 
     // Three and others.

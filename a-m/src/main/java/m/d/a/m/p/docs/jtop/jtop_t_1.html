@@ -286,6 +286,56 @@ static boolean isPalindrome(String x) {
     </div>
     <!-- S 2. End.-->
 
+    <!-- S 3-->
+    <div>
+        <div>Tree.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td>
+                    <div>Evaluate Reverse Polish Notation.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+static int evalRPN(String[] tokens) {
+    Stack(Integer) stack = new Stack();
+    for (String token : tokens) {
+        if (!"+-*/".contains(token)) {
+            int v = Integer.parseInt(token);
+            stack.push(v);
+            continue;
+        }
+        int n2 = stack.pop();
+        int n1 = stack.pop();
+        int r = 0;
+        switch (token) {
+            case "+":
+                r = n1 + n2;
+                break;
+            case "-":
+                r = n1 - n2;
+                break;
+            case "*":
+                r = n1 * n2;
+                break;
+            case "/":
+                r = n1 / n2;
+                break;
+        }
+        stack.push(r);
+    }
+    return stack.pop();
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- S 3. End. -->
+
     <!-- Template
     <div>
         <div>Tree.</div>
