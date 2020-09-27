@@ -288,11 +288,17 @@ static boolean isPalindrome(String x) {
 
     <!-- S 3-->
     <div>
-        <div>Tree.</div>
+        <div>S 3.</div>
         <table cellspacing="0" cellpadding="0" width="100%" border="0">
             <tr>
                 <td>
                     <div>Evaluate Reverse Polish Notation.</div>
+                </td>
+                <td>
+                    <div>Check for balanced parentheses in an expression.</div>
+                </td>
+                <td>
+                    <div>Merge Sorted Array.</div>
                 </td>
             </tr>
             <tr>
@@ -327,6 +333,73 @@ static int evalRPN(String[] tokens) {
         stack.push(r);
     }
     return stack.pop();
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static boolean areParanthesisBalanced(String expr) {
+    Deque(Character) stack = new ArrayDeque();
+    for (int i = 0; i < expr.length(); i++) {
+        char x = expr.charAt(i);
+        if (x == '(' || x == '{' || x == '[') {
+            stack.push(x);
+            continue;
+        }
+        if (stack.isEmpty()) return false;
+        switch (x) {
+            case ')':
+                stack.pop();
+                if (x == '{' || x == '[') {
+                    return false;
+                }
+                break;
+            case '}':
+                stack.pop();
+                if (x == '(' || x == '[') {
+                    return false;
+                }
+                break;
+            case ']':
+                stack.pop();
+                if (x == '{' || x == '(') {
+                    return false;
+                }
+                break;
+        }
+    }
+    return (stack.isEmpty());
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+void merge(int[] nums1, int m, int[] nums2, int n) {
+    int k = m + n - 1;
+    while (m - 1 >= 0 && n - 1 >= 0) {
+        if (nums1[m - 1] > nums2[n - 1]) {
+            nums1[k] = nums1[m - 1];
+            m--;
+        } else {
+            nums1[k] = nums2[n - 1];
+            n--;
+        }
+        k--;
+    }
+    while (m - 1 >= 0) {
+        nums1[k] = nums1[m - 1];
+        k--;
+        m--;
+    }
+    while (n - 1 >= 0) {
+        nums1[k] = nums2[n - 1];
+        k--;
+        n--;
+    }
 }
                         </code>
                     </pre>

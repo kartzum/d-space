@@ -15,7 +15,8 @@ public class T1 {
         // isBSTTest();
         // DFSTest();
         // BFSTest();
-        evalRPNTest();
+        // evalRPNTest();
+        areParanthesisBalancedTest();
     }
 
     // Maximum consecutive one’s (or zeros) in a binary array.
@@ -411,6 +412,46 @@ public class T1 {
             stack.push(r);
         }
         return stack.pop();
+    }
+
+    // Check for balanced parentheses in an expression.
+    // https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
+
+    static void areParanthesisBalancedTest() {
+        System.out.println(areParanthesisBalanced("([{}])"));
+    }
+
+    static boolean areParanthesisBalanced(String expr) {
+        Deque<Character> stack = new ArrayDeque<>();
+        for (int i = 0; i < expr.length(); i++) {
+            char x = expr.charAt(i);
+            if (x == '(' || x == '{' || x == '[') {
+                stack.push(x);
+                continue;
+            }
+            if (stack.isEmpty()) return false;
+            switch (x) {
+                case ')':
+                    stack.pop();
+                    if (x == '{' || x == '[') {
+                        return false;
+                    }
+                    break;
+                case '}':
+                    stack.pop();
+                    if (x == '(' || x == '[') {
+                        return false;
+                    }
+                    break;
+                case ']':
+                    stack.pop();
+                    if (x == '{' || x == '(') {
+                        return false;
+                    }
+                    break;
+            }
+        }
+        return (stack.isEmpty());
     }
 
     // Three and others.
