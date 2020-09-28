@@ -7,7 +7,9 @@ public class T9 {
     public static void main(String[] args) {
         // arrays();
         // collections();
-        maps();
+        // maps();
+        // stacks();
+        queues();
     }
 
     static void arrays() {
@@ -71,6 +73,24 @@ public class T9 {
         sm.put(9, "9");
         for (Map.Entry<Integer, String> entry : sm.entrySet()) {
             System.out.println(entry.getValue());
+        }
+    }
+
+    static void stacks() {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
+    }
+
+    static void queues() {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(1);
+        queue.add(2);
+        while (!queue.isEmpty()) {
+            System.out.println(queue.poll());
         }
     }
 }
