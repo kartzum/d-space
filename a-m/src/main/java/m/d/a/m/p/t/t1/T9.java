@@ -1,7 +1,9 @@
 package m.d.a.m.p.t.t1;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class T9 {
     public static void main(String[] args) {
@@ -10,7 +12,8 @@ public class T9 {
         // maps();
         // stacks();
         // queues();
-        myQueue();
+        // myQueue();
+        streams();
     }
 
     static void arrays() {
@@ -108,6 +111,32 @@ public class T9 {
         System.out.println(v);
     }
 
+    static void streams() {
+        String[][] data = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
+
+        Stream<String[]> temp = Arrays.stream(data);
+        Stream<String> stringStream = temp.flatMap(x -> Arrays.stream(x));
+        stringStream.forEach(System.out::println);
+
+        System.out.println();
+        Arrays.stream(data).flatMap(x -> Arrays.stream(x)).filter(a -> a.contains("a")).forEach(System.out::println);
+
+        System.out.println();
+        Stream<Phone> phoneStream = Stream.of(new Phone("iPhone X", "Apple", 600),
+                new Phone("Pixel 2", "Google", 500),
+                new Phone("iPhone 8", "Apple", 450),
+                new Phone("Galaxy S9", "Samsung", 440),
+                new Phone("Galaxy S8", "Samsung", 340));
+        Map<String, List<Phone>> phonesByCompany = phoneStream.collect(Collectors.groupingBy(Phone::getCompany));
+        for (Map.Entry<String, List<Phone>> item : phonesByCompany.entrySet()) {
+            System.out.println(item.getKey());
+            for (Phone phone : item.getValue()) {
+                System.out.println(phone.getName());
+            }
+            System.out.println();
+        }
+    }
+
     // Entities.
 
     static class MyCircularQueue {
@@ -152,6 +181,30 @@ public class T9 {
             }
             int tailIndex = (this.headIndex + this.count - 1) % this.capacity;
             return this.queue[tailIndex];
+        }
+    }
+
+    static class Phone {
+        private String name;
+        private String company;
+        private int price;
+
+        public Phone(String name, String comp, int price) {
+            this.name = name;
+            this.company = comp;
+            this.price = price;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getPrice() {
+            return price;
+        }
+
+        public String getCompany() {
+            return company;
         }
     }
 }
