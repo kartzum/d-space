@@ -9,7 +9,8 @@ public class T9 {
         // collections();
         // maps();
         // stacks();
-        queues();
+        // queues();
+        myQueue();
     }
 
     static void arrays() {
@@ -91,6 +92,66 @@ public class T9 {
         queue.add(2);
         while (!queue.isEmpty()) {
             System.out.println(queue.poll());
+        }
+    }
+
+    // Design Circular Queue.
+    // https://leetcode.com/problems/design-circular-queue/
+
+    static void myQueue() {
+        MyCircularQueue circularQueue = new MyCircularQueue(3);
+        circularQueue.enQueue(1);  // return true
+        circularQueue.enQueue(2);  // return true
+        circularQueue.enQueue(3);  // return true
+        circularQueue.enQueue(4);  // return false, the queue is full
+        int v = circularQueue.rear();  // return 3
+        System.out.println(v);
+    }
+
+    // Entities.
+
+    static class MyCircularQueue {
+        int capacity;
+        int[] queue;
+        int count;
+        int headIndex;
+
+        MyCircularQueue(int capacity) {
+            this.capacity = capacity;
+            this.queue = new int[this.capacity];
+        }
+
+        public boolean enQueue(int value) {
+            if (count == capacity) {
+                return false;
+            }
+            this.queue[(this.headIndex + this.count) % this.capacity] = value;
+            this.count += 1;
+            return true;
+        }
+
+        public boolean deQueue() {
+            if (this.count == 0) {
+                return false;
+            }
+            this.headIndex = (this.headIndex + 1) % this.capacity;
+            this.count -= 1;
+            return true;
+        }
+
+        public int front() {
+            if (this.count == 0) {
+                return -1;
+            }
+            return this.queue[this.headIndex];
+        }
+
+        public int rear() {
+            if (this.count == 0) {
+                return -1;
+            }
+            int tailIndex = (this.headIndex + this.count - 1) % this.capacity;
+            return this.queue[tailIndex];
         }
     }
 }

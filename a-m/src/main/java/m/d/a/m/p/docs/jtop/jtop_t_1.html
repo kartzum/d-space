@@ -300,6 +300,9 @@ static boolean isPalindrome(String x) {
                 <td>
                     <div>Merge Sorted Array.</div>
                 </td>
+                <td>
+                    <div>Design Circular Queue.</div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -399,6 +402,56 @@ void merge(int[] nums1, int m, int[] nums2, int n) {
         nums1[k] = nums2[n - 1];
         k--;
         n--;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static class MyCircularQueue {
+    int capacity;
+    int[] queue;
+    int count;
+    int headIndex;
+
+    MyCircularQueue(int capacity) {
+        this.capacity = capacity;
+        this.queue = new int[this.capacity];
+    }
+
+    public boolean enQueue(int value) {
+        if (count == capacity) {
+            return false;
+        }
+        this.queue[(this.headIndex + this.count) % this.capacity] = value;
+        this.count += 1;
+        return true;
+    }
+
+    public boolean deQueue() {
+        if (this.count == 0) {
+            return false;
+        }
+        this.headIndex = (this.headIndex + 1) % this.capacity;
+        this.count -= 1;
+        return true;
+    }
+
+    public int front() {
+        if (this.count == 0) {
+            return -1;
+        }
+        return this.queue[this.headIndex];
+    }
+
+    public int rear() {
+        if (this.count == 0) {
+            return -1;
+        }
+        int tailIndex = (this.headIndex + this.count - 1) % this.capacity;
+        return this.queue[tailIndex];
     }
 }
                         </code>
