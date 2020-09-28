@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-<div style="font-size:10px">
+<div style="font-size:9px">
     <!-- Sorting. -->
     <div>
         <div>Sorting.</div>
@@ -165,7 +165,8 @@ private static int knapSack(int M, int W[], int V[], int n) {
     for (int i = 1; i <= n; i++) {
         for (int j = 0; j <= M; j++) {
             B[i][j] = B[i - 1][j];
-            if ((j >= W[i - 1]) && (B[i][j] < B[i - 1][j - W[i - 1]] + V[i - 1])) {
+            if ((j >= W[i - 1]) &&
+                            (B[i][j] < B[i - 1][j - W[i - 1]] + V[i - 1])) {
                 B[i][j] = B[i - 1][j - W[i - 1]] + V[i - 1];
             }
             if (debug) {
@@ -183,7 +184,9 @@ private static int knapSack(int M, int W[], int V[], int n) {
     while (n != 0) {
         if (B[n][M] != B[n - 1][M]) {
             if (debug) {
-                System.out.println("\tPackage " + n + " with W = " + W[n - 1] + " and Value = " + V[n - 1]);
+                System.out.println(
+         "\tPackage " + n + " with W = " + W[n - 1] +
+                            " and Value = " + V[n - 1]);
             }
             M = M - W[n - 1];
         }
@@ -365,7 +368,9 @@ class Solution {
     boolean isMirror(TreeNode l, TreeNode r) {
         if (l == null && r == null) return true;
         if (l == null || r == null) return false;
-        return (l.val == r.val) && isMirror(l.right, r.left) && isMirror(l.left, r.right);
+        return (l.val == r.val) &&
+                            isMirror(l.right, r.left) &&
+                            isMirror(l.left, r.right);
     }
 }
                         </code>
@@ -425,19 +430,12 @@ class Solution {
 }
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
-        if (root == null)
-            return root;
+        if (root == null) return root;
 
-        if (key < root.val)
-            root.left = deleteNode(root.left, key);
-
-        else if (key > root.val)
-            root.right = deleteNode(root.right, key);
-
+        if (key < root.val) root.left = deleteNode(root.left, key);
+        else if (key > root.val) root.right = deleteNode(root.right, key);
         else {
-            if (root.left == null)
-                return root.right;
-
+            if (root.left == null) return root.right;
             else if (root.right == null)
                 return root.left;
 
@@ -562,18 +560,15 @@ static int[] dijkstra(int graph[][], int src) {
     for (int count = 0; count < V - 1; count++) {
         int u = minDistance(dist, sptSet);
         sptSet[u] = true;
-        if (debug) {
-            System.out.println(u + ", " + Arrays.toString(dist));
-        }
         for (int v = 0; v < V; v++) {
             if (!sptSet[v] && graph[u][v] != 0 &&
-                    dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v])
+                    dist[u] != Integer.MAX_VALUE &&
+                            dist[u] + graph[u][v] < dist[v])
                 dist[v] = dist[u] + graph[u][v];
         }
     }
     return dist;
 }
-
 static int minDistance(int dist[], Boolean sptSet[]) {
     int V = dist.length;
     int min = Integer.MAX_VALUE;
@@ -585,11 +580,9 @@ static int minDistance(int dist[], Boolean sptSet[]) {
         }
     return min_index;
 }
-
 static void printSolution(int dist[], int n) {
     int V = dist.length;
-    for (int i = 0; i < V; i++)
-        System.out.println(i + " tt " + dist[i]);
+    for (int i = 0; i < V; i++) System.out.println(i + " tt " + dist[i]);
 }
 
 // 0, [0, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647]
@@ -597,12 +590,6 @@ static void printSolution(int dist[], int n) {
 // 1, [0, 2, 1, 8, 2147483647, 4]
 // 5, [0, 2, 1, 8, 10, 4]
 // 3, [0, 2, 1, 8, 9, 4]
-// 0 tt 0
-// 1 tt 2
-// 2 tt 1
-// 3 tt 8
-// 4 tt 9
-// 5 tt 4
                         </code>
                     </pre>
                 </td>
