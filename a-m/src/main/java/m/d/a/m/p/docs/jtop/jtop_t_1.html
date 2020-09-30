@@ -20,9 +20,6 @@
                 <td>
                     <div>Print all combinations of balanced parentheses. TC: O(4^n/sqrt(n)), SC: O(4^n/sqrt(n)).</div>
                 </td>
-                <td>
-                    <div>Max Consecutive Ones III.</div>
-                </td>
             </tr>
             <tr>
                 <td>
@@ -85,7 +82,8 @@ static List(String) generateParenthesis(int n) {
     return ans;
 }
 
-static void backtrack(List(String) ans, String cur, int open, int close, int max){
+static void backtrack(List(String) ans, String cur,
+                            int open, int close, int max){
     if (cur.length() == max * 2) {
         ans.add(cur);
         return;
@@ -94,28 +92,6 @@ static void backtrack(List(String) ans, String cur, int open, int close, int max
         backtrack(ans, cur+"(", open+1, close, max);
     if (close < open)
         backtrack(ans, cur+")", open, close+1, max);
-}
-                        </code>
-                    </pre>
-                </td>
-                <td>
-                    <pre>
-                        <code>
-static int longestOnes(int[] A, int K) {
-    int left = 0;
-    int right = 0;
-    for (right = 0; right < A.length; right++) {
-        if (A[right] == 0) {
-            K--;
-        }
-        if (K < 0) {
-            if (A[left] == 0) {
-                K++;
-            }
-            left++;
-        }
-    }
-    return right - left;
 }
                         </code>
                     </pre>
@@ -170,9 +146,6 @@ static ListNode reverseList(ListNode head) {
                 </td>
                 <td>
                     <div>Topological Sorting.</div>
-                </td>
-                <td>
-                    <div>Is Palindrome.</div>
                 </td>
             </tr>
             <tr>
@@ -229,7 +202,9 @@ static Stack(Integer) topologicalSort(Graph graph) {
     return stack;
 }
 
-static void topologicalSortUtil(Graph graph, int v, boolean[] visited, Stack(Integer) stack) {
+static void topologicalSortUtil(Graph graph,
+                            int v, boolean[] visited,
+                            Stack(Integer) stack) {
     visited[v] = true;
     for (int i : graph.adj.get(v)) {
         if (!visited[i])
@@ -255,38 +230,12 @@ static class Graph {
                         </code>
                     </pre>
                 </td>
-                <td>
-                    <pre>
-                        <code>
-static boolean isPalindrome(String x) {
-    int l = 0;
-    int r = x.length() - 1;
-    while (l < r) {
-        if (!Character.isLetterOrDigit(x.charAt(l))) {
-            l++;
-            continue;
-        }
-        if (!Character.isLetterOrDigit(x.charAt(r))) {
-            r--;
-            continue;
-        }
-        if (Character.toLowerCase(x.charAt(l)) != Character.toLowerCase(x.charAt(r))) {
-            return false;
-        }
-        l++;
-        r--;
-    }
-    return true;
-}
-                        </code>
-                    </pre>
-                </td>
             </tr>
         </table>
     </div>
     <!-- S 2. End.-->
 
-    <!-- S 3-->
+    <!-- S 3 -->
     <div>
         <div>S 3.</div>
         <table cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -299,9 +248,6 @@ static boolean isPalindrome(String x) {
                 </td>
                 <td>
                     <div>Merge Sorted Array.</div>
-                </td>
-                <td>
-                    <div>Design Circular Queue.</div>
                 </td>
             </tr>
             <tr>
@@ -407,6 +353,76 @@ void merge(int[] nums1, int m, int[] nums2, int n) {
                         </code>
                     </pre>
                 </td>
+            </tr>
+        </table>
+    </div>
+    <!-- S 3. End. -->
+
+    <!-- S 4 -->
+    <div>
+        <div>S 4.</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td>
+                    <div>Max Consecutive Ones III.</div>
+                </td>
+                <td>
+                    <div>Is Palindrome.</div>
+                </td>
+                <td>
+                    <div>Design Circular Queue.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <pre>
+                        <code>
+static int longestOnes(int[] A, int K) {
+    int left = 0;
+    int right = 0;
+    for (right = 0; right < A.length; right++) {
+        if (A[right] == 0) {
+            K--;
+        }
+        if (K < 0) {
+            if (A[left] == 0) {
+                K++;
+            }
+            left++;
+        }
+    }
+    return right - left;
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+static boolean isPalindrome(String x) {
+    int l = 0;
+    int r = x.length() - 1;
+    while (l < r) {
+        if (!Character.isLetterOrDigit(x.charAt(l))) {
+            l++;
+            continue;
+        }
+        if (!Character.isLetterOrDigit(x.charAt(r))) {
+            r--;
+            continue;
+        }
+        if (Character.toLowerCase(x.charAt(l))
+                            != Character.toLowerCase(x.charAt(r))) {
+            return false;
+        }
+        l++;
+        r--;
+    }
+    return true;
+}
+                        </code>
+                    </pre>
+                </td>
                 <td>
                     <pre>
                         <code>
@@ -425,7 +441,8 @@ static class MyCircularQueue {
         if (count == capacity) {
             return false;
         }
-        this.queue[(this.headIndex + this.count) % this.capacity] = value;
+        this.queue[
+(this.headIndex + this.count) % this.capacity] = value;
         this.count += 1;
         return true;
     }
@@ -450,7 +467,8 @@ static class MyCircularQueue {
         if (this.count == 0) {
             return -1;
         }
-        int tailIndex = (this.headIndex + this.count - 1) % this.capacity;
+        int tailIndex =
+(this.headIndex + this.count - 1) % this.capacity;
         return this.queue[tailIndex];
     }
 }
@@ -460,7 +478,7 @@ static class MyCircularQueue {
             </tr>
         </table>
     </div>
-    <!-- S 3. End. -->
+    <!-- S 4. End. -->
 
     <!-- Template
     <div>
