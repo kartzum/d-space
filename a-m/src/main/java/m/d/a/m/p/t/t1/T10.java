@@ -7,7 +7,8 @@ public class T10 {
         // removeDuplicatesTest();
         // removeSpacesTest();
         // removeSpaces2Test();
-        rotateArrayTest();
+        // rotateArrayTest();
+        maxDepthTest();
     }
 
     // 26. Remove Duplicates from Sorted Array.
@@ -122,6 +123,46 @@ public class T10 {
             nums[end] = temp;
             start++;
             end--;
+        }
+    }
+
+    // 104. Maximum Depth of Binary Tree.
+    // https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
+    static void maxDepthTest() {
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n9 = new TreeNode(9);
+        TreeNode n20 = new TreeNode(20);
+        TreeNode n15 = new TreeNode(15);
+        TreeNode n7 = new TreeNode(7);
+        n3.left = n9;
+        n3.right = n20;
+        n20.left = n15;
+        n20.right = n7;
+        System.out.println(maxDepth(n3));
+    }
+
+    static int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
+    }
+
+    // Structures.
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
         }
     }
 }
