@@ -14,9 +14,9 @@ public class p108 {
         Scanner input = new Scanner(System.in);
         String p = input.nextLine();
         if (isPalindrome(p)) {
-            System.out.println("YES");
+            System.out.println("yes");
         } else {
-            System.out.println("NO");
+            System.out.println("no");
         }
     }
 
