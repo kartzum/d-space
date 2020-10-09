@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p74 - comment.
+# https://algoprog.ru/material/p74 - completed.
 # https://notes.algoprog.ru/python_basics/5_float.html
 
 # from math import *
