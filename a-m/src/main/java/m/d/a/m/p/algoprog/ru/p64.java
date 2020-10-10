@@ -1,6 +1,6 @@
 // https://algoprog.ru/material/p64 - in progress.
 
-// package m.d.a.m.p.algoprog.ru;
+package m.d.a.m.p.algoprog.ru;
 
 import java.util.Scanner;
 
