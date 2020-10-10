@@ -2,7 +2,7 @@ package m.d.a.m.p.ya.c19036;
 
 import java.util.*;
 
-public class Task2 {
+public class TaskAl {
     public static void main(String[] args) {
         boolean log = true;
         boolean test = true;
