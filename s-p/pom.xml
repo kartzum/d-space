@@ -13,7 +13,7 @@
         <spark.version>2.1.0</spark.version>
         <compiler.plugin.version>3.7.0</compiler.plugin.version>
         <commons-codec.version>1.6</commons-codec.version>
-        <scala.version>2.11.8</scala.version>
+        <scala.version>2.13.1</scala.version>
     </properties>
 
     <build>
