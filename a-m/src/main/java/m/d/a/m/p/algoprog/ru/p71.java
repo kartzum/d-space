@@ -12,10 +12,8 @@ public class p71 {
         String[] nums = values.split(" ");
 
         String temp = nums[nums.length - 1];
-        for (int i = nums.length - 2; i >= 0; i--) {
-            String current = nums[i + 1];
-            nums[i + 1] = nums[i];
-            nums[i] = current;
+        for (int i = nums.length - 1; i > 0; i--) {
+            nums[i] = nums[i - 1];
         }
         nums[0] = temp;
 
