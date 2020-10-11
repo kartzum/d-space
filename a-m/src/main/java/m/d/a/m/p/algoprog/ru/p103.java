@@ -8,9 +8,10 @@ public class p103 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String value = input.nextLine();
+        int shift = 'a' - 'A';
         char c = value.charAt(0);
         if (c >= 'a' && c <= 'z') {
-            System.out.print((char) (c - 32));
+            System.out.print((char) (c - shift));
         } else {
             System.out.println(c);
         }
