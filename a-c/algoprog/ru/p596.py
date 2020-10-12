@@ -17,11 +17,11 @@ def read():
 
 
 def c(x, y):
-    k = 1
-    while x <= y + eps:
-        x += x * .7
-        k += 1
-    return k
+    i = 1
+    while x < y - eps:
+        x *= 1.7
+        i += 1
+    return i
 
 
 def tests():
