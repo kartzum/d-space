@@ -9,23 +9,19 @@ def params():
 
 
 def calc(n, nums, k):
-    left = 0
-    right = len(nums) - 1
-    while left <= right:
-        pivot = (right + left) // 2
-        if nums[pivot] == k:
-            return pivot - 1
-        elif k > nums[pivot]:
-            right = pivot - 1
-        else:
-            left = pivot + 1
-    return left + 1
+    p = n + 1
+    for i in range(len(nums)):
+        if k > nums[i]:
+            p = i + 1
+            break
+    return p
 
 
 def tests():
     print(calc(8, [165, 163, 160, 160, 157, 157, 155, 154], 162))
     print(calc(3, [165, 163, 160], 164))
     print(calc(3, [165, 165, 165], 166))
+    print(calc(3, [165, 165, 165], 163))
 
 
 def run():
