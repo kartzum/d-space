@@ -13,14 +13,14 @@ def params():
 
 def calc(nums):
     m = -10000
-    for v in nums:
-        if v > m:
-            m = v
-    count = 0
-    for v in nums:
-        if v == m:
-            count += 1
-    return count
+    mn = 0
+    for n in nums:
+        if n > m:
+            mn = 1
+            m = n
+        elif n == m:
+            mn += 1
+    return mn
 
 
 def run():
