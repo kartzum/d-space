@@ -5,7 +5,7 @@ m = int(input())
 n = int(input())
 k = int(input())
 
-if m >= k / n and n >= k / m:
+if k <= m % n and k <= n % m:
     print("YES")
 else:
     print("NO")
