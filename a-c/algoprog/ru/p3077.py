@@ -12,15 +12,19 @@ def params():
 
 
 def calc(nums):
-    count = 1
-    result = 1
-    for i in range(1, len(nums)):
-        if nums[i-1] != nums[i]:
-            count = 1
+    mm = 0
+    mc = 1
+    prev = 0
+    for current in nums:
+        if prev == current:
+            mc += 1
+        elif mc > mm:
+            mm = mc
+            mc = 1
         else:
-            count += 1
-            result = max(count, result)
-    return result
+            mc = 1
+        prev = current
+    return mm
 
 
 def run():
