@@ -2,30 +2,25 @@
 
 
 def params():
-    nums = []
-    while True:
-        x = int(input())
-        if x == 0:
-            break
-        nums.append(x)
-    return nums
+    pass
 
 
-def calc(nums):
-    m = -10000
+def calc():
+    mx = -10000
     mn = 0
-    for n in nums:
-        if n > m:
+    curr = -1
+    while curr != 0:
+        curr = int(input())
+        if curr > mx:
             mn = 1
-            m = n
-        elif n == m:
+            mx = curr
+        elif curr == mx:
             mn += 1
     return mn
 
 
 def run():
-    nums = params()
-    result = calc(nums)
+    result = calc()
     print(result)
 
 
