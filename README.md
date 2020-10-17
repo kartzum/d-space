@@ -1,6 +1,21 @@
 # d-space
 Tasks for BigData, Apache Spark...
 
+## a-c
+* [algoprog.ru](https://algoprog.ru/)
+* [ПИТОНТЬЮТОР Занятие 6 Задача Максимальное число идущих подряд равных элементов](https://www.youtube.com/watch?v=JKM6orcenhQ)
+* [algoprog.ru - tasks](https://github.com/char16t/training)
+
+## a-m
+* [algoprog.ru](https://algoprog.ru/)
+* [leetcode.com](https://leetcode.com/)
+
+## d-e
+
+## data
+
+## m-p
+
 ## s-m
 Minimal Apache Spark project (java).
 
@@ -10,9 +25,7 @@ Prototype of searching duplicate data in data users (Spark/java).
 ## s-p
 Small examples (Spark/java).
 
-## d-e
-
-## a-m
+## s-t
 
 ### kuick
 * [List](https://habr.com/ru/company/mailru/blog/350326/)
