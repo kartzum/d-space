@@ -1,36 +1,17 @@
 # https://algoprog.ru/material/p3077 - in progress.
 
 
-def params():
-    nums = []
-    while True:
-        x = int(input())
-        if x == 0:
-            break
-        nums.append(x)
-    return nums
-
-
-def calc(nums):
-    mm = 0
-    mc = 1
-    prev = 0
-    for current in nums:
-        if prev == current:
-            mc += 1
-        elif mc > mm:
-            mm = mc
-            mc = 1
-        else:
-            mc = 1
-        prev = current
-    return mm
-
-
-def run():
-    nums = params()
-    result = calc(nums)
-    print(result)
-
-
-run()
+prev = -1
+cur = 0
+m = 0
+v = int(input())
+while v != 0:
+    if prev == v:
+        cur += 1
+    else:
+        prev = v
+        m = max(m, cur)
+        cur = 1
+    v = int(input())
+m = max(m, cur)
+print(m)
