@@ -1,20 +1,23 @@
 package m.d.a.m.p.algoprog.ru;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class p111 {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
         List<String> list = new ArrayList<>();
-        while (true) {
-            String a = input.nextLine();
-            if (a.length() == 0) {
-                break;
-            }
-            list.add(a);
+
+        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+
+        String v = r.readLine();
+        while (v != null) {
+            list.add(v);
+            v = r.readLine();
         }
+
         long x = 0;
         long y = 0;
         for (String c : list) {
