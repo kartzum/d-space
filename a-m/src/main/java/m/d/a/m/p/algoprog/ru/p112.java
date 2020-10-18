@@ -10,11 +10,13 @@ public class p112 {
         int r = a.length() - 1;
         boolean f = true;
         while (l < r) {
-            while (l < a.length() && a.charAt(l) == ' ') {
+            if (a.charAt(l) == ' ') {
                 l++;
+                continue;
             }
-            while (r >= 0 && a.charAt(r) == ' ') {
+            if (a.charAt(r) == ' ') {
                 r--;
+                continue;
             }
             if (a.charAt(l) != a.charAt(r)) {
                 f = false;
