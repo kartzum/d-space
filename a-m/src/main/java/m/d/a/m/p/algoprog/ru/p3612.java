@@ -1,3 +1,5 @@
+// https://algoprog.ru/material/p3612 - in progress.
+
 package m.d.a.m.p.algoprog.ru;
 
 import java.util.Scanner;

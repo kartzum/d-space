@@ -1,3 +1,5 @@
+// https://algoprog.ru/material/p109 - in progress.
+
 package m.d.a.m.p.algoprog.ru;
 
 import java.util.HashSet;
