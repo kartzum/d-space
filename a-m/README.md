@@ -213,3 +213,7 @@
 * [Спотривное программирование](https://ru.coursera.org/learn/sportivnoe-programmirovanie)
 * [Динамическое программирование](https://tproger.ru/articles/dynprog-starters/)
 * [Динамическое программирование](https://proglib.io/p/graphical-introduction-to-dynamic-programming)
+
+
+### ya
+* [ya-22062](https://contest.yandex.ru/contest/22062/enter)

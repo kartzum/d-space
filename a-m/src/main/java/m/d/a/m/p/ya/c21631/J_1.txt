@@ -1,0 +1,2 @@
+[{"a": "text value", "b": {}}, {"a": true}, {"a": "value", "b": 1}]
+[{"a": null, "b": 1.0}, {"a": "text value"}]
