@@ -216,4 +216,5 @@
 
 
 ### ya
+* [ya-21631](https://contest.yandex.ru/yacup/contest/21631/)
 * [ya-22062](https://contest.yandex.ru/contest/22062/enter)
