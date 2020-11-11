@@ -1,5 +1,7 @@
 // https://algoprog.ru/material/p2771 - in progress.
 
+// https://brestprog.by/topics/prefixsums/
+
 package m.d.a.m.p.algoprog.ru;
 
 import java.io.BufferedReader;
