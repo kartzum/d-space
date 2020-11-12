@@ -27,7 +27,7 @@ Small examples (Spark/java).
 
 ## s-t
 
-### kuick
+### quick
 * [List](https://habr.com/ru/company/mailru/blog/350326/)
 * [jtop](/d-space/a-m/src/main/java/m/d/a/m/p/docs/jtop/*)
 * [m-lectures](https://habr.com/ru/company/mailru/blog/323696/)

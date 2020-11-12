@@ -218,3 +218,15 @@
 ### ya
 * [ya-21631](https://contest.yandex.ru/yacup/contest/21631/)
 * [ya-22062](https://contest.yandex.ru/contest/22062/enter)
+
+## Links & Resources
+* [Дерево отрезков](https://e-maxx.ru/algo/segment_tree)
+* [Выполнить M операций вычисления количества нулевых элементов на отрезке](https://ru.stackoverflow.com/questions/1006840/%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C-m-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9-%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%BE%D1%82%D1%80%D0%B5%D0%B7%D0%BA%D0%B5)
+* [Решение задач по программированию](https://taskcode.ru/array)
+* [Задание ФИВТ МФТИ по программированию 1-3 семестр, основной поток 2016-2017.](https://github.com/valentiay/study)
+* [Дерево отрезков (для любой ассоциативной функции) + картинки + код](https://codeforces.com/blog/entry/12844?locale=ru)
+* [Algorithms_II](https://bsse.compscicenter.ru/wiki/images/e/e6/Algorithms_II.pdf)
+* [Современное программирование](https://bsse.compscicenter.ru/wiki/index.php?title=%D0%A1%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+* [AlgoBook](https://www.babichev.org/books/AlgoBook.pdf)
+* [Алгоритмы и алгоритмические языки](http://lectures.stargeo.ru/alg22/algorithms.htm#_Toc9059868)
+
