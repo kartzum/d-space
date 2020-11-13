@@ -10,6 +10,10 @@ Tasks for BigData, Apache Spark...
 * [algoprog.ru](https://algoprog.ru/)
 * [leetcode.com](https://leetcode.com/)
 
+## Resources
+* [p112735-1](https://www.cyberforum.ru/python-beginners/thread2485659.html)
+* [p112735-2](https://www.cyberforum.ru/cpp-beginners/thread2485140.html)
+
 ## d-e
 
 ## data
