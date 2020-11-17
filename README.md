@@ -14,6 +14,9 @@ Tasks for BigData, Apache Spark...
 * [prefixsums](https://brestprog.by/topics/prefixsums/)
 * [Арифметика остатков.](https://sis.khashaev.ru/2013/august/c-prime/BIwzyPBgU6Y/)
 * [8. Динамическое программирование](https://notes.algoprog.ru/dynprog/index.html)
+* [Algoprog](https://github.com/Gandja/Algoprog)
+* [Поиск подотрезка массива с максимальной/минимальной суммой](https://e-maxx.ru/algo/maximum_average_segment)
+* [Практические задачи по Java](https://vk.com/@devcolibri-java-practical-tasks)
 
 ## Resources
 * [p112735-1](https://www.cyberforum.ru/python-beginners/thread2485659.html)
