@@ -176,6 +176,7 @@
 * [1470. Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)
 * [1512. Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)
 * [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+* [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
