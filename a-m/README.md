@@ -177,6 +177,7 @@
 * [1512. Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)
 * [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 * [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+* [1570. Dot Product of Two Sparse Vectors](https://leetcode.com/problems/dot-product-of-two-sparse-vectors/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
