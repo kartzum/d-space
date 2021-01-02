@@ -19,9 +19,6 @@ public class p1441 {
     }
 
     static int calc(int[] nn) {
-        if (nn.length == 1) {
-            return nn[0];
-        }
         int k = nn[0];
         for (int i = 1; i < nn.length; i++) {
             k = nod(k, nn[i]);
@@ -30,9 +27,11 @@ public class p1441 {
     }
 
     static int nod(int a, int b) {
-        while (a != b)
-            if (a > b) a -= b;
-            else b -= a;
+        while (b > 0) {
+            int c = a % b;
+            a = b;
+            b = c;
+        }
         return a;
     }
 }
