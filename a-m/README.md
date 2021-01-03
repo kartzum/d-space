@@ -180,6 +180,7 @@
 * [1570. Dot Product of Two Sparse Vectors](https://leetcode.com/problems/dot-product-of-two-sparse-vectors/)
 * [1672. Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/)
 * [1313. Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)
+* [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
