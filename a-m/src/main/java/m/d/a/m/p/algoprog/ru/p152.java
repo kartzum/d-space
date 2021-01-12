@@ -1,5 +1,7 @@
 // https://algoprog.ru/material/p152 - in progress.
 
+// https://www.geeksforgeeks.org/program-for-goldbachs-conjecture-two-primes-with-given-sum/
+
 package m.d.a.m.p.algoprog.ru;
 
 import java.io.BufferedReader;
