@@ -181,6 +181,7 @@
 * [1672. Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/)
 * [1313. Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)
 * [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
+* [1365. How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
