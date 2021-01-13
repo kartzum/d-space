@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p235 - in progress.
+# https://algoprog.ru/material/p235
 
 a, b, c = map(int, input().split())
 

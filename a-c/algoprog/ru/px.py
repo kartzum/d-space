@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/px - x.
+# https://algoprog.ru/material/px
 
 
 def params():

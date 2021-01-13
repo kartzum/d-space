@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p595 - in progress.
+# https://algoprog.ru/material/p595
 
 prod = True
 test = False

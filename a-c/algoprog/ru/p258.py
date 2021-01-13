@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p258 - in progress.
+# https://algoprog.ru/material/p258
 
 
 m = int(input())

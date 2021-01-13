@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p596 - comment.
+# https://algoprog.ru/material/p596
 
 debug = False
 prod = True

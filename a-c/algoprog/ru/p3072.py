@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p3072 - in progress.
+# https://algoprog.ru/material/p3072
 
 
 def params():

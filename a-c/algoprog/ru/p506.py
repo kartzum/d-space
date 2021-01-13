@@ -1,4 +1,5 @@
-# https://algoprog.ru/material/p506 - in progress.
+# https://algoprog.ru/material/p506
+
 # https://acmp.ru/asp/champ/index.asp?main=download&id=502
 
 

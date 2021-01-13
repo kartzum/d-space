@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p3612 - completed.
+# https://algoprog.ru/material/p3612
 
 
 h = int(input())

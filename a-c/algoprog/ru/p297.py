@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p297 - in progress.
+# https://algoprog.ru/material/p297
 
 c1 = int(input())
 r1 = int(input())

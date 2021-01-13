@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p3077 - in progress.
+# https://algoprog.ru/material/p3077
 
 
 prev = -1

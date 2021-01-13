@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p264 - in progress.
+# https://algoprog.ru/material/p264
 
 n = int(input())
 

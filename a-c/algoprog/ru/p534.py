@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p506 - in progress.
+# https://algoprog.ru/material/p506
 
 k, t = map(int, input().split())
 temp = (t - 1) % (2 * k)

@@ -1,4 +1,4 @@
-# https://algoprog.ru/material/p227 - in progress.
+# https://algoprog.ru/material/p227
 
 
 def p():
