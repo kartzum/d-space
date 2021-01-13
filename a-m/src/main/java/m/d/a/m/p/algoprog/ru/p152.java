@@ -8,7 +8,8 @@ package m.d.a.m.p.algoprog.ru;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class p152 {
     public static void main(String[] args) throws IOException {
@@ -18,7 +19,7 @@ public class p152 {
         calc(n);
     }
 
-    static ArrayList<Integer> primes = new ArrayList<>();
+    static Map<Integer, Integer> primes = new HashMap<>();
 
     static void calc(int n) {
         if (n <= 2 || n % 2 != 0) {
@@ -26,7 +27,7 @@ public class p152 {
         }
         for (int i = 0; primes.get(i) <= n / 2; i++) {
             int diff = n - primes.get(i);
-            if (primes.contains(diff)) {
+            if (primes.containsValue(diff)) {
                 System.out.println(primes.get(i) + " " + diff);
                 return;
             }
@@ -41,10 +42,12 @@ public class p152 {
                 marked[j] = true;
             }
         }
-        primes.add(2);
+        primes.put(0, 2);
+        int j = 1;
         for (int i = 1; i <= MAX / 2; i++) {
             if (!marked[i]) {
-                primes.add(2 * i + 1);
+                primes.put(j, 2 * i + 1);
+                j++;
             }
         }
     }
