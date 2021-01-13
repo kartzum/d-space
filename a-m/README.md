@@ -182,6 +182,7 @@
 * [1313. Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)
 * [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
 * [1365. How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)
+* [1389. Create Target Array in the Given Order](https://leetcode.com/problems/create-target-array-in-the-given-order/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
