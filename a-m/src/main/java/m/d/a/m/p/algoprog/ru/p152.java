@@ -1,51 +1,44 @@
 // https://algoprog.ru/material/p152 - in progress.
 
 // https://www.geeksforgeeks.org/program-for-goldbachs-conjecture-two-primes-with-given-sum/
+// https://www.programmersought.com/article/8291243372/
 
 package m.d.a.m.p.algoprog.ru;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 public class p152 {
     public static void main(String[] args) throws IOException {
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(r.readLine());
-        calcPrimes();
         calc(n);
     }
-
-    static ArrayList<Integer> primes = new ArrayList<>();
 
     static void calc(int n) {
         if (n <= 2 || n % 2 != 0) {
             return;
         }
-        for (int i = 0; primes.get(i) <= n / 2; i++) {
-            int diff = n - primes.get(i);
-            if (primes.contains(diff)) {
-                System.out.println(primes.get(i) + " " + diff);
-                return;
+        if (n == 4) {
+            System.out.println("2 2");
+            return;
+        }
+        for (int a = 3; a <= n / 2; a += 2) {
+            int b = n - a;
+            if (isPrime(a) && isPrime(b)) {
+                System.out.println(a + " " + b);
+                break;
             }
         }
     }
 
-    static void calcPrimes() {
-        int MAX = 100000;
-        boolean[] marked = new boolean[MAX / 2 + 100];
-        for (int i = 1; i <= (Math.sqrt(MAX) - 1) / 2; i++) {
-            for (int j = (i * (i + 1)) << 1; j <= MAX / 2; j = j + 2 * i + 1) {
-                marked[j] = true;
-            }
+    static boolean isPrime(int m) {
+        double d = Math.sqrt(m);
+        for (int i = 3; i <= d; i += 2) {
+            if (m % i == 0) return false;
         }
-        primes.add(2);
-        for (int i = 1; i <= MAX / 2; i++) {
-            if (!marked[i]) {
-                primes.add(2 * i + 1);
-            }
-        }
+        return true;
     }
 
 }
