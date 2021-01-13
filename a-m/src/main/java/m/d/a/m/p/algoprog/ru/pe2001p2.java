@@ -1,4 +1,4 @@
-// https://algoprog.ru/material/pe2001p2 - in progress.
+// https://algoprog.ru/material/pe2001p2
 
 // https://www.youtube.com/watch?v=jnp-JaRed2A
 

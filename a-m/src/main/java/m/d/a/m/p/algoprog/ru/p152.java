@@ -1,4 +1,4 @@
-// https://algoprog.ru/material/p152 - in progress.
+// https://algoprog.ru/material/p152
 
 // https://www.geeksforgeeks.org/program-for-goldbachs-conjecture-two-primes-with-given-sum/
 // https://www.programmersought.com/article/8291243372/

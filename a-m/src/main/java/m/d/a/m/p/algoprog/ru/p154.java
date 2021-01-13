@@ -1,4 +1,5 @@
-// https://algoprog.ru/material/p154 - in progress.
+// https://algoprog.ru/material/p154
+
 // https://code-live.ru/post/greatest-common-denominator-algorithms/
 // https://codelab.ru/s/cpp/common_divisor:recursive_euclid/
 

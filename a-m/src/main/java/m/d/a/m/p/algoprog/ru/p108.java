@@ -1,4 +1,4 @@
-// https://algoprog.ru/material/p108 - in progress.
+// https://algoprog.ru/material/p108
 
 package m.d.a.m.p.algoprog.ru;
 

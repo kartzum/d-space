@@ -1,4 +1,4 @@
-// https://algoprog.ru/material/p2771 - in progress.
+// https://algoprog.ru/material/p2771
 
 // https://brestprog.by/topics/prefixsums/
 

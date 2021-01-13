@@ -1,4 +1,4 @@
-// https://algoprog.ru/material/p3050 - in progress.
+// https://algoprog.ru/material/p3050
 
 // https://www.youtube.com/watch?v=6AW94BcSo4o
 // https://www.youtube.com/watch?v=0Bc8zLURY-c
