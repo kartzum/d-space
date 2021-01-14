@@ -8,8 +8,7 @@ package m.d.a.m.p.ru.algoprog;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedHashSet;
 
 public class p152 {
     public static void main(String[] args) throws IOException {
@@ -19,17 +18,20 @@ public class p152 {
         calc(n);
     }
 
-    static Map<Integer, Integer> primes = new HashMap<>();
+    static LinkedHashSet<Integer> primes = new LinkedHashSet<>();
 
     static void calc(int n) {
         if (n <= 2 || n % 2 != 0) {
             return;
         }
-        for (int i = 0; primes.get(i) <= n / 2; i++) {
-            int diff = n - primes.get(i);
-            if (primes.containsValue(diff)) {
-                System.out.println(primes.get(i) + " " + diff);
-                return;
+        for (int v : primes) {
+            if (v > n / 2) {
+                break;
+            }
+            int diff = n - v;
+            if (primes.contains(diff)) {
+                System.out.println(v + " " + diff);
+                break;
             }
         }
     }
@@ -42,12 +44,10 @@ public class p152 {
                 marked[j] = true;
             }
         }
-        primes.put(0, 2);
-        int j = 1;
+        primes.add(2);
         for (int i = 1; i <= MAX / 2; i++) {
             if (!marked[i]) {
-                primes.put(j, 2 * i + 1);
-                j++;
+                primes.add(2 * i + 1);
             }
         }
     }
