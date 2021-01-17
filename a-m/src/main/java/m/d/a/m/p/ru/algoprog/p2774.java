@@ -1,5 +1,7 @@
 // https://algoprog.ru/material/p2774
 
+// https://www.geeksforgeeks.org/finding-the-maximum-square-sub-matrix-with-all-equal-elements/
+
 package m.d.a.m.p.ru.algoprog;
 
 import java.io.BufferedReader;
@@ -15,45 +17,53 @@ public class p2774 {
     static void run(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(reader.readLine());
-        char[][] x = new char[n][n];
+        int[][] a = new int[n][n];
         for (int i = 0; i < n; i++) {
             char[] c = reader.readLine().toCharArray();
-            x[i] = c;
+            for (int j = 0; j < c.length; j++) {
+                a[i][j] = c[j] == '#' ? 1 : 0;
+            }
         }
-        System.out.println(calc(x));
+        System.out.println(calc(a));
     }
 
     static void tests() {
-        char[][] x = new char[][]{
-                {'.', '.', '.', '.', '.'},
-                {'.', '#', '#', '#', '.'},
-                {'.', '#', '#', '#', '#'},
-                {'.', '#', '#', '#', '#'},
-                {'.', '.', '.', '#', '#'},
+        int[][] a1 = new int[][]{
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 1, 1, 1, 1},
+                {0, 1, 1, 1, 1},
+                {0, 0, 0, 1, 1}
         };
-        System.out.println(calc(x));
+        System.out.println(calc(a1));
+        int[][] a2 = new int[][]{
+                {1}
+        };
+        System.out.println(calc(a2));
     }
 
-    static int calc(char[][] x) {
-        int n = x.length;
+    static int calc(int[][] a) {
+        int n = a.length;
         int m = n;
+        if (n == 1 && a[0][0] == 0) {
+            return 0;
+        }
         int[][] dp = new int[n][m];
-        int r = 0;
+        int result = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (i * j == 0) {
-                    continue;
-                }
-                if (x[i][j] == '#') {
-                    int m1 = Math.min(dp[i - 1][j], dp[i][j - 1]);
-                    int m2 = Math.min(m1, dp[i - 1][j - 1]);
-                    dp[i][j] += 1 + m2;
-                    if (dp[i][j] > r) {
-                        r = dp[i][j];
+                if (i == 0 || j == 0) {
+                    dp[i][j] = 1;
+                } else {
+                    if (a[i][j] == a[i - 1][j] && a[i][j] == a[i][j - 1] && a[i][j] == a[i - 1][j - 1] && a[i][j] == 1) {
+                        dp[i][j] = Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;
+                    } else {
+                        dp[i][j] = 1;
                     }
                 }
+                result = Math.max(result, dp[i][j]);
             }
         }
-        return r;
+        return result;
     }
 }
