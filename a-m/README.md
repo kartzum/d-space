@@ -1,6 +1,7 @@
 # a-m
 
 ## Tasks
+
 * [1. Two Sum](https://leetcode.com/problems/two-sum/)
 * Arrays
 * Lists
@@ -188,6 +189,7 @@
 * [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
+
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
 * [Missing Number](https://cses.fi/problemset/task/1083)
 * [Repetitions](https://cses.fi/problemset/task/1069)
@@ -196,9 +198,11 @@
 ## Areas
 
 ### Memory & Multithreading
+
 * [Java memory model](https://habr.com/ru/post/133981/)
 
 ### Questions
+
 * [ya-interview](https://yandex.ru/jobs/ya-interview/)
 * [e-maxx.ru](http://e-maxx.ru/algo/)
 * [50-voprosov-i-otvetov-po-programmirovaniiu](https://zen.yandex.ru/media/codeblog/50-voprosov-i-otvetov-po-programmirovaniiu-dlia-podgotovki-k-tehnicheskomu-interviu-5bd4cdae060b8d00aa9f5f6e)
@@ -208,6 +212,7 @@
 * [ya](https://medium.com/@mbelsky/yandex-frontend-interview-454c75435b26)
 
 ## Links
+
 * [Array](http://developer.alexanderklimov.ru/android/java/array.php)
 * [Java Data Structures](https://www.cs.wcupa.edu/rkline/ds/data-structures.html)
 * [Java's API and data structures](https://www.cs.cmu.edu/~adamchik/15-121/lectures/)
@@ -224,17 +229,19 @@
 * [Java Collections Framework](https://habr.com/ru/post/237043/)
 * [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html)
 
-### Tasks
+## Tasks
+
 * [Спотривное программирование](https://ru.coursera.org/learn/sportivnoe-programmirovanie)
 * [Динамическое программирование](https://tproger.ru/articles/dynprog-starters/)
 * [Динамическое программирование](https://proglib.io/p/graphical-introduction-to-dynamic-programming)
 
+## ya
 
-### ya
 * [ya-21631](https://contest.yandex.ru/yacup/contest/21631/)
 * [ya-22062](https://contest.yandex.ru/contest/22062/enter)
 
 ## Links & Resources
+
 * [Дерево отрезков](https://e-maxx.ru/algo/segment_tree)
 * [Выполнить M операций вычисления количества нулевых элементов на отрезке](https://ru.stackoverflow.com/questions/1006840/%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C-m-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9-%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%BD%D1%83%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%BE%D1%82%D1%80%D0%B5%D0%B7%D0%BA%D0%B5)
 * [Решение задач по программированию](https://taskcode.ru/array)
@@ -244,4 +251,9 @@
 * [Современное программирование](https://bsse.compscicenter.ru/wiki/index.php?title=%D0%A1%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
 * [AlgoBook](https://www.babichev.org/books/AlgoBook.pdf)
 * [Алгоритмы и алгоритмические языки](http://lectures.stargeo.ru/alg22/algorithms.htm#_Toc9059868)
+
+## geeksforgeeks
+
+* [Finding the maximum square sub-matrix with all equal elements](https://www.geeksforgeeks.org/finding-the-maximum-square-sub-matrix-with-all-equal-elements/)
+
 
