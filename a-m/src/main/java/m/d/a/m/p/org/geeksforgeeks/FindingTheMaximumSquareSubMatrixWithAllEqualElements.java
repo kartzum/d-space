@@ -28,23 +28,12 @@ public class FindingTheMaximumSquareSubMatrixWithAllEqualElements {
         int m = n;
         int[][] dp = new int[n][m];
         int result = 0;
-        for (int i = 0;
-             i < n; i++) {
-            for (int j = 0;
-                 j < m; j++) {
-                // If elements is at top
-                // row or first column,
-                // it wont form a square
-                // matrix's bottom-right
-                if (i == 0 || j == 0)
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i == 0 || j == 0) {
                     dp[i][j] = 1;
-
-                else {
-                    // Check if adjacent
-                    // elements are equal
-                    if (a[i][j] == a[i - 1][j] &&
-                            a[i][j] == a[i][j - 1] &&
-                            a[i][j] == a[i - 1][j - 1]) {
+                } else {
+                    if (a[i][j] == a[i - 1][j] && a[i][j] == a[i][j - 1] && a[i][j] == a[i - 1][j - 1]) {
                         dp[i][j] = (dp[i - 1][j] > dp[i][j - 1] &&
                                 dp[i - 1][j] > dp[i - 1][j - 1] + 1) ?
                                 dp[i - 1][j] :
@@ -52,15 +41,11 @@ public class FindingTheMaximumSquareSubMatrixWithAllEqualElements {
                                         dp[i][j - 1] > dp[i - 1][j - 1] + 1) ?
                                         dp[i][j - 1] :
                                         dp[i - 1][j - 1] + 1;
+                    } else {
+                        dp[i][j] = 1;
                     }
-
-                    // If not equal, then it
-                    // will form a 1x1 submatrix
-                    else dp[i][j] = 1;
                 }
-
-                // Update result at each (i,j)
-                result = result > dp[i][j] ? result : dp[i][j];
+                result = Math.max(result, dp[i][j]);
             }
         }
         return result;
