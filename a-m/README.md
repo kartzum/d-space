@@ -185,6 +185,7 @@
 * [1389. Create Target Array in the Given Order](https://leetcode.com/problems/create-target-array-in-the-given-order/)
 * [1486. XOR Operation in an Array](https://leetcode.com/problems/xor-operation-in-an-array/)
 * [1711. Count Good Meals](https://leetcode.com/problems/count-good-meals/)
+* [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 * [Weird Algorithm](https://cses.fi/problemset/task/1068/)
