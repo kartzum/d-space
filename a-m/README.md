@@ -187,6 +187,7 @@
 * [1486. XOR Operation in an Array](https://leetcode.com/problems/xor-operation-in-an-array/)
 * [1711. Count Good Meals](https://leetcode.com/problems/count-good-meals/)
 * [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+* [907. Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 
