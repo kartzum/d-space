@@ -17,18 +17,18 @@ public class p2774 {
     static void run(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(reader.readLine());
-        int[][] a = new int[n][n];
+        char[][] a = new char[n][n];
         for (int i = 0; i < n; i++) {
             char[] c = reader.readLine().toCharArray();
             for (int j = 0; j < c.length; j++) {
-                a[i][j] = c[j] == '#' ? 1 : 0;
+                a[i][j] = c[j] == '#' ? (char) 1 : 0;
             }
         }
         System.out.println(calc(a));
     }
 
     static void tests() {
-        int[][] a1 = new int[][]{
+        char[][] a1 = new char[][]{
                 {0, 0, 0, 0, 0},
                 {0, 1, 1, 1, 0},
                 {0, 1, 1, 1, 1},
@@ -36,19 +36,19 @@ public class p2774 {
                 {0, 0, 0, 1, 1}
         };
         System.out.println(calc(a1));
-        int[][] a2 = new int[][]{
+        char[][] a2 = new char[][]{
                 {1}
         };
         System.out.println(calc(a2));
     }
 
-    static int calc(int[][] a) {
+    static int calc(char[][] a) {
         int n = a.length;
         int m = n;
         if (n == 1 && a[0][0] == 0) {
             return 0;
         }
-        int[][] dp = new int[n][m];
+        char[][] dp = new char[n][m];
         int result = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
@@ -56,7 +56,7 @@ public class p2774 {
                     dp[i][j] = 1;
                 } else {
                     if (a[i][j] == a[i - 1][j] && a[i][j] == a[i][j - 1] && a[i][j] == a[i - 1][j - 1] && a[i][j] == 1) {
-                        dp[i][j] = Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;
+                        dp[i][j] = (char) (Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1);
                     } else {
                         dp[i][j] = 1;
                     }
