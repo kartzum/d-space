@@ -1,5 +1,7 @@
 // https://algoprog.ru/material/p1460
 
+// https://hsecodes.com/index.php/tasksdecision/index/467
+
 package m.d.a.m.p.ru.algoprog;
 
 import java.io.BufferedReader;
@@ -20,20 +22,29 @@ public class p1460 {
     }
 
     static void calc(int n, int[] nn, int k) {
-        int kk = k;
-        if (kk > 0) {
-            kk %= n;
-        } else {
-            kk = n - ((-kk) % n);
-        }
         StringBuilder buffer = new StringBuilder();
-        for (int i = n - kk; i < n; i++) {
-            buffer.append(nn[i]);
-            buffer.append(" ");
-        }
-        for (int i = 0; i < n - k; i++) {
-            buffer.append(nn[i]);
-            buffer.append(" ");
+        if (k > 0) {
+            int kk = k;
+            kk %= nn.length;
+            for (int i = nn.length - kk; i < nn.length; ++i) {
+                buffer.append(nn[i]);
+                buffer.append(" ");
+            }
+            for (int i = 0; i < nn.length - kk; ++i) {
+                buffer.append(nn[i]);
+                buffer.append(" ");
+            }
+        } else {
+            int kk = Math.abs(k);
+            kk %= nn.length;
+            for (int i = kk; i < nn.length; ++i) {
+                buffer.append(nn[i]);
+                buffer.append(" ");
+            }
+            for (int i = 0; i < kk; ++i) {
+                buffer.append(nn[i]);
+                buffer.append(" ");
+            }
         }
         System.out.println(buffer.toString());
     }
