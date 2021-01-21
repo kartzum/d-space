@@ -231,6 +231,15 @@
 * [Java Collections Framework](https://habr.com/ru/post/237043/)
 * [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html)
 
+## DP
+* [10.1 Динамическое программирование](https://stepik.org/lesson/88229/step/2)
+* [DP](https://cdkrot.me/teaching/2019f-algo1/conspect.pdf)
+* [Задача о рюкзаке](https://neerc.ifmo.ru/wiki/index.php?title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE_%D1%80%D1%8E%D0%BA%D0%B7%D0%B0%D0%BA%D0%B5)
+* [DP](https://foxford.ru/wiki/informatika/algoritm-ukladki-ryukzaka)
+* [DP](https://ejudge.lksh.ru/archive/2017/08/C.py/extra_data/info/cbook.pdf)
+* [DP](https://studassistent.ru/pascal/0-1-ryukzak-naibolshij-ves-pascal)
+* [DP](https://algocode.ru/page/c-8-knapsack/)
+
 ## Tasks
 
 * [Спотривное программирование](https://ru.coursera.org/learn/sportivnoe-programmirovanie)
