@@ -206,6 +206,8 @@
 
 ### Questions
 
+#### ya
+
 * [ya-interview](https://yandex.ru/jobs/ya-interview/)
 * [e-maxx.ru](http://e-maxx.ru/algo/)
 * [50-voprosov-i-otvetov-po-programmirovaniiu](https://zen.yandex.ru/media/codeblog/50-voprosov-i-otvetov-po-programmirovaniiu-dlia-podgotovki-k-tehnicheskomu-interviu-5bd4cdae060b8d00aa9f5f6e)
@@ -213,6 +215,12 @@
 * [ya](http://lmndeit.kg/746/hr-yandex/)
 * [ya](https://sysdev.me/yandex-tests/)
 * [ya](https://medium.com/@mbelsky/yandex-frontend-interview-454c75435b26)
+
+#### fb
+
+* [cracking-top-facebook-coding-interview-questions](https://www.educative.io/blog/cracking-top-facebook-coding-interview-questions)
+* [fucking-algorithm](https://github.com/labuladong/fucking-algorithm/tree/english)
+* [interview](https://github.com/Olshansk/interview)
 
 ## Links
 
