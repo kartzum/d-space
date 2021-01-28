@@ -14,7 +14,13 @@ package m.d.a.m.p.t.t1;
 // Add Two Integers. https://www.educative.io/m/add-two-integers
 // Merge Two Sorted Linked Lists. https://www.educative.io/m/merge-two-sorted-linked-lists
 
+// Trees.
+// Level Order Traversal of Binary Tree. https://www.educative.io/m/level-order-traversal-binary-tree. https://www.programcreek.com/2014/04/leetcode-binary-tree-level-order-traversal-java/
+
+import m.d.a.m.p.lt.problems.TreeNode;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class T11 {
     public static void main(String[] args) {
@@ -22,7 +28,8 @@ public class T11 {
         // Sorts.BubbleSort.tests();
         // Arrays.MergeIntervals.tests();
         // LinkedLists.AddIntegers.tests();
-        LinkedLists.MergeSortList.tests();
+        // LinkedLists.MergeSortList.tests();
+        Trees.LevelOrderTraversal.tests();
     }
 
     static class Arrays {
@@ -264,6 +271,64 @@ public class T11 {
                 while (n1 != null) {
                     System.out.println(n1.data);
                     n1 = n1.next;
+                }
+            }
+        }
+    }
+
+    static class Trees {
+        static class LevelOrderTraversal {
+            static class TreeNode {
+                int val;
+                TreeNode left;
+                TreeNode right;
+
+                TreeNode(int x) {
+                    val = x;
+                }
+            }
+
+            static ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+                ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
+                ArrayList<Integer> nodeValues = new ArrayList<>();
+                if (root == null) {
+                    return al;
+                }
+                LinkedList<TreeNode> current = new LinkedList<TreeNode>();
+                LinkedList<TreeNode> next = new LinkedList<TreeNode>();
+                current.add(root);
+                while (!current.isEmpty()) {
+                    TreeNode node = current.remove();
+                    if (node.left != null) {
+                        next.add(node.left);
+                    }
+                    if (node.right != null) {
+                        next.add(node.right);
+                    }
+                    nodeValues.add(node.val);
+                    if (current.isEmpty()) {
+                        current = next;
+                        next = new LinkedList<TreeNode>();
+                        al.add(nodeValues);
+                        nodeValues = new ArrayList<>();
+                    }
+                }
+                return al;
+            }
+
+            static void tests() {
+                TreeNode tn3 = new TreeNode(3);
+                TreeNode tn9 = new TreeNode(9);
+                TreeNode tn20 = new TreeNode(20);
+                tn3.left = tn9;
+                tn3.right = tn20;
+
+                ArrayList<ArrayList<Integer>> r = levelOrder(tn3);
+                for (ArrayList<Integer> a : r) {
+                    for (Integer i : a) {
+                        System.out.print(i + " ");
+                    }
+                    System.out.println();
                 }
             }
         }
