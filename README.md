@@ -8,6 +8,7 @@ There are solutions for tasks from [algoprog.ru](https://algoprog.ru/).
 * [algoprog.ru](https://algoprog.ru/)
 * [ПИТОНТЬЮТОР Занятие 6 Задача Максимальное число идущих подряд равных элементов](https://www.youtube.com/watch?v=JKM6orcenhQ)
 * [algoprog.ru - tasks](https://github.com/char16t/training)
+* [CodeForces](https://github.com/DionysiosB/CodeForces)
 
 ## a-m
 There are solutions for tasks from [algoprog.ru](https://algoprog.ru/), [leetcode.com](https://leetcode.com/).
