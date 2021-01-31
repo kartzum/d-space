@@ -271,6 +271,7 @@
 * [Современное программирование](https://bsse.compscicenter.ru/wiki/index.php?title=%D0%A1%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
 * [AlgoBook](https://www.babichev.org/books/AlgoBook.pdf)
 * [Алгоритмы и алгоритмические языки](http://lectures.stargeo.ru/alg22/algorithms.htm#_Toc9059868)
+* [Задача “Предусмотрительное жюри”](https://inf.1sept.ru/view_article.php?ID=200800503)
 
 ## geeksforgeeks
 
