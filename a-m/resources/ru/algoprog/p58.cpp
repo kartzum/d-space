@@ -1,3 +1,5 @@
+// https://algoprog.ru/material/p58
+
 #include <bits/stdc++.h>
 
 using namespace std;
