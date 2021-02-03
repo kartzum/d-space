@@ -10,6 +10,7 @@ There are solutions for tasks from [algoprog.ru](https://algoprog.ru/).
 * [algoprog.ru - tasks](https://github.com/char16t/training)
 * [CodeForces](https://github.com/DionysiosB/CodeForces)
 * [brestprog](https://brestprog.by/)
+* [mccme](https://github.com/esix/competitive-programming/blob/master/mccme/README.md)
 
 ## a-m
 There are solutions for tasks from [algoprog.ru](https://algoprog.ru/), [leetcode.com](https://leetcode.com/).
