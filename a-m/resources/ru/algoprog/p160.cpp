@@ -33,7 +33,7 @@ int main()
     vector<int> dist(size);
 
     int mainMatrix[SIZE][SIZE];
-    int way[SIZE];
+    int https://proglib.io/p/algorithm-tasks/[SIZE];
     int counter = 0;
     matrix_input(mainMatrix, size);
 
