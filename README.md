@@ -11,6 +11,7 @@ There are solutions for tasks from [algoprog.ru](https://algoprog.ru/).
 * [CodeForces](https://github.com/DionysiosB/CodeForces)
 * [brestprog](https://brestprog.by/)
 * [mccme](https://github.com/esix/competitive-programming/blob/master/mccme/README.md)
+* [ТОП-15 алгоритмических задач, реализованных на C++](https://proglib.io/p/algorithm-tasks/)
 
 ## a-m
 There are solutions for tasks from [algoprog.ru](https://algoprog.ru/), [leetcode.com](https://leetcode.com/).

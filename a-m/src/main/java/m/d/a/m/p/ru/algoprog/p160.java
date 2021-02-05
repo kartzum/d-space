@@ -5,7 +5,7 @@ package m.d.a.m.p.ru.algoprog;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
+import java.util.*;
 
 public class p160 {
     public static void main(String[] args) throws IOException {
@@ -15,8 +15,9 @@ public class p160 {
 
     static void run() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int n = 100;
         int v = Integer.parseInt(reader.readLine());
-        int[][] g = new int[v][v];
+        int[][] g = new int[n][n];
         for (int i = 0; i < v; i++) {
             String[] t = reader.readLine().split(" ");
             for (int j = 0; j < v; j++) {
@@ -24,14 +25,14 @@ public class p160 {
             }
         }
         String[] t = reader.readLine().split(" ");
-        int src = Integer.parseInt(t[0]);
-        int dest = Integer.parseInt(t[1]);
-        int[] pred = new int[v];
-        if (bfs(v, g, src, dest, pred)) {
-            printPath(pred, dest);
-        } else {
-            System.out.println("-1");
-        }
+        int start = Integer.parseInt(t[0]);
+        int end = Integer.parseInt(t[1]);
+        int[] dist = new int[v];
+        int[] from = new int[v];
+        boolean[] visited = new boolean[v];
+        Arrays.fill(from, -1);
+        bfs(v, g, start, end, visited, dist, from);
+        printResults(end, visited, dist, from);
     }
 
     static void tests() {
@@ -43,51 +44,51 @@ public class p160 {
                 {0, 0, 0, 0, 0},
                 {1, 0, 0, 0, 0},
         };
-        int[] pred = new int[v];
-        int src = 2;
-        int dest = 4;
-        boolean r = bfs(v, g, src, dest, pred);
-        if (r) {
-            printPath(pred, dest);
-        }
-    }
-
-    static void printPath(int[] pred, int dest) {
-        LinkedList<Integer> path = new LinkedList<>();
-        int crawl = dest;
-        path.add(crawl);
-        while (pred[crawl] != -1) {
-            path.add(pred[crawl]);
-            crawl = pred[crawl];
-        }
-        System.out.println(path.size() - 1);
-        for (int i = path.size() - 1; i >= 0; i--) {
-            System.out.print((path.get(i) + 1) + " ");
-        }
-    }
-
-    static boolean bfs(int v, int[][] g, int src, int dest, int[] pred) {
-        LinkedList<Integer> queue = new LinkedList<>();
+        int[] dist = new int[v];
+        int[] from = new int[v];
         boolean[] visited = new boolean[v];
-        for (int i = 0; i < v; i++) {
-            visited[i] = false;
-            pred[i] = -1;
+        int start = 2;
+        int end = 4;
+        Arrays.fill(from, -1);
+        bfs(v, g, start, end, visited, dist, from);
+        printResults(end, visited, dist, from);
+    }
+
+    static void printResults(int end, boolean[] visited, int[] dist, int[] from) {
+        if (visited[end]) {
+            if (dist[end] == 0) {
+                System.out.println(dist[end]);
+            } else {
+                System.out.println(dist[end]);
+                List<Integer> p = new ArrayList<>();
+                for (int i = end; i != -1; i = from[i]) {
+                    p.add(i);
+                }
+                Collections.reverse(p);
+                for (int i : p) {
+                    System.out.print((i + 1) + " ");
+                }
+            }
+        } else {
+            System.out.println("-1");
         }
-        visited[src] = true;
-        queue.add(src);
+    }
+
+    static void bfs(int v, int[][] g, int start, int end, boolean[] visited, int[] dist, int[] from) {
+        LinkedList<Integer> queue = new LinkedList<>();
+        queue.push(start);
+        dist[start] = 0;
+        visited[start] = true;
         while (!queue.isEmpty()) {
             int u = queue.remove();
             for (int i = 0; i < v; i++) {
                 if (g[u][i] == 1 && !visited[i]) {
                     visited[i] = true;
-                    pred[i] = u;
-                    queue.add(i);
-                    if (i == dest) {
-                        return true;
-                    }
+                    dist[i] = dist[u] + 1;
+                    from[i] = u;
+                    queue.push(i);
                 }
             }
         }
-        return false;
     }
 }
