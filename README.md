@@ -12,6 +12,10 @@ There are solutions for tasks from [algoprog.ru](https://algoprog.ru/).
 * [brestprog](https://brestprog.by/)
 * [mccme](https://github.com/esix/competitive-programming/blob/master/mccme/README.md)
 * [ТОП-15 алгоритмических задач, реализованных на C++](https://proglib.io/p/algorithm-tasks/)
+* [algorithms](https://github.com/AngelinaKhilman/algorithms)  
+* [informatics-mccme-ru](https://github.com/linouk23/informatics-mccme-ru)
+* [OlympiadSolutions](https://github.com/IvanIsCoding/OlympiadSolutions)
+* [informatics_kirienko_solutions](https://github.com/Radolyn/informatics_kirienko_solutions)
 
 ## a-m
 There are solutions for tasks from [algoprog.ru](https://algoprog.ru/), [leetcode.com](https://leetcode.com/).
