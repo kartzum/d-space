@@ -16,6 +16,7 @@ There are solutions for tasks from [algoprog.ru](https://algoprog.ru/).
 * [informatics-mccme-ru](https://github.com/linouk23/informatics-mccme-ru)
 * [OlympiadSolutions](https://github.com/IvanIsCoding/OlympiadSolutions)
 * [informatics_kirienko_solutions](https://github.com/Radolyn/informatics_kirienko_solutions)
+* [informatics](https://github.com/alexsyrom/informatics)
 
 ## a-m
 There are solutions for tasks from [algoprog.ru](https://algoprog.ru/), [leetcode.com](https://leetcode.com/).

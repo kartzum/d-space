@@ -278,3 +278,7 @@
 * [Finding the maximum square sub-matrix with all equal elements](https://www.geeksforgeeks.org/finding-the-maximum-square-sub-matrix-with-all-equal-elements/)
 
 
+## notes
+* https://hsecodes.com/index.php/tasksdecision/index/371
+* https://github.com/linouk23/informatics-mccme-ru/blob/master/Graph%20Theory%20Problems/161.cpp
+* https://raw.githubusercontent.com/linouk23/informatics-mccme-ru/master/Graph%20Theory%20Problems/1329.cpp
