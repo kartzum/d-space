@@ -25,11 +25,9 @@ public class p510 {
             for (int j = 0; j < t.length - 1; j++) {
                 ll[j] = Integer.parseInt(t[j + 1]);
             }
-            for (int j = 1; j < ll.length; j++) {
-                int from = ll[j - 1] - 1;
-                int to = ll[j] - 1;
-                g[from][to] = 1;
-                g[to][from] = 1;
+            for (int j = 0; j < ll.length; j++) {
+                int vv = ll[j] - 1;
+                g[i][vv] = 1;
             }
         }
         String[] t = reader.readLine().split(" ");
