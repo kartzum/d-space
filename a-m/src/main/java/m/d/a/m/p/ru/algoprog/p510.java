@@ -25,10 +25,11 @@ public class p510 {
             for (int j = 0; j < t.length - 1; j++) {
                 ll[j] = Integer.parseInt(t[j + 1]);
             }
-            for (int ii = 0; ii < ll.length; ii++) {
-                for (int jj = 0; jj < ll.length; jj++) {
-                    g[ll[ii] - 1][ll[jj] - 1] = 1;
-                }
+            for (int j = 1; j < ll.length; j++) {
+                int from = ll[j - 1] - 1;
+                int to = ll[j] - 1;
+                g[from][to] = 1;
+                g[to][from] = 1;
             }
         }
         String[] t = reader.readLine().split(" ");
@@ -36,9 +37,19 @@ public class p510 {
         int end = Integer.parseInt(t[1]) - 1;
         boolean[] visited = new boolean[v];
         int dist[] = new int[v];
+        // printG(v, g);
         Arrays.fill(dist, Integer.MAX_VALUE);
         int r = bfs(v, g, start, end, visited, dist);
         System.out.println(r);
+    }
+
+    static void printG(int v, int[][] g) {
+        for (int i = 0; i < v; i++) {
+            for (int j = 0; j < v; j++) {
+                System.out.print(g[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
     static void tests() {
