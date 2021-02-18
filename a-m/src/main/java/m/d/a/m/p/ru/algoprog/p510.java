@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class p510 {
+    static int V = 21;
+
     public static void main(String[] args) throws IOException {
         // tests();
         run();
@@ -17,7 +19,6 @@ public class p510 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         int v = Integer.parseInt(reader.readLine());
-        int[][] g = new int[v][v];
         int m = Integer.parseInt(reader.readLine());
         Map<Integer, Set<Integer>> map = new HashMap<>();
         for (int i = 0; i < v; i++) {
@@ -27,8 +28,6 @@ public class p510 {
             String[] t = reader.readLine().split(" ");
             for (int j = 0; j < t.length - 1; j++) {
                 int vv = Integer.parseInt(t[j + 1]) - 1;
-                g[i][vv] = 1;
-                g[vv][i] = 1;
                 map.get(vv).add(i);
             }
         }
@@ -39,8 +38,19 @@ public class p510 {
         List<Integer> ends = new ArrayList<>(map.get(end));
         starts.sort(Comparator.naturalOrder());
         ends.sort(Comparator.naturalOrder());
+        int[][] g = new int[V][V];
+        for (Map.Entry<Integer, Set<Integer>> entry : map.entrySet()) {
+            for (int i : entry.getValue()) {
+                for (int j : entry.getValue()) {
+                    if (i != j) {
+                        g[i][j] = 1;
+                    }
+                }
+            }
+        }
         // printG(v, g);
-        int r = bfs(v, g, starts, ends);
+
+        int r = bfs(V, g, starts, ends);
         System.out.println(r);
     }
 
@@ -54,7 +64,6 @@ public class p510 {
     }
 
     static void tests() {
-        int v = 5;
         int[][] g = new int[][]{
                 {1, 1, 0, 0, 0},
                 {1, 1, 1, 0, 0},
@@ -67,7 +76,7 @@ public class p510 {
         starts.add(0);
         List<Integer> ends = new ArrayList<>();
         ends.add(4);
-        int r = bfs(v, g, starts, ends);
+        int r = bfs(5, g, starts, ends);
         System.out.println(r);
     }
 
