@@ -12,6 +12,7 @@ public class p510 {
 
     public static void main(String[] args) throws IOException {
         // tests();
+
         run();
     }
 
@@ -49,7 +50,6 @@ public class p510 {
             }
         }
         // printG(v, g);
-
         int r = bfs(V, g, starts, ends);
         System.out.println(r);
     }
@@ -81,22 +81,22 @@ public class p510 {
     }
 
     static int bfs(int v, int[][] g, List<Integer> starts, List<Integer> ends) {
-        LinkedList<Integer> queue = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[v];
         int dist[] = new int[v];
         Arrays.fill(dist, Integer.MAX_VALUE);
         for (int i : starts) {
-            queue.push(i);
+            queue.add(i);
             visited[i] = true;
             dist[i] = 0;
         }
         while (!queue.isEmpty()) {
-            int u = queue.remove();
+            int u = queue.poll();
             for (int i = 0; i < v; i++) {
                 if (g[u][i] == 1 && !visited[i]) {
                     visited[i] = true;
                     dist[i] = dist[u] + 1;
-                    queue.push(i);
+                    queue.add(i);
                 }
             }
         }
