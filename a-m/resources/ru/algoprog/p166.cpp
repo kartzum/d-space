@@ -1,3 +1,5 @@
+// https://algoprog.ru/material/p166
+
 #include <bits/stdc++.h>
 
 using namespace std;
