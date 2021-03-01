@@ -26,20 +26,13 @@ int calc(int len, vector<int> &mas) {
 void solve() {
     int l = 0, r = 1e8;
     int len = 0;
-    while (l<=r)
-    {
-        int m = (l+r)>>1;
-        if (m == 0)
-        {
-            l = m+1;
-            continue;
-        }
+    while (r-l>1) {
+        int m = (r + l) / 2;
         int curAmount = calc(m,mas);
         if (curAmount < amount)
-            r = m - 1;
-        else if (curAmount >= amount)
-        {
-            l = m + 1;
+            r = m;
+        else if (curAmount >= amount) {
+            l = m;
             len = max(len,m);
         }
     }
