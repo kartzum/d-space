@@ -25,18 +25,16 @@ int calc(int len, vector<int> &mas) {
 
 void solve() {
     int l = 0, r = 1e8;
-    int len = 0;
     while (r-l>1) {
         int m = (r + l) / 2;
         int curAmount = calc(m,mas);
         if (curAmount < amount)
             r = m;
-        else if (curAmount >= amount) {
+        else {
             l = m;
-            len = max(len,m);
         }
     }
-    cout<<len;
+    cout<<l;
 }
 
 int main() {
