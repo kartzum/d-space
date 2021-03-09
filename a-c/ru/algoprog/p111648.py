@@ -1,6 +1,7 @@
 # https://algoprog.ru/material/p111648
 
-m,k=1,0
+m = 1
+k = 0
 n, *s = list(map(int,input().split())) + [10]
 while m!=k:
     m=k
