@@ -1,27 +1,48 @@
 // https://algoprog.ru/material/p111648
 
 #include <iostream>
+#include <cmath>
 
-int N;
-int m[1001];
+using namespace std;
 
-int main() {
-    std::cin >> N;
-    for(int i = 0; i < N; i++) std::cin >> m[i];
-    for(int i = 0, count = 0; i < N-2; i++) {
-        int L = i;
-        int R = i + 1;
-        while(m[L] == m[R]) {
-            int cnt = 2;
-            while((--L >= 0) && (m[L] == m[R]  )) cnt++;
-            while((++R <  N) && (m[R] == m[L+1])) cnt++;
-            if(cnt < 3) break;
-            count += cnt;
-        }
-        if(count) {
-            std::cout << count; return 0;
-        }
-    }
-    std::cout << 0;
-    return 0;
+int main ()
+{
+  int N, x, y, t, L, h;
+  cin >> N;
+  int A[N], l, p;
+  for (int i = 0; i < N; i++) {
+      cin >> A[i];
+  }
+  L = N;
+  h = 0;
+  while (h < 100) {
+      l = 0;
+      p = 0;
+      for (int i = p; i < L; i++) {
+          if (A[i] == A[i + 1]) {
+              l++;
+          }
+          else {
+              p = l;
+              l = 0;
+              if (p >= 2) {
+                x = abs (p - i);
+                y = p + 1;
+                break;
+                }
+          }
+	  }
+      if (p < 2) break;
+      t = 0;
+      while (t < y) {
+          for (int i = x; i < L - t; i++) {
+              A[i] = A[i + 1];
+          }
+          t++;
+	  }
+      L = L - t;
+      h++;
+  }
+  cout << N - L << endl;
+  return 0;
 }
