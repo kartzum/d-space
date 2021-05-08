@@ -7,6 +7,7 @@ import java.util.*;
  * <p>
  * TwoSum
  * ContainerWithMostWater
+ * <p>
  */
 public class T1 {
     public static void main(String[] args) {
@@ -15,20 +16,20 @@ public class T1 {
 
     static void runAll() {
         List<T> tasks = new ArrayList<>();
+        tasks.add(new TwoSum());
+        tasks.add(new ContainerWithMostWater());
         tasks.add(new MaxCon());
         tasks.add(new AreAnagram());
         tasks.add(new PrintParenthesis());
         tasks.add(new ReverseList());
         tasks.add(new LongestOnes());
         tasks.add(new MoveZeroes());
-        tasks.add(new TwoSum());
         tasks.add(new TopologicalSort());
         tasks.add(new IsBST());
         tasks.add(new DFS());
         tasks.add(new BFS());
         tasks.add(new EvalRPN());
         tasks.add(new AreParanthesisBalanced());
-        tasks.add(new ContainerWithMostWater());
         for (T t : tasks) {
             t.tests();
         }
@@ -36,6 +37,52 @@ public class T1 {
 
     interface T {
         void tests();
+    }
+
+    /**
+     * Two Sum.
+     * https://leetcode.com/problems/two-sum/
+     */
+    static class TwoSum implements T {
+        @Override
+        public void tests() {
+            int[] nums = new int[]{2, 7, 11, 15};
+            int[] r = twoSum(nums, 9);
+            System.out.println(Arrays.toString(r));
+        }
+
+        static int[] twoSum(int[] nums, int target) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int i = 0; i < nums.length; i++) {
+                int complement = target - nums[i];
+                if (map.containsKey(complement)) {
+                    return new int[]{map.get(complement), i};
+                }
+                map.put(nums[i], i);
+            }
+            throw new IllegalArgumentException("No two sum solution");
+        }
+    }
+
+    /**
+     * https://leetcode.com/problems/container-with-most-water/
+     * https://leetcode.com/problems/container-with-most-water/discuss/6245/O(n)-Java-Solution-Two-Pointers
+     */
+    static class ContainerWithMostWater implements T {
+        @Override
+        public void tests() {
+            System.out.println(new ContainerWithMostWater().maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7})); // 49
+        }
+
+        public int maxArea(int[] height) {
+            int maxWater = 0, left = 0, right = height.length - 1;
+            while (left < right) {
+                maxWater = Math.max(maxWater, (right - left) * Math.min(height[left], height[right]));
+                if (height[left] < height[right]) left++;
+                else right--;
+            }
+            return maxWater;
+        }
     }
 
     /**
@@ -210,31 +257,6 @@ public class T1 {
                     k++;
                 }
             }
-        }
-    }
-
-    /**
-     * Two Sum.
-     * https://leetcode.com/problems/two-sum/
-     */
-    static class TwoSum implements T {
-        @Override
-        public void tests() {
-            int[] nums = new int[]{2, 7, 11, 15};
-            int[] r = twoSum(nums, 9);
-            System.out.println(Arrays.toString(r));
-        }
-
-        static int[] twoSum(int[] nums, int target) {
-            Map<Integer, Integer> map = new HashMap<>();
-            for (int i = 0; i < nums.length; i++) {
-                int complement = target - nums[i];
-                if (map.containsKey(complement)) {
-                    return new int[]{map.get(complement), i};
-                }
-                map.put(nums[i], i);
-            }
-            throw new IllegalArgumentException("No two sum solution");
         }
     }
 
@@ -521,27 +543,6 @@ public class T1 {
                 }
             }
             return (stack.isEmpty());
-        }
-    }
-
-    /**
-     * https://leetcode.com/problems/container-with-most-water/
-     * https://leetcode.com/problems/container-with-most-water/discuss/6245/O(n)-Java-Solution-Two-Pointers
-     */
-    static class ContainerWithMostWater implements T {
-        @Override
-        public void tests() {
-            System.out.println(new ContainerWithMostWater().maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7})); // 49
-        }
-
-        public int maxArea(int[] height) {
-            int maxWater = 0, left = 0, right = height.length - 1;
-            while (left < right) {
-                maxWater = Math.max(maxWater, (right - left) * Math.min(height[left], height[right]));
-                if (height[left] < height[right]) left++;
-                else right--;
-            }
-            return maxWater;
         }
     }
 
