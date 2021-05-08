@@ -7,6 +7,8 @@ import java.util.*;
  * <p>
  * TwoSum
  * ContainerWithMostWater
+ * MoveZeroes
+ * MergeIntervals
  * <p>
  */
 public class T1 {
@@ -18,12 +20,13 @@ public class T1 {
         List<T> tasks = new ArrayList<>();
         tasks.add(new TwoSum());
         tasks.add(new ContainerWithMostWater());
+        tasks.add(new MoveZeroes());
+        tasks.add(new MergeIntervals());
         tasks.add(new MaxCon());
         tasks.add(new AreAnagram());
         tasks.add(new PrintParenthesis());
         tasks.add(new ReverseList());
         tasks.add(new LongestOnes());
-        tasks.add(new MoveZeroes());
         tasks.add(new TopologicalSort());
         tasks.add(new IsBST());
         tasks.add(new DFS());
@@ -82,6 +85,73 @@ public class T1 {
                 else right--;
             }
             return maxWater;
+        }
+    }
+
+    /**
+     * Move Zeroes.
+     * https://leetcode.com/problems/move-zeroes/
+     */
+    static class MoveZeroes implements T {
+        @Override
+        public void tests() {
+            int[] nums = new int[]{1, 0, 3, 12};
+            moveZeroes(nums);
+            System.out.println(Arrays.toString(nums));
+        }
+
+        static void moveZeroes(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return;
+            }
+            int k = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != 0) {
+                    int temp = nums[k];
+                    nums[k] = nums[i];
+                    nums[i] = temp;
+                    k++;
+                }
+            }
+        }
+    }
+
+    /**
+     * https://leetcode.com/problems/merge-intervals/
+     * Given an array of intervals where intervals[i] = [starti, endi],
+     * merge all overlapping intervals, and return an array of the non-overlapping
+     * intervals that cover all the intervals in the input.
+     */
+    static class MergeIntervals implements T {
+        @Override
+        public void tests() {
+            int[][] intervals1 = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+            int[][] r1 = new Solution().merge(intervals1);
+            for (int[] x : r1) {
+                System.out.print(x[0] + " " + x[1] + ", ");
+            }
+            // 1 6, 8 10, 15 18,
+            System.out.println();
+        }
+
+        static class Solution {
+            public int[][] merge(int[][] intervals) {
+                Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+                LinkedList<int[]> merged = new LinkedList<>();
+                for (int[] interval : intervals) {
+                    // if the list of merged intervals is empty or if the current
+                    // interval does not overlap with the previous, simply append it.
+                    if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
+                        merged.add(interval);
+                    }
+                    // otherwise, there is overlap, so we merge the current and previous
+                    // intervals.
+                    else {
+                        merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
+                    }
+                }
+                return merged.toArray(new int[merged.size()][]);
+            }
         }
     }
 
@@ -229,34 +299,6 @@ public class T1 {
                 }
             }
             return right - left;
-        }
-    }
-
-    /**
-     * Move Zeroes.
-     * https://leetcode.com/problems/move-zeroes/
-     */
-    static class MoveZeroes implements T {
-        @Override
-        public void tests() {
-            int[] nums = new int[]{1, 0, 3, 12};
-            moveZeroes(nums);
-            System.out.println(Arrays.toString(nums));
-        }
-
-        static void moveZeroes(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return;
-            }
-            int k = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] != 0) {
-                    int temp = nums[k];
-                    nums[k] = nums[i];
-                    nums[i] = temp;
-                    k++;
-                }
-            }
         }
     }
 
