@@ -1,4 +1,4 @@
-package m.d.a.m.p.ya.c1;
+package m.d.a.m.p.ya.c8458;
 
 import java.util.HashSet;
 import java.util.Scanner;
