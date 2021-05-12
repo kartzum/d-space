@@ -2,7 +2,7 @@ package m.d.a.m.p.ya.c8458;
 
 import java.util.Scanner;
 
-public class Task3 {
+public class c8458b {
     public static void main(String[] args) {
         // int[] b = new int[]{0, 0, 0, 0, 0, 0, 0};
         Scanner input = new Scanner(System.in);

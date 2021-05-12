@@ -3,7 +3,7 @@ package m.d.a.m.p.ya.c8458;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class Task1 {
+public class c8458a {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String J = input.nextLine(); // "ab";

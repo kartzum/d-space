@@ -3,7 +3,7 @@ package m.d.a.m.p.ya.c8458;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class Task2 {
+public class c8458e {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String a = input.nextLine(); // "qiu";

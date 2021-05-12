@@ -2,7 +2,7 @@ package m.d.a.m.p.ya.c8458;
 
 import java.util.Scanner;
 
-public class Task4 {
+public class c8458c {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
