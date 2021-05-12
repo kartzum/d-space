@@ -13,43 +13,48 @@ public class c27073a {
     static void run() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String[] temp = reader.readLine().split(" ");
-        StringBuilder s = new StringBuilder(temp[0]);
-        StringBuilder t = new StringBuilder(temp[1]);
-        System.out.println(calc(s, t));
+        System.out.println(calc(temp[0], temp[1]));
     }
 
     static void tests() {
-        System.out.println(calc(new StringBuilder("abc."), new StringBuilder("abd.")));
-        System.out.println(calc(new StringBuilder("aaaa..."), new StringBuilder("bbbb...")));
+        System.out.println(calc("abc.", "abd."));
+        System.out.println(calc("aaaa...", "bbbb..."));
     }
 
-    static boolean calc(StringBuilder s, StringBuilder t) {
-        int ps = applyBackspaces(s);
-        int pt = applyBackspaces(t);
-
-        if (pt != ps) {
-            return false;
-        } else if (ps == -1 && pt == -1) {
-            return true;
-        } else {
-            for (int i = 0; i <= pt; i++) {
-                if (s.charAt(i) != t.charAt(i))
+    static boolean calc(String s, String t) {
+        int si = s.length() - 1;
+        int ti = t.length() - 1;
+        int sc = 0;
+        int tc = 0;
+        while (si >= 0 || ti >= 0) {
+            while (si >= 0 && (sc > 0 || s.charAt(si) == '.')) {
+                if (s.charAt(si) == '.') {
+                    sc++;
+                } else {
+                    sc--;
+                }
+                si--;
+            }
+            while (ti >= 0 && (tc > 0 || t.charAt(ti) == '.')) {
+                if (t.charAt(ti) == '.') {
+                    tc++;
+                } else {
+                    tc--;
+                }
+                ti--;
+            }
+            if (si >= 0 && ti >= 0) {
+                if (s.charAt(si) != t.charAt(ti)) {
                     return false;
-            }
-            return true;
-        }
-    }
-
-    static int applyBackspaces(StringBuilder v) {
-        int p = -1;
-        for (int i = 0; i < v.length(); i++) {
-            if (v.charAt(i) == '.' && p != -1) {
-                p -= 1;
-            } else if (v.charAt(i) != '.') {
-                v.setCharAt(p + 1, v.charAt(i));
-                p += 1;
+                }
+                si--;
+                ti--;
+            } else if (si < 0 && ti >= 0) {
+                return false;
+            } else {
+                return si < 0;
             }
         }
-        return p;
+        return true;
     }
 }
