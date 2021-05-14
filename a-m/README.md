@@ -205,7 +205,7 @@
 
 * [Java memory model](https://habr.com/ru/post/133981/)
 
-### Questions
+## Questions
 
 #### ya
 
@@ -216,6 +216,9 @@
 * [ya](http://lmndeit.kg/746/hr-yandex/)
 * [ya](https://sysdev.me/yandex-tests/)
 * [ya](https://medium.com/@mbelsky/yandex-frontend-interview-454c75435b26)
+* [Яндекс.Блиц. 12 алгоритмических задач отборочного раунда и их разборы](https://habr.com/ru/company/yandex/blog/340784/)
+* [Собеседование в Яндекс: театр абсурда :/](https://habr.com/ru/post/550088/)
+* https://www.facebook.com/academy.yandex/posts/2340787639484485/
 
 #### fb
 
@@ -277,7 +280,6 @@
 ## geeksforgeeks
 
 * [Finding the maximum square sub-matrix with all equal elements](https://www.geeksforgeeks.org/finding-the-maximum-square-sub-matrix-with-all-equal-elements/)
-
 
 ## notes
 * https://hsecodes.com/index.php/tasksdecision/index/371
