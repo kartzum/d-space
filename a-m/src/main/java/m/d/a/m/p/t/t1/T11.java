@@ -17,10 +17,14 @@ package m.d.a.m.p.t.t1;
 // Trees.
 // Level Order Traversal of Binary Tree. https://www.educative.io/m/level-order-traversal-binary-tree. https://www.programcreek.com/2014/04/leetcode-binary-tree-level-order-traversal-java/
 
-import m.d.a.m.p.lt.problems.TreeNode;
+// General.
+// https://leetcode.com/problems/intersection-of-two-arrays/
+// https://leetcode.com/problems/string-compression/
+// https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/
+// https://leetcode.com/problems/group-anagrams/
+// https://leetcode.com/problems/merge-intervals/
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 public class T11 {
     public static void main(String[] args) {
@@ -29,7 +33,8 @@ public class T11 {
         // Arrays.MergeIntervals.tests();
         // LinkedLists.AddIntegers.tests();
         // LinkedLists.MergeSortList.tests();
-        Trees.LevelOrderTraversal.tests();
+        // Trees.LevelOrderTraversal.tests();
+        General.MergeIntervals.tests();
     }
 
     static class Arrays {
@@ -329,6 +334,162 @@ public class T11 {
                         System.out.print(i + " ");
                     }
                     System.out.println();
+                }
+            }
+        }
+    }
+
+    static class General {
+        static class IntersectionOfTwoArrays {
+            static class Solution {
+                public int[] intersection(int[] nums1, int[] nums2) {
+                    HashSet<Integer> set1 = new HashSet<Integer>();
+                    for (Integer n : nums1) set1.add(n);
+                    HashSet<Integer> set2 = new HashSet<Integer>();
+                    for (Integer n : nums2) set2.add(n);
+
+                    set1.retainAll(set2);
+
+                    int[] output = new int[set1.size()];
+                    int idx = 0;
+                    for (int s : set1) output[idx++] = s;
+                    return output;
+                }
+            }
+
+            static void tests() {
+                System.out.println(java.util.Arrays.toString(new Solution().intersection(new int[]{}, new int[]{})));
+            }
+        }
+
+        static class StringCompression {
+            static class Solution {
+                public int compress(char[] chars) {
+                    if (chars.length == 1) return chars.length;
+
+                    int i = 0;
+                    int l = 0;
+                    int r = 0;
+
+                    while (r < chars.length) {
+                        int count = 0;
+                        char val = chars[l];
+                        while (r < chars.length && chars[r] == val) {
+                            count++;
+                            r++;
+                        }
+
+                        chars[i] = val;
+                        i++;
+
+                        if (count > 1) {
+                            for (char c : Integer.toString(count).toCharArray()) {
+                                chars[i] = c;
+                                i++;
+                            }
+                        }
+
+                        l = r;
+                    }
+
+                    return i;
+                }
+            }
+
+            static void tests() {
+                System.out.println(new Solution().compress(new char[]{}));
+            }
+        }
+
+        static class LongestSubarrayOf1sAfterDeletingOneElement {
+            static class Solution {
+                public int longestSubarray(int[] nums) {
+                    int prev = 0;
+                    int curr = 0;
+                    int max = 0;
+                    for (int i = 0; i < nums.length; ++i) {
+                        if (nums[i] == 1) {
+                            curr++;
+                            if (curr + prev > max) max = curr + prev;
+                        } else if (nums[i] == 0) {
+                            prev = curr;
+                            curr = 0;
+                        }
+                    }
+                    if (max == nums.length) return max - 1;
+                    else return max;
+                }
+            }
+
+            static void tests() {
+                System.out.println(new Solution().longestSubarray(new int[]{1, 1, 0, 1}));
+            }
+        }
+
+        static class GroupAnagrams {
+            static void tests() {
+                for (List<String> l : new Solution().groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"})) {
+                    for (String s : l) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
+                }
+            }
+
+            static class Solution {
+                public List<List<String>> groupAnagrams(String[] strs) {
+                    Map<String, List<String>> m = new HashMap<>();
+                    for (String s : strs) {
+                        char[] a_ = s.toCharArray();
+                        java.util.Arrays.sort(a_);
+                        String a = String.valueOf(a_);
+                        if (!m.containsKey(a)) {
+                            List<String> l = new ArrayList<>();
+                            l.add(s);
+                            m.put(a, l);
+                        } else {
+                            List<String> l = m.get(a);
+                            l.add(s);
+                        }
+                    }
+                    List<List<String>> r = new ArrayList<>();
+                    for (Map.Entry<String, List<String>> e : m.entrySet()) {
+                        r.add(e.getValue());
+                    }
+                    return r;
+                }
+            }
+        }
+
+        static class MergeIntervals {
+            static void tests() {
+                for (int[] a : new Solution().merge(new int[][]{
+                        {1, 3},
+                        {2, 6},
+                        {8, 10},
+                        {15, 18}
+                })) {
+                    System.out.println(java.util.Arrays.toString(a));
+                }
+            }
+
+            static class Solution {
+                public int[][] merge(int[][] intervals) {
+                    java.util.Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+                    LinkedList<int[]> merged = new LinkedList<>();
+                    for (int[] interval : intervals) {
+                        // if the list of merged intervals is empty or if the current
+                        // interval does not overlap with the previous, simply append it.
+                        if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
+                            merged.add(interval);
+                        }
+                        // otherwise, there is overlap, so we merge the current and previous
+                        // intervals.
+                        else {
+                            merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
+                        }
+                    }
+                    return merged.toArray(new int[merged.size()][]);
                 }
             }
         }
