@@ -192,6 +192,7 @@
 * [57. Insert Interval](https://leetcode.com/problems/insert-interval/)
 * [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 * [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+* [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 
