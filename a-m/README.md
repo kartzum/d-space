@@ -195,6 +195,7 @@
 * [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)
 * [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 * [29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)
+* [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 
