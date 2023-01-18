@@ -197,6 +197,7 @@
 * [29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)
 * [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)
 * [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+* [46. Permutations](https://leetcode.com/problem-list/top-interview-questions/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 
