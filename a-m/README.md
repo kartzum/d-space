@@ -211,6 +211,7 @@
 ### Memory & Multithreading
 
 * [Java memory model](https://habr.com/ru/post/133981/)
+* [Garbage Collection и JVM](https://habr.com/ru/companies/otus/articles/776342/)
 
 ## Questions
 
@@ -319,3 +320,6 @@
 
 ### architecture
 * [Архитектура программного обеспечения переоценена, простой и понятный дизайн — недооценен](https://habr.com/ru/post/467997/)
+
+### microservices
+* [API Gateway](https://habr.com/ru/companies/rosbank/articles/779770/)
