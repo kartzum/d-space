@@ -8,9 +8,10 @@ import java.util.List;
  */
 public class Cc {
     public static void main(String[] args) {
-        //ArraysAndStrings.TwoPointersIsPalindrome.run();
-        //ArraysAndStrings.TwoPointersCheckForTarget.run();
-        ArraysAndStrings.TwoPointersCombine.run();
+        // ArraysAndStrings.TwoPointersIsPalindrome.run();
+        // ArraysAndStrings.TwoPointersCheckForTarget.run();
+        // ArraysAndStrings.TwoPointersCombine.run();
+        ArraysAndStrings.SlidingWindowFindLength.run();
     }
 
     static class ArraysAndStrings {
@@ -61,6 +62,7 @@ public class Cc {
             static void run() {
                 System.out.println("Combine.");
                 combine(new int[]{1, 4, 7, 20}, new int[]{3, 5, 6}).forEach((i) -> System.out.print(i + ","));
+                System.out.println();
             }
 
             static List<Integer> combine(int[] arr1, int[] arr2) {
@@ -84,6 +86,30 @@ public class Cc {
                     ans.add(arr1[j]);
                     j++;
                 }
+                return ans;
+            }
+        }
+
+        static class SlidingWindowFindLength {
+            static void run() {
+                System.out.println("findLength. " + findLength(new int[]{3, 1, 2, 7, 4, 2, 1, 1, 5}, 8));
+            }
+
+            static int findLength(int[] nums, int k) {
+                int left = 0;
+                int curr = 0;
+                int ans = 0;
+
+                for (int right = 0; right < nums.length; right++) {
+                    curr += nums[right];
+                    while (curr > k) {
+                        curr -= nums[left];
+                        left++;
+                    }
+
+                    ans = Math.max(ans, right - left + 1);
+                }
+
                 return ans;
             }
         }
