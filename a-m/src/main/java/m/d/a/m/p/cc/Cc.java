@@ -3,6 +3,7 @@ package m.d.a.m.p.cc;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/
@@ -16,7 +17,8 @@ public class Cc {
         // ArraysAndStrings.SlidingWindowFindLengthZero.run();
         // ArraysAndStrings.SlidingWindowNumSubarrayProductLessThanK.run();
         // ArraysAndStrings.PrefixSumAnswerQueries.run();
-        Backtracking.AllPathsFromSourceToTarget.run();
+        // Backtracking.AllPathsFromSourceToTarget.run();
+        Backtracking.LetterCombinationsOfAPhoneNumber.run();
     }
 
     static class ArraysAndStrings {
@@ -236,6 +238,46 @@ public class Cc {
                             backtrack(n, path);
                             path.removeLast();
                         }
+                    }
+                }
+            }
+        }
+
+        static class LetterCombinationsOfAPhoneNumber {
+
+            static void run() {
+                System.out.println("Letter Combinations of a Phone Number.");
+                new Solution().letterCombinations("23").forEach((i) -> System.out.print(i + ","));
+                System.out.println();
+            }
+
+            static class Solution {
+                private List<String> combinations = new ArrayList<>();
+                private Map<Character, String> letters = Map.of(
+                        '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
+                        '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
+                private String phoneDigits;
+
+                public List<String> letterCombinations(String digits) {
+                    if (digits.length() == 0) {
+                        return combinations;
+                    }
+                    phoneDigits = digits;
+                    backtrack(0, new StringBuilder());
+                    return combinations;
+                }
+
+                private void backtrack(int index, StringBuilder path) {
+                    if (path.length() == phoneDigits.length()) {
+                        combinations.add(path.toString());
+                        return;
+                    }
+
+                    String possibleLetters = letters.get(phoneDigits.charAt(index));
+                    for (char letter : possibleLetters.toCharArray()) {
+                        path.append(letter);
+                        backtrack(index + 1, path);
+                        path.deleteCharAt(path.length() - 1);
                     }
                 }
             }
