@@ -11,7 +11,9 @@ public class Cc {
         // ArraysAndStrings.TwoPointersIsPalindrome.run();
         // ArraysAndStrings.TwoPointersCheckForTarget.run();
         // ArraysAndStrings.TwoPointersCombine.run();
-        ArraysAndStrings.SlidingWindowFindLength.run();
+        // ArraysAndStrings.SlidingWindowFindLength.run();
+        // ArraysAndStrings.SlidingWindowFindLengthZero.run();
+        ArraysAndStrings.SlidingWindowNumSubarrayProductLessThanK.run();
     }
 
     static class ArraysAndStrings {
@@ -110,6 +112,53 @@ public class Cc {
                     ans = Math.max(ans, right - left + 1);
                 }
 
+                return ans;
+            }
+        }
+
+        static class SlidingWindowFindLengthZero {
+            static void run() {
+                System.out.println("findLength. " + findLength("1101100111"));
+            }
+
+            static int findLength(String s) {
+                int left = 0;
+                int curr = 0;
+                int ans = 0;
+                for (int right = 0; right < s.length(); right++) {
+                    if (s.charAt(right) == '0') {
+                        curr++;
+                    }
+                    while (curr > 1) {
+                        if (s.charAt(left) == '0') {
+                            curr--;
+                        }
+                        left++;
+                    }
+
+                    ans = Math.max(ans, right - left + 1);
+                }
+                return ans;
+            }
+        }
+
+        static class SlidingWindowNumSubarrayProductLessThanK {
+            static void run() {
+                System.out.println("K. " + numSubarrayProductLessThanK(new int[]{10, 5, 2, 6}, 100));
+            }
+
+            static int numSubarrayProductLessThanK(int[] nums, int k) {
+                int left = 0;
+                int curr = 1;
+                int ans = 0;
+                for (int right = 0; right < nums.length; right++) {
+                    curr *= nums[right];
+                    while (curr >= k) {
+                        curr /= nums[left];
+                        left++;
+                    }
+                    ans += right - left + 1;
+                }
                 return ans;
             }
         }
