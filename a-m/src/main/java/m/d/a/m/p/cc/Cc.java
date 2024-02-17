@@ -1,6 +1,7 @@
 package m.d.a.m.p.cc;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -14,7 +15,8 @@ public class Cc {
         // ArraysAndStrings.SlidingWindowFindLength.run();
         // ArraysAndStrings.SlidingWindowFindLengthZero.run();
         // ArraysAndStrings.SlidingWindowNumSubarrayProductLessThanK.run();
-        ArraysAndStrings.PrefixSumAnswerQueries.run();
+        // ArraysAndStrings.PrefixSumAnswerQueries.run();
+        Backtracking.AllPathsFromSourceToTarget.run();
     }
 
     static class ArraysAndStrings {
@@ -194,6 +196,48 @@ public class Cc {
                 }
 
                 return ans;
+            }
+        }
+    }
+
+    static class Backtracking {
+        static class AllPathsFromSourceToTarget {
+            static void run() {
+                System.out.println("AllPathsFromSourceToTarget.");
+                List<List<Integer>> r = new Solution().allPathsSourceTarget(new int[][]{{1, 2}, {3}, {3}, {}});
+                r.forEach((i) -> {
+                    i.forEach((j) -> System.out.print(j + ","));
+                    System.out.println();
+                });
+                System.out.println();
+            }
+
+            static class Solution {
+                private int target;
+                private int[][] graph;
+                private List<List<Integer>> results;
+
+                public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+                    this.target = graph.length - 1;
+                    this.graph = graph;
+                    this.results = new ArrayList<>();
+                    LinkedList<Integer> path = new LinkedList<>();
+                    path.addLast(0);
+                    backtrack(0, path);
+                    return results;
+                }
+
+                void backtrack(int currNode, LinkedList<Integer> path) {
+                    if (currNode == this.target) {
+                        results.add(new ArrayList<>(path));
+                    } else {
+                        for (int n : graph[currNode]) {
+                            path.addLast(n);
+                            backtrack(n, path);
+                            path.removeLast();
+                        }
+                    }
+                }
             }
         }
     }
