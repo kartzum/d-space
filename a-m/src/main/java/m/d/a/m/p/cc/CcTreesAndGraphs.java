@@ -1,5 +1,7 @@
 package m.d.a.m.p.cc;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -7,8 +9,9 @@ import java.util.Stack;
  */
 public class CcTreesAndGraphs {
     public static void main(String[] args) {
-        // TreesAndGraphs.MaxDepth.run();
-        TreesAndGraphs.MaxDepthIteratively.run();
+        // TreesAndGraphs.DfsMaxDepth.run();
+        // TreesAndGraphs.DfsMaxDepthIteratively.run();
+        TreesAndGraphs.BfsPrintAllNodes.run();
     }
 
     static class TreeNode {
@@ -41,7 +44,7 @@ public class CcTreesAndGraphs {
     }
 
     static class TreesAndGraphs {
-        static class MaxDepth {
+        static class DfsMaxDepth {
             static void run() {
                 System.out.println("MaxDepth. " + maxDepth(createTreeNode()));
             }
@@ -56,7 +59,7 @@ public class CcTreesAndGraphs {
             }
         }
 
-        static class MaxDepthIteratively {
+        static class DfsMaxDepthIteratively {
             static void run() {
                 System.out.println("MaxDepth. " + maxDepth(createTreeNode()));
             }
@@ -81,6 +84,32 @@ public class CcTreesAndGraphs {
                     }
                 }
                 return ans;
+            }
+        }
+
+        static class BfsPrintAllNodes {
+            static void run() {
+                System.out.println("PrintAllNodes.");
+                printAllNodes(createTreeNode());
+                System.out.println();
+            }
+
+            static void printAllNodes(TreeNode root) {
+                Queue<TreeNode> queue = new LinkedList<>();
+                queue.add(root);
+                while (!queue.isEmpty()) {
+                    int nodesInCurrentLevel = queue.size();
+                    for (int i = 0; i < nodesInCurrentLevel; i++) {
+                        TreeNode node = queue.remove();
+                        System.out.print(node.val + ",");
+                        if (node.left != null) {
+                            queue.add(node.left);
+                        }
+                        if (node.right != null) {
+                            queue.add(node.right);
+                        }
+                    }
+                }
             }
         }
 
