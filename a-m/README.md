@@ -198,6 +198,7 @@
 * [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)
 * [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 * [46. Permutations](https://leetcode.com/problem-list/top-interview-questions/)
+* [270. Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 
