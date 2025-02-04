@@ -199,6 +199,7 @@
 * [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 * [46. Permutations](https://leetcode.com/problem-list/top-interview-questions/)
 * [270. Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/)
+* [993. Cousins in Binary Tree](https://leetcode.com/problems/cousins-in-binary-tree/)
 
 ## Tasks (https://cses.fi/, https://cses.fi/problemset/list/)
 
