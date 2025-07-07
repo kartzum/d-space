@@ -20,6 +20,17 @@
 * [Clickhouse + Zookeeper](https://github.com/TanVD/ClickhouseCluster_DockerCompose/tree/master)
 * https://github.com/tetafro/clickhouse-cluster/tree/master
 
+#### syntax & statements
+##### syntax & statements - resource
+* [Syntax](https://clickhouse.com/docs/sql-reference/syntax)
+* [Data Types in ClickHouse](https://clickhouse.com/docs/sql-reference/data-types)
+* [Statements](https://clickhouse.com/docs/sql-reference/statements)
+
+#### engines
+##### engines - resource
+* [ReplacingMergeTree](https://clickhouse.com/docs/engines/table-engines/mergetree-family/replacingmergetree)
+* [ClickHouse Basic Tutorial: Table Engines](https://dev.to/hoptical/clickhouse-basic-tutorial-table-engines-30i1)
+
 #### structure
 
 Sql for creating t_pt_prop_v1.
@@ -67,6 +78,16 @@ SELECT count(*) FROM t_pt_prop_v1;
 ```
 
 ### design & queries
+
+#### queries
+##### queries - resources
+* [Advanced Tutorial](https://github.com/ClickHouse/clickhouse-docs/blob/main/docs/tutorial.md)
+* [A simple guide for query optimization](https://github.com/ClickHouse/clickhouse-docs/blob/main/docs/guides/best-practices/query-optimization.md)
+* [Advanced Tutorial](https://clickhouse.com/docs/tutorial)
+
+#### functions
+##### functions - resources
+* [Functions](https://clickhouse.com/docs/sql-reference/functions)
 
 #### explain
 
@@ -193,3 +214,29 @@ Expression ((Projection + Before ORDER BY))
 "        Filter (WHERE)"
 "          ReadFromMergeTree (t_pt_prop_v1)"
 ```
+
+#### join
+
+```
+SELECT [DISTINCT [ON (column1, column2, ...)]] expr_list
+[FROM [db.]table | (subquery) | table_function] [FINAL]
+[GLOBAL] [ANY|ALL|ASOF] [INNER|LEFT|RIGHT|FULL|CROSS] 
+[OUTER|SEMI|ANTI] 
+JOIN (subquery)|table (ON <expr_list>)|(USING <column_list>)
+...
+```
+
+```
+INNER JOIN возвращает только совпадающие строки.
+LEFT OUTER JOIN возвращает несовпадающие строки из левой таблицы в дополнение к совпадающим строкам.
+RIGHT OUTER JOIN возвращает несовпадающие строки из правой таблицы в дополнение к совпадающим строкам.
+FULL OUTER JOIN возвращает несовпадающие строки из обеих таблиц в дополнение к совпадающим строкам.
+CROSS JOIN производит декартово произведение таблиц целиком, ключи соединения не указываются. 
+```
+
+### data & pipes
+
+#### resources
+* https://clickhouse.com/docs/engines/database-engines
+* https://clickhouse.com/docs/engines/table-engines/integrations/postgresql
+* https://clickhouse.com/docs/engines/table-engines/integrations/kafka

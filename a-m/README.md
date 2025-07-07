@@ -379,6 +379,8 @@
 ### data
 #### Common
 ##### Apache Kafka
+###### Resources
+* [Apache Kafka: основы технологии](https://habr.com/ru/companies/slurm/articles/550934/)
 ##### Apache Pulsar
 ##### Cassandra
 ##### ActiveMQ Artemis
