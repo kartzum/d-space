@@ -21,13 +21,13 @@
 * https://github.com/tetafro/clickhouse-cluster/tree/master
 
 #### syntax & statements
-##### syntax & statements - resource
+##### syntax & statements - resources
 * [Syntax](https://clickhouse.com/docs/sql-reference/syntax)
 * [Data Types in ClickHouse](https://clickhouse.com/docs/sql-reference/data-types)
 * [Statements](https://clickhouse.com/docs/sql-reference/statements)
 
 #### engines
-##### engines - resource
+##### engines - resources
 * [ReplacingMergeTree](https://clickhouse.com/docs/engines/table-engines/mergetree-family/replacingmergetree)
 * [ClickHouse Basic Tutorial: Table Engines](https://dev.to/hoptical/clickhouse-basic-tutorial-table-engines-30i1)
 
@@ -78,6 +78,14 @@ SELECT count(*) FROM t_pt_prop_v1;
 ```
 
 ### design & queries
+
+#### design
+##### design - resources
+* [Schema Design](https://clickhouse.com/docs/data-modeling/schema-design)
+
+#### deployment & architecture
+##### deployment & architecture - resources
+* [Deployment and Scaling](https://clickhouse.com/docs/architecture/introduction)
 
 #### queries
 ##### queries - resources
@@ -236,7 +244,7 @@ CROSS JOIN производит декартово произведение та
 
 ### data & pipes
 
-#### resources
+#### data & pipes - resources
 * https://clickhouse.com/docs/engines/database-engines
 * https://clickhouse.com/docs/engines/table-engines/integrations/postgresql
 * https://clickhouse.com/docs/engines/table-engines/integrations/kafka
