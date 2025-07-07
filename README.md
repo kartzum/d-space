@@ -70,4 +70,6 @@ Small examples (Spark/java).
 ## s-t
 Streaming examples.
 
+## ch-n
+Clickhouse notes and examples.
 
