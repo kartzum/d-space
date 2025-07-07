@@ -311,7 +311,54 @@
 
 ## Tracks
 
+### Java/services
+#### Common
+##### Virtual threads
+##### Memory model
+##### CompletableFuture
+##### VisualVM
+##### Network
+##### Spring Core/Web
+* [REST with Spring Series](https://www.baeldung.com/rest-with-spring-series)
+* [Comparing Embedded Servlet Containers in Spring Boot](https://www.baeldung.com/spring-boot-servlet-containers)
+* [http2](https://www.baeldung.com/spring-boot-http2-tomcat)
+* [Testing Spring Boot Applications](https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html)
+* https://www.baeldung.com/integration-testing-a-rest-api
+* https://www.javaguides.net/2023/12/webtestclient-in-spring-boot-testing.html
+* [Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)
+* [Обработка исключений в REST API SpringBoot](https://struchkov.dev/blog/ru/exception-handling-controlleradvice/)
+* [Documenting a Spring REST API Using OpenAPI 3.0](https://www.baeldung.com/spring-rest-openapi-documentation)
+* https://www.baeldung.com/spring-quartz-schedule
+* https://dev.to/anarefin/quartz-scheduler-with-spring-boot-and-postgresql-in-a-clustered-environment-49m4
+* https://github.com/quartz-scheduler/quartz/blob/main/quartz/src/main/resources/org/quartz/impl/jdbcjobstore/tables_postgres.sql
+##### Spring Cloud
+##### Spring Data
+* https://spring.io/projects/spring-data-jpa
+* https://www.baeldung.com/java-hibernate-uuid-primary-key
+* https://julianduru.com/springboot-integration-testing-using-testcontainers-and-docker-compose/
+* https://www.baeldung.com/jpa-entity-equality
+* https://auth0.com/blog/integrating-spring-data-jpa-postgresql-liquibase/
+* https://www.baeldung.com/hibernate-one-to-many
+* https://www.baeldung.com/spring-data-jpa-skip-select-insert
+* https://www.baeldung.com/jpa-one-to-one
+* https://www.baeldung.com/java-jpa-transaction-locks
+* https://www.baeldung.com/spring-data-jpa-query
+* [Pessimistic Locking in JPA](https://www.baeldung.com/jpa-pessimistic-locking)
+* https://arnoldgalovics.com/jpa-pessimistic-locking/
+* https://www.codingshuttle.com/spring-boot-handbook/optimistic-and-pessimistic-transaction-locks-in-spring-boot-data-jpa/
+* [Замечательная аннотация Version в JPA](https://habr.com/ru/articles/434836/)
+* [Optimistic Locking in JPA](https://www.baeldung.com/jpa-optimistic-locking)
+* https://blog.mimacom.com/testing-optimistic-locking-handling-spring-boot-jpa/
+* [Is there any way to make both pessimistic and optimistic locking working in Hibernate](https://stackoverflow.com/questions/57847871/is-there-any-way-to-make-both-pessimistic-and-optimistic-locking-working-in-hibe/57860116#57860116)
+* [hibernate-monitoring](https://www.adeliosys.fr/articles/hibernate-monitoring/)
+* [Resolving Deadlocks in Transactions in Spring Boot](https://dev.to/tharindufdo/resolving-deadlocks-in-transactions-in-spring-boot-5a9j)
+* [Types of JPA Queries](https://www.baeldung.com/jpa-queries)
+* [Guide to Spring Retry](https://www.baeldung.com/spring-retry)
+* https://github.com/hafizmuhammadusman537/spring-boot-JPA-pagination-offset-and-limit/tree/main
+* https://www.baeldung.com/spring-jdbctemplate-in-list
+
 ### postgresql
+#### Resources
 * [PostgreSQL N devel Documentation](https://www.postgresql.org/docs/devel/)
 * [Postgres Professional](https://www.youtube.com/c/PostgresProfessional/featured)
 * [Администрирование PostgreSQL 10. Базовый курс](https://postgrespro.ru/education/courses/DBA1)
@@ -321,4 +368,19 @@
 * [Understanding the PostgreSQL Architecture](https://severalnines.com/database-blog/understanding-postgresql-architecture)
 
 ### architecture
+#### Common
+##### Cloud Platforms
+##### Sharding
+##### DDD
+##### C4 model
+#### Resources
 * [Архитектура программного обеспечения переоценена, простой и понятный дизайн — недооценен](https://habr.com/ru/post/467997/)
+
+### data
+#### Common
+##### Apache Kafka
+##### Apache Pulsar
+##### Cassandra
+##### ActiveMQ Artemis
+
+### security
