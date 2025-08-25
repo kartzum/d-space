@@ -311,12 +311,30 @@
 
 ## Tracks
 
+### Algo
+#### Common
+##### Trees & Lists & Graphs
+* B-Trees, Trie, Radix trees, Skip Lists
+* DFS, BFS, Floyd–Warshall, Dijkstra's
+#### Functional Programming (pure functions, immutability, higher-order functions, functions composition, рекурсия, мемоизация)
+* Functional Programming in Java https://www.baeldung.com/java-functional-programming
+
 ### Java/services
 #### Common
 ##### Virtual threads
 ##### Memory model
 ##### CompletableFuture
-##### VisualVM
+##### VisualVM & AsyncProfiler
+```
+VisualVM 
+https://docs.oracle.com/javase/8/docs/technotes/guides/visualvm/profiler.html
+
+AsyncProfiler
+https://github.com/async-profiler/async-profiler/tree/master
+https://www.baeldung.com/java-async-profiler
+https://habr.com/ru/articles/542156/
+```
+
 ##### Network
 ##### Spring Core/Web
 * [REST with Spring Series](https://www.baeldung.com/rest-with-spring-series)
@@ -333,6 +351,7 @@
 * https://github.com/quartz-scheduler/quartz/blob/main/quartz/src/main/resources/org/quartz/impl/jdbcjobstore/tables_postgres.sql
 ##### Spring Cloud
 ##### Spring Data
+* ЖЦ Entity, N+1, Transaction Propagation, L2 Cache, Lazy/EAGER
 * https://spring.io/projects/spring-data-jpa
 * https://www.baeldung.com/java-hibernate-uuid-primary-key
 * https://julianduru.com/springboot-integration-testing-using-testcontainers-and-docker-compose/
@@ -369,7 +388,64 @@
 
 ### architecture
 #### Common
-##### Cloud Platforms
+* SOLID, DRY, KISS, YAGNI, GRASP
+```
+SOLID
+Single responsibility principle, open-closed principle, Liskov substitution principle, 
+interface segregation principle, dependency inversion principle.
+https://habr.com/ru/companies/productivity_inside/articles/505430/
+
+DRY, KISS, YAGNI
+DRY – Don’t repeat yourself (не повторяй себя)
+KISS – keep it simple stupid (делайте вещи проще)
+YAGNI - You ain’t gonna need it – вам это не понадобится
+https://habr.com/ru/articles/144611/
+
+GRASP
+https://habr.com/ru/articles/92570/
+https://habr.com/ru/articles/900140/
+```
+* TDD, API First, Code first, RAD, DDD
+```
+TDD
+Test Driven Development (разработка через тестирование).
+https://habr.com/ru/companies/ruvds/articles/450316/
+
+API First
+https://habr.com/ru/companies/axenix/articles/694340/
+
+Code first
+https://thecode.media/design-first/
+
+RAD
+RAD-модель — разновидность инкрементной модели. 
+В RAD-модели компоненты или функции разрабатываются несколькими высококвалифицированными 
+командами параллельно.
+https://habr.com/ru/companies/edison/articles/269789/
+
+DDD
+Domain-Driven Design: чистая архитектура снизу доверху https://habr.com/ru/companies/sberbank/articles/781612/
+Что можно узнать о Domain Driven Design за 10 минут? https://habr.com/ru/companies/dododev/articles/489352/
+Domain-Driven Design (DDD) — Как сделать архитектуру запутанной https://habr.com/ru/articles/906290/
+Domain-Driven Design (DDD) https://www.geeksforgeeks.org/system-design/domain-driven-design-ddd/
+Domain-Driven Design with Java - A Practitioner’s Guide https://github.com/PacktPublishing/Domain-Driven-Design-with-Java-A-Practitioner-s-Guide
+Domain-driven design example in Java with Spring framework https://github.com/ttulka/ddd-example-ecommerce/tree/main
+```
+* MVC (Model-View-Controller) & MVVM (Model-View-ViewModel)
+* Особенности основных архитектурных паттернов presentation layer (MVC, MVVM, MVP, Clean Architecture, CQRS, Saga, Pub-Sub, Microkernel)
+```
+Microservice Architecture pattern https://microservices.io/patterns/microservices.html
+Saga https://github.com/eventuate-tram/eventuate-tram-examples-customers-and-orders
+```
+* Основные этапы и принципы System Design (производительность, масштабируемость, согласованность, надежность, отказоустойчивость, безопасность, поддерживаемость и др.)
+* Продвинутые подходы к архитектуре (Microkernel, Hexagonal, Event Sourcing, Clean Architecture)
+* Ключевые характеристики и показатели качества системы (доступность, отказоустойчивость, безопасность, масштабируемость, задержка, пропускная способность)
+
+##### Cloud & Cloud Platforms
+* Основные типы облачных услуг (SaaS, PaaS, IaaS)
+* Docker & Kubernetes
+* Принципы масштабирования и балансировки нагрузки в Kubernetes
+
 ##### Sharding
 ##### DDD
 ##### C4 model
@@ -378,6 +454,9 @@
 
 ### data
 #### Common
+* Теорема CAP и ее применение к NoSQL 
+* БД Time-Series Databases (InfluxDB, TimescaleDB)
+
 ##### Apache Kafka
 ###### Resources
 * [Apache Kafka: основы технологии](https://habr.com/ru/companies/slurm/articles/550934/)
@@ -385,4 +464,13 @@
 ##### Cassandra
 ##### ActiveMQ Artemis
 
+### network
+#### Протоколы, API
+* Уровни модели OSI и общие принципы работы сокетов и транспортных протоколов (SOAP, HTTP 2.0, TCP, UDP, WebSocket)
+
 ### security
+#### Протоколы аутентификации (OAuth, JWT и базовая аутентификация)
+#### Продвинутые механизмы аутентификации и авторизации (OIDC, OAuth2)
+#### Расширенные возможности Secure Hash Algorithms (SHA-256, SHA-512)
+#### Современные стандарты шифрования (AES, RSA, эллиптические кривые)
+#### Принципы управления и валидации сертификатов и Public Key Infrastructure (PKI)
