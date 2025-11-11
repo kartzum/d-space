@@ -73,3 +73,5 @@ Streaming examples.
 ## ch-n
 Clickhouse notes and examples.
 
+## ar-bz
+Architecture & base.
