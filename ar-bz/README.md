@@ -18,4 +18,3 @@ https://www.baeldung.com/spring-boot-docker-images
 https://www.baeldung.com/docker-compose-support-spring-boot
 
 https://www.baeldung.com/spring-boot-postgresql-docker
-
