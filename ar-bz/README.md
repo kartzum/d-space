@@ -95,3 +95,11 @@ AsyncAPI — это спецификация для документирован
 Подобно OpenAPI для синхронных API, AsyncAPI позволяет описывать структуры сообщений, 
 каналы и взаимодействия между компонентами в асинхронной системе.
 ```
+
+### kubernetes
+
+* https://kubernetes.io/
+* [Как работать с Minikube: рекомендации и полезные советы](https://habr.com/ru/companies/vk/articles/648117/)
+* [Разворачиваем веб-приложение в Kubernetes с нуля](https://habr.com/ru/articles/752586/)
+* [Running Spring Boot Applications With Minikube](https://www.baeldung.com/spring-boot-minikube)
+* [minikube start](https://minikube.sigs.k8s.io/docs/start/)
